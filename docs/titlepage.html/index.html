@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).">
-<meta name="keywords" content=" eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu">
-<title>Eclipse Embedded CDT</title>
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title> | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -236,7 +236,7 @@
           
           
           
-          <li class="active"><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/">Overview</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li class="active"><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT</h1>
+   <h1 class="post-title-main"></h1>
 </div>
 
 
@@ -430,123 +430,50 @@
 <div class="post-content">
 
    
-    <div class="summary">Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).
-</div>
-   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
 
     
 
 
-   <p><strong>Eclipse Embedded CDT</strong> is an open source project that includes a family
-of Eclipse plug-ins and tools for multi-platform embedded Arm and RISC-V
-development, based on GNU toolchains. The project is hosted on
-<a href="https://github.com/eclipse-embed-cdt">GitHub</a>.</p>
+   <div class="printTitleArea">
+    <div class="printTitle"></div>
+    <div class="printSubtitle"></div>
+    <div class="lastGeneratedDate">Last generated: August 17, 2020</div>
+    <hr />
 
-<h2 id="the-eclipse-embedded-cdt-plug-ins">The Eclipse Embedded CDT plug-ins</h2>
+    <div class="printTitleImage">
+        <img src="https://www.eclipse.org/embed-cdt//images/company_logo_big.png" alt="Company Logo"/>
+    </div>
 
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for
-GNU embedded toolchains like
-<a href="https://xpack.github.io/arm-none-eabi-gcc/">xPack GNU Arm Embedded GCC</a>,
-<a href="https://xpack.github.io/riscv-none-embed-gcc/">xPack GNU RISC-V Embedded GCC</a>,
-etc.</p>
+    <div class="copyrightBoilerplate">
+        <p>&copy; 2020 Eclipse. This is a boilerplate copyright statement... All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+        </p>
 
-<p>In short, the Eclipse Embedded CDT plug-ins allow to create, build,
-debug and in general to <strong>manage Arm &amp; RISC-V projects</strong> (executables
-and static/shared libraries, in both 32 and 64-bit versions) with the
-Eclipse framework (currently tested up to Eclipse 4.16, 2020-06).
-The plug-ins run on Windows, macOS and GNU/Linux. For more details
-please visit the <a href="/plugins/features/">Features</a> page.</p>
+    </div>
 
-<p><img src="/assets/images/2015/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
-
-<h2 id="additional-tools">Additional tools</h2>
-
-<p>Apart from the main Eclipse plug-ins, this project is accompanied by
-several other tools, distributed as separate packages.</p>
-
-<ul>
-  <li>
-    <p><strong>xPack Windows Build Tools</strong></p>
-
-    <p>The <a href="https://xpack.github.io/windows-build-tools/"><strong>xPack Windows Build Tools</strong></a>
-project includes the additional tools required to perform builds on Windows
-(<strong>make</strong> &amp; <strong>rm</strong>).</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU Arm Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a>
-project is an alternate binary distribution that complements the official
-<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Arm Embedded Toolchain</a> maintained by Arm. Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU RISC-V Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/riscv-none-embed-gcc/"><strong>xPack GNU RISC-V Embedded GCC</strong></a>
-project is a new distribution of the bare metal version of
-<a href="https://github.com/riscv/riscv-gcc">RISC-V GCC</a>, maintained by
-<a href="https://www.sifive.com">SiFive</a>. Binaries for Windows, macOS and GNU/Linux
-are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack OpenOCD</strong></p>
-
-    <p>The <a href="https://xpack.github.io/openocd/"><strong>xPack OpenOCD</strong></a> project is a
-new distribution of <a href="http://openocd.org/">OpenOCD</a>, customised for a
-better/more convenient integration with the <strong>OpenOCD Debugging</strong> plug-in.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack QEMU Arm</strong></p>
-
-    <p>The <a href="https://xpack.github.io/qemu-arm/"><strong>xPack QEMU Arm</strong></a> project is a
-fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator),
-intended to provide support for Cortex-M emulation in GNU MCU Eclipse.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-
-    <p><img src="/assets/images/2015/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
-  </li>
-</ul>
-
-<h2 id="notifications">Notifications</h2>
-
-<p>To stay up-to-date with new releases, the recommended way is
-to follow <a href="https://twitter.com/gnu-mcu-eclipse">@gnu-mcu-eclipse</a> on Twitter.</p>
-
-<p>Alternatively you can subscribe to this site RSS feed
-<a href="https://www.eclipse.org/embed-cdt/feed.xml">https://www.eclipse.org/embed-cdt/feed.xml</a>.</p>
-
-<p>To stay current with changes to individual projects, enable <strong>watching</strong>
-in the GitHub web interface for each project of interest.</p>
-
-<h2 id="license">License</h2>
-
-<p>Unless otherwise mentioned, all Eclipse plug-ins
-are provided <strong>free of charge</strong> under the terms of the
-<a href="https://projects.eclipse.org/license/epl-2.0">Eclipse Public License 2.0</a>.</p>
-
-<h2 id="let-us-know-if-you-enjoyed-using-this-project">Let us know if you enjoyed using this project!</h2>
-
-<p>If you enjoyed using this project, please let us know; here are some advices:</p>
-
-<ul>
-  <li>the best way to praise us would be to <strong>donate</strong>; if you want to speed
-up development and help future versions include more and more great
-features, please consider donating; any contribution, small or
-generous, will be highly appreciated;</li>
-  <li>star the projects you liked on GitHub
-(<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins">eclipse-plugins</a>);</li>
-  <li>follow the project on <a href="https://twitter.com/xpack_project">Twitter</a>,
-to get notifications on new releases.</li>
-</ul>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="." border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
-
+</div>
 
 
         
@@ -567,7 +494,7 @@ to get notifications on new releases.</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 16, 2020<br/> Site last generated: Aug 17, 2020 <br />
+ Site last generated: Aug 17, 2020 <br />
                 </div>
             </div>
 </footer>

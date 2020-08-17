@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).">
-<meta name="keywords" content=" eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu">
-<title>Eclipse Embedded CDT</title>
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>The peripherals registers view | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="The peripherals registers view">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -236,7 +236,7 @@
           
           
           
-          <li class="active"><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/">Overview</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li class="active"><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT</h1>
+   <h1 class="post-title-main">The peripherals registers view</h1>
 </div>
 
 
@@ -430,122 +430,158 @@
 <div class="post-content">
 
    
-    <div class="summary">Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).
-</div>
-   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
 
     
 
 
-   <p><strong>Eclipse Embedded CDT</strong> is an open source project that includes a family
-of Eclipse plug-ins and tools for multi-platform embedded Arm and RISC-V
-development, based on GNU toolchains. The project is hosted on
-<a href="https://github.com/eclipse-embed-cdt">GitHub</a>.</p>
+   <p>After the success of the <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">J-Link plug-in</a>, which significantly reduced the configuration effort to start a debug session, the most requested feature was a way of examining/modifying the peripheral registers.</p>
 
-<h2 id="the-eclipse-embedded-cdt-plug-ins">The Eclipse Embedded CDT plug-ins</h2>
+<p>There were other solutions already available for this, but all required the availability of various hardware definitions files, plus the manual selection of the appropriate file for the current debug configuration.</p>
 
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for
-GNU embedded toolchains like
-<a href="https://xpack.github.io/arm-none-eabi-gcc/">xPack GNU Arm Embedded GCC</a>,
-<a href="https://xpack.github.io/riscv-none-embed-gcc/">xPack GNU RISC-V Embedded GCC</a>,
-etc.</p>
+<p>The GNU MCU Eclipse plug-in approach is a more integrated one, based on <a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html">CMSIS Packs</a>. In fact the main reason for introducing the peripheral registers view only now was the need for the CMSIS Packs technology to mature and of course a CMSIS Packs Manager implementation.</p>
 
-<p>In short, the Eclipse Embedded CDT plug-ins allow to create, build,
-debug and in general to <strong>manage Arm &amp; RISC-V projects</strong> (executables
-and static/shared libraries, in both 32 and 64-bit versions) with the
-Eclipse framework (currently tested up to Eclipse 4.16, 2020-06).
-The plug-ins run on Windows, macOS and GNU/Linux. For more details
-please visit the <a href="/plugins/features/">Features</a> page.</p>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<p><img src="/assets/images/2015/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
+<h3 id="the-packs-plug-ins">The Packs plug-ins</h3>
 
-<h2 id="additional-tools">Additional tools</h2>
+<p>The first thing required is the presence of the Packs plug-ins. To check if they are installed, use the <strong>About Eclipse</strong> menu and click the <strong>Installation Details</strong> button.</p>
 
-<p>Apart from the main Eclipse plug-ins, this project is accompanied by
-several other tools, distributed as separate packages.</p>
+<p><img src="/assets/images/2014/10/PacksFeature.png" alt="Check the presence of the Packs plug-ins" /></p>
 
-<ul>
-  <li>
-    <p><strong>xPack Windows Build Tools</strong></p>
+<p>If not present, it is recommended to first read the <a href="/plugins/packs-manager/" title="Packs manager">Packs manager</a> documentation page where installation details are also provided.</p>
 
-    <p>The <a href="https://xpack.github.io/windows-build-tools/"><strong>xPack Windows Build Tools</strong></a>
-project includes the additional tools required to perform builds on Windows
-(<strong>make</strong> &amp; <strong>rm</strong>).</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU Arm Embedded GCC</strong></p>
+<h3 id="install-required-packs">Install required packs</h3>
 
-    <p>The <a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a>
-project is an alternate binary distribution that complements the official
-<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Arm Embedded Toolchain</a> maintained by Arm. Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU RISC-V Embedded GCC</strong></p>
+<p>Once the Packs plug-ins are available, and the list of available packages was retrieved, it is necessary to install the packages related to the devices used by the projects under development.</p>
 
-    <p>The <a href="https://xpack.github.io/riscv-none-embed-gcc/"><strong>xPack GNU RISC-V Embedded GCC</strong></a>
-project is a new distribution of the bare metal version of
-<a href="https://github.com/riscv/riscv-gcc">RISC-V GCC</a>, maintained by
-<a href="https://www.sifive.com">SiFive</a>. Binaries for Windows, macOS and GNU/Linux
-are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack OpenOCD</strong></p>
+<p>Please note that failure to do so will prevent the device selection window to make the desired device available for selection.</p>
 
-    <p>The <a href="https://xpack.github.io/openocd/"><strong>xPack OpenOCD</strong></a> project is a
-new distribution of <a href="http://openocd.org/">OpenOCD</a>, customised for a
-better/more convenient integration with the <strong>OpenOCD Debugging</strong> plug-in.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack QEMU Arm</strong></p>
+<h3 id="associate-a-device-to-the-project">Associate a device to the project</h3>
 
-    <p>The <a href="https://xpack.github.io/qemu-arm/"><strong>xPack QEMU Arm</strong></a> project is a
-fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator),
-intended to provide support for Cortex-M emulation in GNU MCU Eclipse.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
+<p>Even if a future release will automatically make this association via a wizard during project creation, it is still recommended to check it, and adjust if needed.</p>
 
-    <p><img src="/assets/images/2015/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
-  </li>
-</ul>
+<p>For more details, please visit the <a href="/eclipse/project/assign-device/" title="Associate a device to the project">separate page</a>.</p>
 
-<h2 id="notifications">Notifications</h2>
+<p><img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" /></p>
 
-<p>To stay up-to-date with new releases, the recommended way is
-to follow <a href="https://twitter.com/gnu-mcu-eclipse">@gnu-mcu-eclipse</a> on Twitter.</p>
+<h2 id="the-debug-configuration">The debug configuration</h2>
 
-<p>Alternatively you can subscribe to this site RSS feed
-<a href="https://www.eclipse.org/embed-cdt/feed.xml">https://www.eclipse.org/embed-cdt/feed.xml</a>.</p>
-
-<p>To stay current with changes to individual projects, enable <strong>watching</strong>
-in the GitHub web interface for each project of interest.</p>
-
-<h2 id="license">License</h2>
-
-<p>Unless otherwise mentioned, all Eclipse plug-ins
-are provided <strong>free of charge</strong> under the terms of the
-<a href="https://projects.eclipse.org/license/epl-2.0">Eclipse Public License 2.0</a>.</p>
-
-<h2 id="let-us-know-if-you-enjoyed-using-this-project">Let us know if you enjoyed using this project!</h2>
-
-<p>If you enjoyed using this project, please let us know; here are some advices:</p>
+<p>With the device associated to the build configuration, the debug configuration is created and started the usual way:</p>
 
 <ul>
-  <li>the best way to praise us would be to <strong>donate</strong>; if you want to speed
-up development and help future versions include more and more great
-features, please consider donating; any contribution, small or
-generous, will be highly appreciated;</li>
-  <li>star the projects you liked on GitHub
-(<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins">eclipse-plugins</a>);</li>
-  <li>follow the project on <a href="https://twitter.com/xpack_project">Twitter</a>,
-to get notifications on new releases.</li>
+  <li>select the .elf file</li>
+  <li>right click, <strong>Debug As</strong> → <strong>Debug Configurations…</strong></li>
+  <li>double click the <strong>GDB SEGGER J-Link Debugging</strong> (or OpenOCD, or QEMU)</li>
 </ul>
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="." border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
+<p><strong>Device name automatic configuration</strong></p>
+
+<p>Since the device name is (should be) known, the J-Link <strong>Device name</strong> field is automatically configured with the CMSIS device name.</p>
+
+<h2 id="the-peripherals-view">The Peripherals view</h2>
+
+<p>After starting the debug session, the typical <strong>Debug</strong> perspective is shown.</p>
+
+<p>New to this perspective is the <strong>Peripherals</strong> view, added to the right of the <strong>Registers</strong> view, in the same window with <strong>Variables</strong> and <strong>Breakpoints</strong>. If, for any reasons, this view is not shown, although the Packs plug-ins were installed, try to perform a <strong>Reset</strong> on the Debug perspective.</p>
+
+<p><img src="/assets/images/2013/10/PeripheralRegisters.png" alt="The peripheral registers view" /></p>
+
+<p>The <strong>Peripherals</strong> view lists all peripherals available in the device hardware description .SVD file provided by the silicon vendor.</p>
+
+<p>The list includes the peripheral name, the peripheral memory address, a short description and a check box that can be used to select the peripherals to be monitored in the debug session.</p>
+
+<h2 id="maximal-peripherals-list">Maximal peripherals list</h2>
+
+<p>Some silicon vendors, like ST, provide a single .SVD file for an entire family of devices. Although this avoids a lot of redundancy, with the current .SVD specifications it is not possible to filter out the devices not used by some family members, so in such cases expect to encounter peripherals that actually are not available in some devices.</p>
+
+<h2 id="systemregisters">System registers</h2>
+
+<p>The current SVD specifications do not cover very well if/how the vendor should define the system registers, like <strong>SysTick</strong>, <strong>NVIC</strong>, <strong>Debug</strong>, etc, so it is up to the silicon vendors how to do it; some define the system registers grouped in one single custom peripheral, some in multiple peripherals, and <strong>some do not even define all system registers</strong>.</p>
+
+<h2 id="the-memory-monitors">The Memory monitors</h2>
+
+<p>Since for most modern devices the peripherals are memory mapped devices, in the GNU MCU Eclipse implementation, selecting a peripheral in the Peripherals view does not open a separate window, but a standard <strong>Memory monitor</strong>, mapped to the corresponding peripheral memory area.</p>
+
+<p>The peripheral monitors are listed in the same view with usual memory monitors, and preserve all common behaviour, like individual <strong>Remove</strong> or <strong>Remove All</strong>.</p>
+
+<p>The difference comes in the custom rendering, represented as a tree in the right side of the window.</p>
+
+<p>According to the SVD specifications, this tree can have the following nodes:</p>
+
+<ul>
+  <li>clusters of registers,</li>
+  <li>arrays of clusters,</li>
+  <li>registers</li>
+  <li>arrays of registers</li>
+  <li>bit fields.</li>
+</ul>
+
+<p>All of them are currently supported and depicted in a hierarchical way.</p>
+
+<h2 id="special-access-registers">Special access registers</h2>
+
+<p>According to SVD, registers or fields can have special access rights, like <strong>read-only</strong> (highlighted in light yellow) or <strong>write-only</strong> (highlighted in light blue).</p>
+
+<h2 id="tool-tips">Tool tips</h2>
+
+<p>By hovering the mouse over the peripheral monitor window, additional details are shown as tool tips. Different content is shown for different columns, for example the <strong>Register</strong> column will show detailed descriptions, the <strong>Address</strong> column will show offset and size, and the <strong>Value</strong> column will show reset value and mask.</p>
+
+<h2 id="editing">Editing</h2>
+
+<p>The values of the non read-only registers can be changed using <strong>in-place-editing</strong>, in the corresponding cell of the <strong>Value</strong> column.</p>
+
+<p>Registers and fields are synchronised, editing the value of a field will also change the value of the parent register, and editing the value of a register will also change the affected fields.</p>
+
+<h2 id="filtering">Filtering</h2>
+
+<p>It is possible to filter the content of the peripheral monitor by register name. To enter the filtering conditions, right click anywhere in the monitor rendering window and select the <strong>Add Filter…</strong> action.</p>
+
+<p><img src="/assets/images/2014/10/PeripheralMenu.png" alt="Peripheral monitor menu" /></p>
+
+<p>Note: In the initial release the functionality behind this menu needs more polishing…</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="zero-values">Zero values?</h3>
+
+<p>The first question some people might raise is <em>“why so many peripherals have zero values?”</em>. Well, most probably because they are not enabled, so reading them leads usually to zeroes. Or because they do not exist for the actual device, and are present there because the silicon vendor provides a single file for the entire family.</p>
+
+<h3 id="no-devices-available-install-packs-first">“No devices available, install packs first”</h3>
+
+<p>If your devices window is empty, you did not read carefully the above steps. You need to update the list of available packages, then install the ones you need.</p>
+
+<h2 id="support">Support</h2>
+
+<p>In case you encounter bugs or problems, the usual SourceForge support trackers are available.</p>
+
+<p>If you have problems with the actual registers/fields definitions, well, there isn’t much that we can do to fix them, but we still can forward your complains to ARM/Keil, to further forward them to the silicon vendors.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p>The use of a memory monitor to view peripheral registers, and the look and feel of the interface was inspired by the (now defunct) <strong>Red Suite 5</strong> by <strong>Code Red</strong> (acquired by NXP). Many thanks for providing the inspiration!</p>
 
 
 
@@ -567,7 +603,7 @@ to get notifications on new releases.</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 16, 2020<br/> Site last generated: Aug 17, 2020 <br />
+ Site last generated: Aug 17, 2020 <br />
                 </div>
             </div>
 </footer>

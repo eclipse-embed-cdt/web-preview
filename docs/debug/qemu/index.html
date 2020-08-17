@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).">
-<meta name="keywords" content=" eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu">
-<title>Eclipse Embedded CDT</title>
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>The QEMU debugging Eclipse plug-in | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="The QEMU debugging Eclipse plug-in">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -236,7 +236,7 @@
           
           
           
-          <li class="active"><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/">Overview</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li class="active"><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT</h1>
+   <h1 class="post-title-main">The QEMU debugging Eclipse plug-in</h1>
 </div>
 
 
@@ -430,123 +430,230 @@
 <div class="post-content">
 
    
-    <div class="summary">Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).
-</div>
-   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
 
     
 
 
-   <p><strong>Eclipse Embedded CDT</strong> is an open source project that includes a family
-of Eclipse plug-ins and tools for multi-platform embedded Arm and RISC-V
-development, based on GNU toolchains. The project is hosted on
-<a href="https://github.com/eclipse-embed-cdt">GitHub</a>.</p>
+   <h2 id="quicklinks">Quicklinks</h2>
 
-<h2 id="the-eclipse-embedded-cdt-plug-ins">The Eclipse Embedded CDT plug-ins</h2>
+<p>If you already know what are the features of the new plug-in and only want to know how to install/use it, you can directly skip to:</p>
 
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for
-GNU embedded toolchains like
-<a href="https://xpack.github.io/arm-none-eabi-gcc/">xPack GNU Arm Embedded GCC</a>,
-<a href="https://xpack.github.io/riscv-none-embed-gcc/">xPack GNU RISC-V Embedded GCC</a>,
-etc.</p>
+<ul>
+  <li><a href="https://xpack.github.io/qemu-arm/install/">xPack QEMU Arm install</a></li>
+  <li><a href="/debug/qemu/#qemu-plug-in-usage">QEMU plug-in usage</a></li>
+</ul>
 
-<p>In short, the Eclipse Embedded CDT plug-ins allow to create, build,
-debug and in general to <strong>manage Arm &amp; RISC-V projects</strong> (executables
-and static/shared libraries, in both 32 and 64-bit versions) with the
-Eclipse framework (currently tested up to Eclipse 4.16, 2020-06).
-The plug-ins run on Windows, macOS and GNU/Linux. For more details
-please visit the <a href="/plugins/features/">Features</a> page.</p>
+<h2 id="why-a-new-plug-in">Why a new plug-in?</h2>
 
-<p><img src="/assets/images/2015/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
+<p>The short answer is: because a debugging plug-in provides the best integration of the emulator into the Eclipse debugger, making debugging in an emulated environment more convenient than on physical boards.</p>
 
-<h2 id="additional-tools">Additional tools</h2>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<p>Apart from the main Eclipse plug-ins, this project is accompanied by
-several other tools, distributed as separate packages.</p>
+<p>Before being able to use QEMU with the GNU MCU Eclipse plug-ins, you must separately install:</p>
+
+<ul>
+  <li>the QEMU debugging plug-in</li>
+  <li>the GDB debugger (client) application, as part of a GNU toolchain</li>
+  <li>the xPack QEMU Arm.</li>
+</ul>
+
+<p>If you did not do it yet, please follow the instructions in the <a href="https://xpack.github.io/qemu-arm/install/">xPack QEMU Arm install</a> page and return when completed.</p>
+
+<p>The presence of a GDB as part of a GNU toolchain is mandatory, and it is recommended that the version of the GDB client matches the toolchain. Generally only debugging .elf applications is possible, and these applications must be compiled to include GNU compatible debugging information (like dwarf).</p>
+
+<h2 id="qemu-plug-in-usage">QEMU plug-in usage</h2>
+
+<h3 id="define-the-qemufolder-location">Define the QEMU folder location</h3>
+
+<p>Before starting work with QEMU, it is required to define the path to the QEMU folder.</p>
 
 <ul>
   <li>
-    <p><strong>xPack Windows Build Tools</strong></p>
+    <p>in the <em>Eclipse</em> menu, go to <strong>(Window →) Preferences</strong> → <strong>MCU</strong> → <strong>Global QEMU Path</strong> (or <strong>Workspace QEMU Path</strong>)</p>
 
-    <p>The <a href="https://xpack.github.io/windows-build-tools/"><strong>xPack Windows Build Tools</strong></a>
-project includes the additional tools required to perform builds on Windows
-(<strong>make</strong> &amp; <strong>rm</strong>).</p>
+    <p><img src="/assets/images/2018/qemu-preferences.png" alt="The QEMU preferences page" /></p>
   </li>
-  <li>
-    <p><strong>xPack GNU Arm Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a>
-project is an alternate binary distribution that complements the official
-<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Arm Embedded Toolchain</a> maintained by Arm. Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU RISC-V Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/riscv-none-embed-gcc/"><strong>xPack GNU RISC-V Embedded GCC</strong></a>
-project is a new distribution of the bare metal version of
-<a href="https://github.com/riscv/riscv-gcc">RISC-V GCC</a>, maintained by
-<a href="https://www.sifive.com">SiFive</a>. Binaries for Windows, macOS and GNU/Linux
-are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack OpenOCD</strong></p>
-
-    <p>The <a href="https://xpack.github.io/openocd/"><strong>xPack OpenOCD</strong></a> project is a
-new distribution of <a href="http://openocd.org/">OpenOCD</a>, customised for a
-better/more convenient integration with the <strong>OpenOCD Debugging</strong> plug-in.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack QEMU Arm</strong></p>
-
-    <p>The <a href="https://xpack.github.io/qemu-arm/"><strong>xPack QEMU Arm</strong></a> project is a
-fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator),
-intended to provide support for Cortex-M emulation in GNU MCU Eclipse.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-
-    <p><img src="/assets/images/2015/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
-  </li>
+  <li>click the <strong>Restore Defaults</strong> button</li>
+  <li>the plug-in will suggest the default values computed when Eclipse started; if a new version of GNU MCU Eclipse QEMU was installed while Eclipse was active, restart Eclipse and click again the Restore Defaults button</li>
+  <li>check the <em>Executable:</em> field; it must define the name of the QEMU executable; in most cases it should be already set correctly; if not, edit it to match the correct name;</li>
+  <li>check the <em>Folder:</em> field; it must point to the actual folder where the xPack QEMU Arm was installed on your system, for example <code class="highlighter-rouge">/Users/ilg/opt/xPacks/qemu-arm/&lt;version&gt;/bin</code> on macOS</li>
+  <li>click the <strong>OK</strong> button</li>
 </ul>
 
-<h2 id="notifications">Notifications</h2>
+<p>By default, the GDB server is defined as <code class="highlighter-rouge">${qemu_path}/${qemu_executable}</code>; these two macros are automatically set by the above preference page; for portability reasons, it is recommended to keep this definition in all your debug configurations, and also to have a single place to update the path when a new version of the xPack QEMU Arm is released.</p>
 
-<p>To stay up-to-date with new releases, the recommended way is
-to follow <a href="https://twitter.com/gnu-mcu-eclipse">@gnu-mcu-eclipse</a> on Twitter.</p>
+<h3 id="associate-a-device-to-the-project">Associate a device to the project</h3>
 
-<p>Alternatively you can subscribe to this site RSS feed
-<a href="https://www.eclipse.org/embed-cdt/feed.xml">https://www.eclipse.org/embed-cdt/feed.xml</a>.</p>
+<p>Although not absolutely mandatory, it is recommended to associate a device to the project, so that creating the debugger launch configuration will automatically fill-in the device name.</p>
 
-<p>To stay current with changes to individual projects, enable <strong>watching</strong>
-in the GitHub web interface for each project of interest.</p>
+<p><img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" /></p>
 
-<h2 id="license">License</h2>
+<p>Follow the steps in the separate page <a href="/eclipse/project/assign-device/">Associate a device to the project</a> and return to this page to continue.</p>
 
-<p>Unless otherwise mentioned, all Eclipse plug-ins
-are provided <strong>free of charge</strong> under the terms of the
-<a href="https://projects.eclipse.org/license/epl-2.0">Eclipse Public License 2.0</a>.</p>
+<h3 id="create-the-debugger-launch-configuration">Create the debugger launch configuration</h3>
 
-<h2 id="let-us-know-if-you-enjoyed-using-this-project">Let us know if you enjoyed using this project!</h2>
-
-<p>If you enjoyed using this project, please let us know; here are some advices:</p>
+<p>Being a standard debugger, this plug-in also uses the Eclipse standard method of creating debugger configurations for each application. After you successfully build your application, you can create a new debug configuration following these steps:</p>
 
 <ul>
-  <li>the best way to praise us would be to <strong>donate</strong>; if you want to speed
-up development and help future versions include more and more great
-features, please consider donating; any contribution, small or
-generous, will be highly appreciated;</li>
-  <li>star the projects you liked on GitHub
-(<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins">eclipse-plugins</a>);</li>
-  <li>follow the project on <a href="https://twitter.com/xpack_project">Twitter</a>,
-to get notifications on new releases.</li>
+  <li>select the project</li>
+  <li>build it and ensure the executable file is available</li>
+  <li>expand either the Debug or the Release folder and select the executable you want to debug</li>
+  <li>
+    <p>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong> or select the down arrow at the right of the bug icon.</p>
+
+    <p><img src="/assets/images/2013/10/HelloBuildResult.png" alt="The build result" /></p>
+  </li>
+  <li>
+    <p>double click the <strong>GDB QEMU Debugging</strong> group, or select it and click the top leftmost <strong>New</strong> button.</p>
+
+    <p><img src="/assets/images/2015/04/QEMU_Debugging.png" alt="Create a new QEMU launch configuration" /></p>
+  </li>
+  <li>a multi-tab page will be displayed;</li>
+  <li>
+    <p>if you started this procedure with the project selected and the project was previously built, the first tab, named <strong>Main</strong>, should be already filled in with the project name (for example hello) and the application file name and location (for example <code class="highlighter-rouge">Debug/hello.elf</code>).</p>
+
+    <p><img src="/assets/images/2015/04/HelloMainTab.png" alt="The Main tab" /></p>
+  </li>
+  <li>
+    <p>click the second tab, named <strong>Debugger</strong>, which contains the configuration options required to start QEMU as a GDB server and the GDB client.</p>
+
+    <p><img src="/assets/images/2015/04/HelloDebuggerTab.png" alt="The Debugger tab at first run" /></p>
+  </li>
+  <li>at your first run it is recommended to leave the Board name: field as it is, with a question mark, for the emulator to display the list of supported boards.</li>
+  <li>although not mandatory, it is recommended to change the location where the launcher file is stored; for this,
+    <ul>
+      <li>select the <strong>Common</strong> tab,</li>
+      <li>set the <em>Save as:</em> field to <strong>Shared file</strong></li>
+      <li>accept the current project name.</li>
+      <li>click the <strong>Apply</strong> button</li>
+    </ul>
+
+    <p><img src="/assets/images/2015/04/HelloCommonTab.png" alt="Store the debug configuration in the project" /></p>
+  </li>
+  <li>click the <strong>Close</strong> button.</li>
 </ul>
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="." border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
+<p>With the above settings, the debug configuration will be saved in the project, not in the workspace storage.</p>
 
+<p><img src="/assets/images/2015/04/LauncherInProject.png" alt="The debug launch configuration stored in the project folder" /></p>
+
+<h2 id="start-a-debug-session">Start a debug session</h2>
+
+<p>With all the above steps completed properly, you can start the debug session:</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong></li>
+  <li>if necessary, expand the<strong> GDB QEMU Debugging</strong> group</li>
+  <li>select the newly defined <strong>hello</strong> configuration</li>
+  <li>click the bottom <strong>Debug</strong> button</li>
+</ul>
+
+<p>Alternatively, on subsequent runs, you can use the bug specific icon. By default this will start the previously used debug launch configuration; to start a different configuration, use the down arrow button:</p>
+
+<p><img src="/assets/images/2015/04/DebugDownArrow.png" alt="The debugger down arrow selection" /></p>
+
+<p>If everything is ok, after a few seconds required to start QEMU, you should see something like this:</p>
+
+<p><img src="/assets/images/2015/04/QEMU_FirstRun.png" alt="The list of supported boards" /></p>
+
+<p>This happened because by default the <em>Board name:</em> field contains a question mark.</p>
+
+<p>Further configure the debug configuration</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong></li>
+  <li>select <strong>hello</strong></li>
+  <li>select the <strong>Debugger</strong> tab</li>
+  <li>in the <em>Board name:</em> field, enter <strong>STM32-H103</strong> (a popular Olimex STM32F103 board)</li>
+  <li>
+    <p>in the Command line: field, after hello, add <code class="highlighter-rouge">3 2 1</code>, as an example</p>
+
+    <p><img src="/assets/images/2015/04/HelloDebuggerTabH103.png" alt="The Debugger tab with the board name filled-in" /></p>
+  </li>
+  <li>click the Debug button</li>
+</ul>
+
+<p>If everything is ok, after a few seconds required to start the server, to allow it to connect to the target, start the gdb client, download the application and start the debugging session, you should see something like this:</p>
+
+<p><img src="/assets/images/2015/04/HelloFirstDebug.png" alt="The first debug" /></p>
+
+<p>Be sure you enable the Remember my decision check box, otherwise Eclipse will ask this question each and every time you launch this debug configuration. Then click the <strong>Yes</strong> button.</p>
+
+<p>If everything is ok, after a few seconds required to start QEMUt, start the gdb client, download the application and start the debugging session, you should see something like this:</p>
+
+<p><img src="/assets/images/2015/04/BreakpointInMain.png" alt="Breakpoint in main()" /></p>
+
+<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <code class="highlighter-rouge">main()</code> function.</p>
+
+<h2 id="debug-operations">Debug operations</h2>
+
+<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <code class="highlighter-rouge">main()</code> function), you can perform any debug operation you need.</p>
+
+<p>The most common operations are:</p>
+
+<ul>
+  <li>single step over one source instruction (click the <strong>Step Over</strong> button)</li>
+  <li>single step into the next function called (click the <strong>Step Into</strong> button)</li>
+  <li>single step out of the current function (click the <strong>Step Return</strong> button)</li>
+  <li>set breakpoints (click the grey side area at the left of the source lines)</li>
+  <li>run (click the <strong>Resume</strong> button)</li>
+  <li>halt a running program (click the <strong>Suspend</strong> button)</li>
+  <li>inspect processor registers (use the <strong>Registers</strong> view)</li>
+  <li>inspect memory (use the <strong>Memory</strong> view)</li>
+</ul>
+
+<p>For more details please read the <a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_t_debug_prog.htm">Running and debugging projects</a> section in the Eclipse documentation.</p>
+
+<h2 id="view-consoles">View consoles</h2>
+
+<p>Each debug process has a dedicated console, to display its standard output and standard error, or to get input for the standard input.</p>
+
+<p>To see the console of any process, select the process in the top left window. For example the QEMU console will initially look like this:</p>
+
+<p><img src="/assets/images/2015/04/QEMU_Console.png" alt="The QEMU console" /></p>
+
+<p>select again the main thread in the debugged application (in the upper left window) and click several times the Step Over button, until you reach the <code class="highlighter-rouge">timer_start()</code> function.</p>
+
+<p><img src="/assets/images/2015/04/HelloSingleSteps.png" alt="Hello single steps" /></p>
+
+<p>The QEMU console should display the program arguments, passed via semihosting, then exercise various output functions.</p>
+
+<p>Click the <strong>Resume</strong> button and execution will resume. Watch the console. After three iterations, execution will complete and QEMU will quit with exit code 0 (success).</p>
+
+<p><img src="/assets/images/2015/04/HelloFinalRun.png" alt="Run the application to completion" /></p>
+
+<p>You can experiment with the first argument, which controls the number of iterations in the main loop; edit it to 7 and rerun the application.</p>
+
+<h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
+
+<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code class="highlighter-rouge">--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code class="highlighter-rouge">system.gdbinit</code>, <code class="highlighter-rouge">~/.gdbinit</code>, <code class="highlighter-rouge">./.gdbinit</code>) are loaded.</p>
+
+<p>To add more commands to the GDB initialisation sequence, use the <em>Commands:</em> field in the <em>GDB Client Setup</em> section.</p>
+
+<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code class="highlighter-rouge">mon</code> will be further passed from the GDB client to the GDB server, in this case the QEMU server.</p>
 
 
         
@@ -567,7 +674,7 @@ to get notifications on new releases.</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 16, 2020<br/> Site last generated: Aug 17, 2020 <br />
+ Site last generated: Aug 17, 2020 <br />
                 </div>
             </div>
 </footer>

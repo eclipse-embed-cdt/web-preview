@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).">
-<meta name="keywords" content=" eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu">
-<title>Eclipse Embedded CDT</title>
+<meta name="description" content="">
+<meta name="keywords" content=" npmxpackinstall">
+<title>How to install the Eclipse prerequisites | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="How to install the Eclipse prerequisites">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -236,7 +236,7 @@
           
           
           
-          <li class="active"><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/">Overview</a></li>
           
           
           
@@ -250,7 +250,7 @@
           
           
           
-          <li><a title="Install prerequisites" href="/plugins/prerequisites/">Install prerequisites</a></li>
+          <li class="active"><a title="Install prerequisites" href="/plugins/prerequisites/">Install prerequisites</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li class="active"><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT</h1>
+   <h1 class="post-title-main">How to install the Eclipse prerequisites</h1>
 </div>
 
 
@@ -430,123 +430,257 @@
 <div class="post-content">
 
    
-    <div class="summary">Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).
-</div>
-   
 
     
 
 
-   <p><strong>Eclipse Embedded CDT</strong> is an open source project that includes a family
-of Eclipse plug-ins and tools for multi-platform embedded Arm and RISC-V
-development, based on GNU toolchains. The project is hosted on
-<a href="https://github.com/eclipse-embed-cdt">GitHub</a>.</p>
+   <h2 id="overview">Overview</h2>
 
-<h2 id="the-eclipse-embedded-cdt-plug-ins">The Eclipse Embedded CDT plug-ins</h2>
+<p>The main prerequisite to run the Eclipse Embedded CDT is <strong>Java</strong>. Generally
+Java is not available by default on most platforms, and requires a separate
+installation.</p>
 
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for
-GNU embedded toolchains like
-<a href="https://xpack.github.io/arm-none-eabi-gcc/">xPack GNU Arm Embedded GCC</a>,
-<a href="https://xpack.github.io/riscv-none-embed-gcc/">xPack GNU RISC-V Embedded GCC</a>,
-etc.</p>
+<p>Although not mandatory, but highly recommended, the second prerequisite
+is <strong>xpm</strong> (the xPack Package Manager), which is a <strong>Node.js</strong>
+portable application.</p>
 
-<p>In short, the Eclipse Embedded CDT plug-ins allow to create, build,
-debug and in general to <strong>manage Arm &amp; RISC-V projects</strong> (executables
-and static/shared libraries, in both 32 and 64-bit versions) with the
-Eclipse framework (currently tested up to Eclipse 4.16, 2020-06).
-The plug-ins run on Windows, macOS and GNU/Linux. For more details
-please visit the <a href="/plugins/features/">Features</a> page.</p>
+<p>To build projects, on Windows it is necessary to install <strong>make</strong>, available
+from the <strong>Windows Build Tools</strong>.</p>
 
-<p><img src="/assets/images/2015/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
+<p>To build Arm projects, an <strong>Arm toolchain</strong> is required; similarly, for
+RISC-V projects, a <strong>RISC-V toolchain</strong> is required.</p>
 
-<h2 id="additional-tools">Additional tools</h2>
+<p>To debug projects, a JTAG probe is necessary together with the software
+to access it,
+for example the <strong>SEGGER J-Link</strong> software, or <strong>OpenOCD</strong>.</p>
 
-<p>Apart from the main Eclipse plug-ins, this project is accompanied by
-several other tools, distributed as separate packages.</p>
+<p>To run debug sessions without actual hardware, the <strong>QEMU Arm</strong> emulator is
+necessary (the blinky tutorial mandates it).</p>
+
+<p>All of these additional tools can be installed as xPacks, which makes
+<strong>xpm</strong> a very convenient tool.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>The following section covers the common Windows/macOS/Linux platforms;
+for a wider range of platforms, see the <strong>Alternate solutions</strong> below.</p>
+
+<ul id="profileTabs_1" class="nav nav-tabs">
+    <li class="active"><a href="#windows_1" data-toggle="tab">Windows</a></li>
+    <li><a href="#macos_1" data-toggle="tab">macOS</a></li>
+    <li><a href="#linux_1" data-toggle="tab">GNU/Linux</a></li>
+</ul>
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="windows_1">
+		
+<p>The recommended package is the latest version from the official
+<a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
+
+<p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
+<a href="https://jdk.java.net/14">jdk.java.net/14</a>.</p>
+
+<p>In the <strong>Builds</strong> section, download the <strong>Windows/x64</strong> .zip file.</p>
+
+<p>Create a new folder</p>
+
+<pre><code class="language-plain">mkdir %APPDATA%\Oracle
+</code></pre>
+
+<p>And extract the archive content into <code class="highlighter-rouge">...\AppData\Roaming\Oracle\jdk-14.0.1</code>.</p>
+
+<p>To set the path, in a cmd.exe terminal, issue the following:</p>
+
+<pre><code class="language-plain">set Path=%APPDATA%\Oracle\jdk-14.0.1\bin;%Path%
+setx Path "%APPDATA%\Oracle\jdk-14.0.1\bin;%Path%"
+</code></pre>
+
+<p>Check version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>It is possible to install multiple versions on the same system, and chose
+which one to use by controlling the Path.</p>
+
+
+	</div>
+	<div role="tabpanel" class="tab-pane" id="macos_1">
+		
+<p>The recommended package is the latest version from the official
+<a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
+
+<p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
+<a href="https://jdk.java.net/14">jdk.java.net/14</a>.</p>
+
+<p>In the <strong>Builds</strong> section, download the <strong>macOS/x64</strong> .tar.gz file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
+<span class="nb">tar </span>xf openjdk-14.0.1_osx-x64_bin.tar.gz
+xattr <span class="nt">-d</span> com.apple.quarantine openjdk-14.0.1_osx-x64_bin.tar.gz
+<span class="nb">sudo </span>mv jdk-14.0.1.jdk/ /Library/Java/JavaVirtualMachines/
+</code></pre></div></div>
+
+<p>Check version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>On recent macOS systems, this might fail or trigger a security message.
+To overcome this, go to System Preferences → Security &amp; Privacy → Allow.</p>
+
+<p>On macOS 10.15 the system automatically identifies the latest version
+installed in <code class="highlighter-rouge">/Library/Java/JavaVirtualMachines/</code> and somehow
+links <code class="highlighter-rouge">/usr/bin/java</code> to it.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">% which java
+/usr/bin/java
+% ls -l /usr/bin/java
+</span><span class="gp">lrwxr-xr-x  1 root  wheel  74 Jan  2  2020 /usr/bin/java -&gt;</span> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java
+</code></pre></div></div>
+
+<p>How exactly it gets from here to the actual location is a bit of Apple magic.</p>
+
+<p>Since it is possible to install multiple version on the same system,
+if you want to override this mechanism and use a different version, try
+to configure the user path via <code class="highlighter-rouge">launchctl</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>launchctl config user path /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+<span class="nb">sudo </span>reboot
+</code></pre></div></div>
+
+<p>For this configuration to become effective, it is necessary to reboot.</p>
+
+<p>To check if the new path was configured properly:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>launchctl getenv PATH
+</code></pre></div></div>
+
+<p>Please note that the above command configures only the path for the GUI
+applications. For shell usage, it is necessary to also set the PATH
+environment variable in the shell startup files (like <code class="highlighter-rouge">.zprofile</code>):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+</code></pre></div></div>
+
+
+	</div>
+	<div role="tabpanel" class="tab-pane" id="linux_1">
+		
+<p>On most modern Linux distributions, OpenJDK is available as a package,
+and can be installed via the sytem package manager.</p>
+
+<p>For example on Ubuntu:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt install <span class="nt">--yes</span> openjdk-14-jdk
+</code></pre></div></div>
+
+<p>Or on CentOS:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> install java-14-openjdk
+</code></pre></div></div>
+
+<p>Check your system for the available package names and versions.</p>
+
+<p>However, if you cannot find at least JDK 11, install the Oracle OpenJDK.</p>
+
+<p>The recommended package is the latest version from the official
+<a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
+
+<p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
+<a href="https://jdk.java.net/14">jdk.java.net/14</a>.</p>
+
+<p>In the <strong>Builds</strong> section, download the <strong>Linux/x64</strong> .tar.gz file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
+<span class="nb">tar </span>xf openjdk-14.0.1_linux-x64_bin.tar.gz
+mkdir <span class="nt">-p</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
+<span class="nb">sudo </span>mv jdk-14.0.1/ <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/
+</code></pre></div></div>
+
+<p>Then add the location to the user PATH:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/jdk-14.0.1/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+</code></pre></div></div>
+
+<p>Check version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>If your Windows Manager allows to start Eclipse with clicks in the file
+manager without using a shell, you might need to set the GUI path in a way
+specific to the window manager.</p>
+
+<p>TODO: give some examples.</p>
+
+<p>It is possible to install multiple versions on the same system, and chose
+which one to use by controlling the PATH.</p>
+
+
+	</div>
+</div>
+
+<h2 id="alternate-solutions">Alternate solutions</h2>
+
+<p>For those who prefer alternate solutions, the second recommendation
+goes to <a href="https://adoptopenjdk.net/">AdoptOpenJDK</a>
+which provides prebuilt OpenJDK binaries for an even wider
+range of platforms.</p>
+
+<h2 id="install-node--xpm">Install node &amp; xpm</h2>
+
+<p>The next step is to install the xPack tools.</p>
+
+<p>For full details, please follow the steps in the separate install pages:</p>
 
 <ul>
-  <li>
-    <p><strong>xPack Windows Build Tools</strong></p>
-
-    <p>The <a href="https://xpack.github.io/windows-build-tools/"><strong>xPack Windows Build Tools</strong></a>
-project includes the additional tools required to perform builds on Windows
-(<strong>make</strong> &amp; <strong>rm</strong>).</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU Arm Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a>
-project is an alternate binary distribution that complements the official
-<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Arm Embedded Toolchain</a> maintained by Arm. Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU RISC-V Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/riscv-none-embed-gcc/"><strong>xPack GNU RISC-V Embedded GCC</strong></a>
-project is a new distribution of the bare metal version of
-<a href="https://github.com/riscv/riscv-gcc">RISC-V GCC</a>, maintained by
-<a href="https://www.sifive.com">SiFive</a>. Binaries for Windows, macOS and GNU/Linux
-are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack OpenOCD</strong></p>
-
-    <p>The <a href="https://xpack.github.io/openocd/"><strong>xPack OpenOCD</strong></a> project is a
-new distribution of <a href="http://openocd.org/">OpenOCD</a>, customised for a
-better/more convenient integration with the <strong>OpenOCD Debugging</strong> plug-in.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack QEMU Arm</strong></p>
-
-    <p>The <a href="https://xpack.github.io/qemu-arm/"><strong>xPack QEMU Arm</strong></a> project is a
-fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator),
-intended to provide support for Cortex-M emulation in GNU MCU Eclipse.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-
-    <p><img src="/assets/images/2015/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
-  </li>
+  <li><a href="https://xpack.github.io/install/">node</a></li>
+  <li><a href="https://xpack.github.io/xpm/install/">xpm</a></li>
 </ul>
 
-<h2 id="notifications">Notifications</h2>
+<p>For convenience for those who already know what this means, here is a brief.</p>
 
-<p>To stay up-to-date with new releases, the recommended way is
-to follow <a href="https://twitter.com/gnu-mcu-eclipse">@gnu-mcu-eclipse</a> on Twitter.</p>
+<p>For macOS and GNU/Linux, use <strong>nvm</strong> (for Windows use the .msi, as explained in
+the <a href="https://xpack.github.io/install/">node</a> install page):</p>
 
-<p>Alternatively you can subscribe to this site RSS feed
-<a href="https://www.eclipse.org/embed-cdt/feed.xml">https://www.eclipse.org/embed-cdt/feed.xml</a>.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-o-</span> https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+<span class="nb">exit</span>
+</code></pre></div></div>
 
-<p>To stay current with changes to individual projects, enable <strong>watching</strong>
-in the GitHub web interface for each project of interest.</p>
+<p>In a new terminal, to benefit from the definitions added by the script:</p>
 
-<h2 id="license">License</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm install <span class="nt">--lts</span> node
+nvm use node
+node <span class="nt">--version</span>
+nvm install-latest-npm
+npm <span class="nt">--version</span>
+</code></pre></div></div>
 
-<p>Unless otherwise mentioned, all Eclipse plug-ins
-are provided <strong>free of charge</strong> under the terms of the
-<a href="https://projects.eclipse.org/license/epl-2.0">Eclipse Public License 2.0</a>.</p>
+<p>Install <strong>xpm</strong>:</p>
 
-<h2 id="let-us-know-if-you-enjoyed-using-this-project">Let us know if you enjoyed using this project!</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--global</span> xpm@latest
+</code></pre></div></div>
 
-<p>If you enjoyed using this project, please let us know; here are some advices:</p>
+<p>On Windows, install <strong>make</strong> and the rest of the build tools:</p>
 
-<ul>
-  <li>the best way to praise us would be to <strong>donate</strong>; if you want to speed
-up development and help future versions include more and more great
-features, please consider donating; any contribution, small or
-generous, will be highly appreciated;</li>
-  <li>star the projects you liked on GitHub
-(<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins">eclipse-plugins</a>);</li>
-  <li>follow the project on <a href="https://twitter.com/xpack_project">Twitter</a>,
-to get notifications on new releases.</li>
-</ul>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm install <span class="nt">--global</span> @xpack-dev-tools/windows-build-tools@latest
+</code></pre></div></div>
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="." border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
+<p>Install the toolchain and the other tools; don’t skip qemu, since it is used
+by the blinky tutorial; openocd may also be useful to run debug sessions;
+the riscv toolchain is necessary only for RISC-V projects.</p>
 
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm install <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest
+xpm install <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest
+xpm install <span class="nt">--global</span> @xpack-dev-tools/openocd@latest
+xpm install <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@latest
+</code></pre></div></div>
+
+<p>All xPacks are installed in a central folder in the user home; check
+the xpm output for the actual location.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since xPacks are installed in <em>dot</em> folders,
+be sure you configure your file manager to show hidden files.</div>
 
 
         
@@ -558,6 +692,22 @@ to get notifications on new releases.</li>
 
     
 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'embed-cdt'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 </div>
 
@@ -567,7 +717,7 @@ to get notifications on new releases.</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 16, 2020<br/> Site last generated: Aug 17, 2020 <br />
+<span>Page last updated:</span> Jul 14, 2020<br/> Site last generated: Aug 17, 2020 <br />
                 </div>
             </div>
 </footer>

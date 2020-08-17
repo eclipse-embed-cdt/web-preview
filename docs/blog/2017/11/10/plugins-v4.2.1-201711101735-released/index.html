@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).">
-<meta name="keywords" content=" eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu">
-<title>Eclipse Embedded CDT</title>
+<meta name="description" content="">
+<meta name="keywords" content="gnuarmeclipserisc-vmcu,  ">
+<title>GNU MCU Eclipse plug-ins v4.2.1-201711101735 released | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="GNU MCU Eclipse plug-ins v4.2.1-201711101735 released">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -236,7 +236,7 @@
           
           
           
-          <li class="active"><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/">Overview</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li class="active"><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -421,145 +421,162 @@
 
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
-            <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT</h1>
-</div>
+            <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">GNU MCU Eclipse plug-ins v4.2.1-201711101735 released</h1>
+        <p class="post-meta"><time datetime="2017-11-10T18:36:00+00:00" itemprop="datePublished">Nov 10, 2017</time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">/ Liviu Ionescu</span></span> /
+            
+            
+            
+            <a href="/tags/gnu/">gnu</a>, 
+            
+            
+            
+            <a href="/tags/arm/">arm</a>, 
+            
+            
+            
+            <a href="/tags/eclipse/">eclipse</a>, 
+            
+            
+            
+            <a href="/tags/risc-v/">risc-v</a>, 
+            
+            
+            
+            <a href="/tags/mcu/">mcu</a>
+            
+            
+            
+
+        </p>
 
 
+    </header>
 
-<div class="post-content">
-
-   
-    <div class="summary">Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).
-</div>
-   
-
-    
-
-
-   <p><strong>Eclipse Embedded CDT</strong> is an open source project that includes a family
-of Eclipse plug-ins and tools for multi-platform embedded Arm and RISC-V
-development, based on GNU toolchains. The project is hosted on
-<a href="https://github.com/eclipse-embed-cdt">GitHub</a>.</p>
-
-<h2 id="the-eclipse-embedded-cdt-plug-ins">The Eclipse Embedded CDT plug-ins</h2>
-
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for
-GNU embedded toolchains like
-<a href="https://xpack.github.io/arm-none-eabi-gcc/">xPack GNU Arm Embedded GCC</a>,
-<a href="https://xpack.github.io/riscv-none-embed-gcc/">xPack GNU RISC-V Embedded GCC</a>,
-etc.</p>
-
-<p>In short, the Eclipse Embedded CDT plug-ins allow to create, build,
-debug and in general to <strong>manage Arm &amp; RISC-V projects</strong> (executables
-and static/shared libraries, in both 32 and 64-bit versions) with the
-Eclipse framework (currently tested up to Eclipse 4.16, 2020-06).
-The plug-ins run on Windows, macOS and GNU/Linux. For more details
-please visit the <a href="/plugins/features/">Features</a> page.</p>
-
-<p><img src="/assets/images/2015/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
-
-<h2 id="additional-tools">Additional tools</h2>
-
-<p>Apart from the main Eclipse plug-ins, this project is accompanied by
-several other tools, distributed as separate packages.</p>
-
-<ul>
-  <li>
-    <p><strong>xPack Windows Build Tools</strong></p>
-
-    <p>The <a href="https://xpack.github.io/windows-build-tools/"><strong>xPack Windows Build Tools</strong></a>
-project includes the additional tools required to perform builds on Windows
-(<strong>make</strong> &amp; <strong>rm</strong>).</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU Arm Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a>
-project is an alternate binary distribution that complements the official
-<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Arm Embedded Toolchain</a> maintained by Arm. Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU RISC-V Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/riscv-none-embed-gcc/"><strong>xPack GNU RISC-V Embedded GCC</strong></a>
-project is a new distribution of the bare metal version of
-<a href="https://github.com/riscv/riscv-gcc">RISC-V GCC</a>, maintained by
-<a href="https://www.sifive.com">SiFive</a>. Binaries for Windows, macOS and GNU/Linux
-are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack OpenOCD</strong></p>
-
-    <p>The <a href="https://xpack.github.io/openocd/"><strong>xPack OpenOCD</strong></a> project is a
-new distribution of <a href="http://openocd.org/">OpenOCD</a>, customised for a
-better/more convenient integration with the <strong>OpenOCD Debugging</strong> plug-in.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack QEMU Arm</strong></p>
-
-    <p>The <a href="https://xpack.github.io/qemu-arm/"><strong>xPack QEMU Arm</strong></a> project is a
-fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator),
-intended to provide support for Cortex-M emulation in GNU MCU Eclipse.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-
-    <p><img src="/assets/images/2015/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
-  </li>
-</ul>
-
-<h2 id="notifications">Notifications</h2>
-
-<p>To stay up-to-date with new releases, the recommended way is
-to follow <a href="https://twitter.com/gnu-mcu-eclipse">@gnu-mcu-eclipse</a> on Twitter.</p>
-
-<p>Alternatively you can subscribe to this site RSS feed
-<a href="https://www.eclipse.org/embed-cdt/feed.xml">https://www.eclipse.org/embed-cdt/feed.xml</a>.</p>
-
-<p>To stay current with changes to individual projects, enable <strong>watching</strong>
-in the GitHub web interface for each project of interest.</p>
-
-<h2 id="license">License</h2>
-
-<p>Unless otherwise mentioned, all Eclipse plug-ins
-are provided <strong>free of charge</strong> under the terms of the
-<a href="https://projects.eclipse.org/license/epl-2.0">Eclipse Public License 2.0</a>.</p>
-
-<h2 id="let-us-know-if-you-enjoyed-using-this-project">Let us know if you enjoyed using this project!</h2>
-
-<p>If you enjoyed using this project, please let us know; here are some advices:</p>
-
-<ul>
-  <li>the best way to praise us would be to <strong>donate</strong>; if you want to speed
-up development and help future versions include more and more great
-features, please consider donating; any contribution, small or
-generous, will be highly appreciated;</li>
-  <li>star the projects you liked on GitHub
-(<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins">eclipse-plugins</a>);</li>
-  <li>follow the project on <a href="https://twitter.com/xpack_project">Twitter</a>,
-to get notifications on new releases.</li>
-</ul>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="." border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
-
-
+    <div class="post-content" itemprop="articleBody">
 
         
 
+        <p>Version 4.2.1-201711101735 is a major release; thanks to a contribution from <a href="https://www.sifive.com">SiFive</a>, the project was enhanced with a template plug-in to create projects for the SiFive boards.</p>
 
-    <div class="tags">
-        
+<p><strong>Important</strong>: the public URL for the new v4.x Eclipse update site is (<code class="highlighter-rouge">http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/</code>).</p>
+
+<p><a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/releases/tag/v4.2.1-201711101735">Binary files »</a></p>
+
+<p>For convenience, the plug-ins are also available as <a href="https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases">GNU MCU Eclipse IDE for C/C++ Developers</a>, which packs together the <strong>Eclipse IDE for C/C++ Developers</strong> with the <strong>GNU MCU Eclipse plug-ins</strong>.</p>
+
+<h2 id="new-risc-v-project-template">New RISC-V project template</h2>
+
+<p>A new template plug-in was added to create projects for the SiFive boards; it can be accessed from the <strong>New</strong> → <strong>C/C++ Project</strong> menu, the <strong>SiFIve C/C++ Project</strong>:</p>
+
+<p><img src="/assets/images/2017/create-sifive-cpp-project.png" alt="Create SiFive projects" /></p>
+
+<p>The template can generate both C and C++ projects. The difference between them is reflected in the type of the files generated in the top <code class="highlighter-rouge">src</code> folder; for C++, most of the files are <code class="highlighter-rouge">.cpp</code>, while for C, as expected, all files are <code class="highlighter-rouge">.c</code>.</p>
+
+<p>However, please note that this selection refers to the application files only; internally, the support packages are mainly written in C++, all with equivalent C API. For those with little C++ experience, this might be a good opportunity to start studying C++, by comparing the differences between the C and C++ projects generated with the same options.</p>
+
+<p>The wizard has many configuration options:</p>
+
+<p><img src="/assets/images/2017/sifive-template-config.png" alt="RISC-V plug-in tool settings" /></p>
+
+<p>It currently supports three boards, <strong>HiFive1</strong>, <strong>E31 Arty</strong> and <strong>E51 Arty</strong>.</p>
+
+<p><img src="/assets/images/2017/sifive-boards-combo.png" alt="SiFive boards" /></p>
+
+<p>The wizard can generate <strong>Blinky</strong> vs <strong>Empty</strong> projects, <strong>Freestanding</strong> vs <strong>POSIX</strong>, with or without support for tracing, with or without various warnings enabled.</p>
+
+<h2 id="new-risc-v-toolchains">New RISC-V toolchains</h2>
+
+<p>In addition to the initial <code class="highlighter-rouge">riscv64-unknown-elf-</code> toolchain, support for following toolchains was added:</p>
+
+<ul>
+  <li><strong>GNU MCU RISC-V GCC</strong> (<code class="highlighter-rouge">riscv-none-embed-</code>)</li>
+  <li><strong>RISC-V GCC/Linux</strong> (<code class="highlighter-rouge">riscv64-unknown-linux-gnu-</code>)</li>
+  <li><strong>RISC-V GCC/RTEMS</strong> (<code class="highlighter-rouge">riscv64-unknown-rtems-</code>)</li>
+  <li><strong>Custom</strong> (<code class="highlighter-rouge">riscv64-unknown-none-</code>)</li>
+</ul>
+
+<p><img src="/assets/images/2017/wizard-riscv-toolchains-selection.png" alt="RISC-V toolchains" /></p>
+
+<p>Separate paths for each toolchain can be configured in the <strong>Preferences…</strong> → <strong>MCU</strong> → <strong>Global RISC-V Toolchain Paths</strong>.</p>
+
+<p><img src="/assets/images/2017/preferences-riscv-paths.png" alt="RISC-V Paths" /></p>
+
+<p>In the same page it is possible to set the <strong>default toolchain</strong> used when creating new projects.</p>
+
+<p>Note: the <code class="highlighter-rouge">riscv-none-embed-</code> toolchain is available starting with version <strong>7.2.0-1-20171109</strong> of the <a href="https://gnu-mcu-eclipse.github.io/toolchain/riscv/">GNU MCU Eclipse RISC-V GCC</a> toolchain, just <a href="https://xpack.github.io/blog/2017/11/09/riscv-none-gcc-v7-2-0-1-20171109-released/">released</a>.</p>
+
+<h2 id="new-features">New features</h2>
+
+<ul>
+  <li>[Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/247">#247</a>] - support for an explicitly embedded RISC-V toolchain (<code class="highlighter-rouge">riscv-none-embed-gcc</code>) was added</li>
+  <li>[Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/240">#240</a>] - support for <strong>Linux</strong> &amp; <strong>rtems</strong> RISC-V toolchains was added</li>
+  <li>[Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/249">#249</a>] - add GUI support to configure the <strong>TCL port</strong> (useful for multi-core debug sessions)</li>
+  <li>[Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/243">#243</a>] - when one of the remote servers did not respond, the packs plugin was waiting very long before timing out; shorter connect &amp; read timeout were added</li>
+  <li>[Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/217">#217</a>] for multi-core debug session, it is sometimes necessary to start the OpenOCD server separately from the GDB client; to allow this a <strong>Start GDB session</strong> was added to OpenOCD GUI, to allow multiple GDB instances to attach to the same OpenCOD</li>
+  <li>in the debug plug-ins, after the field used to configure the GDB executable, a new field showing the <strong>Actual executable</strong> was added</li>
+</ul>
+
+<h2 id="addressed-bugs">Addressed bugs</h2>
+
+<ul>
+  <li>[Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/242">#242</a>] - the debug plug-ins failed with an exception if some of the numeric fields were empty (the telnet/gdb port); fixed;</li>
+  <li>[Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/246">#246</a>] - substituting macros in some of the fields was not done completely; fixed, now  dynamic variables are also substituted;</li>
+  <li>[Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/222">#222</a>] - the <code class="highlighter-rouge">-fno-common</code> option was shown twice in the RISC-V build plug-in settings page; fixed, duplicate removed;</li>
+  <li>[Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/224">#224</a>] - when the GDB server is started without starting the client, do not wait for the confirmation message, since it is expected that the user is responsible for the synchronisation. This allows to use <code class="highlighter-rouge">-l filename</code> to log debug messages, otherwise not possible since the echo message is written to the log, not the stderr stream.</li>
+</ul>
+
+<h2 id="template-changes">Template changes</h2>
+
+<ul>
+  <li>none</li>
+</ul>
+
+<h2 id="other-changes">Other changes</h2>
+
+<ul>
+  <li>none</li>
+</ul>
+
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>the new plug-ins cannot be installed on older Eclipses; for this, use the latest 3.x version, available from the deprecated update site (<code class="highlighter-rouge">http://gnuarmeclipse.sourceforge.net/updates</code>);</li>
+  <li>starting with 4.x, the plug-ins have IDs prefixed with <code class="highlighter-rouge">ilg.gnumcueclipse.</code>, while the old IDs were prefixed with <code class="highlighter-rouge">ilg.gnuarmeclipse.</code>; being completely different, this allows to install the new plug-ins alongside the old ones, but this should be avoided, and the old plug-ins should be manually uninstalled; preferably a new Eclipse instance should be used.</li>
+</ul>
+
     </div>
 
+
+
+</article>
+
+    
+    <a target="_blank" rel="noopener" href="https://github.com/gnu-mcu-eclipse/web-jekyll/blob/master/_posts/plugins/releases/2017-11-10-plugins-v4.2.1-201711101735-released.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit</a>
+
     
 
 
-</div>
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'embed-cdt'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 <hr class="shaded"/>
 
@@ -567,7 +584,7 @@ to get notifications on new releases.</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 16, 2020<br/> Site last generated: Aug 17, 2020 <br />
+ Site last generated: Aug 17, 2020 <br />
                 </div>
             </div>
 </footer>

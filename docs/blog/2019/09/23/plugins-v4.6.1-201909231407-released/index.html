@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).">
-<meta name="keywords" content=" eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu">
-<title>Eclipse Embedded CDT</title>
+<meta name="description" content="">
+<meta name="keywords" content="gnuarmmcueclipserisc-v,  ">
+<title>GNU MCU Eclipse plug-ins v4.6.1-201909231407 released | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="GNU MCU Eclipse plug-ins v4.6.1-201909231407 released">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -236,7 +236,7 @@
           
           
           
-          <li class="active"><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/">Overview</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li class="active"><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -421,145 +421,184 @@
 
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
-            <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT</h1>
-</div>
+            <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">GNU MCU Eclipse plug-ins v4.6.1-201909231407 released</h1>
+        <p class="post-meta"><time datetime="2019-09-23T15:20:00+00:00" itemprop="datePublished">Sep 23, 2019</time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">/ Liviu Ionescu</span></span> /
+            
+            
+            
+            <a href="/tags/gnu/">gnu</a>, 
+            
+            
+            
+            <a href="/tags/arm/">arm</a>, 
+            
+            
+            
+            <a href="/tags/mcu/">mcu</a>, 
+            
+            
+            
+            <a href="/tags/eclipse/">eclipse</a>, 
+            
+            
+            
+            <a href="/tags/risc-v/">risc-v</a>
+            
+            
+            
+
+        </p>
 
 
+    </header>
 
-<div class="post-content">
-
-   
-    <div class="summary">Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).
-</div>
-   
-
-    
-
-
-   <p><strong>Eclipse Embedded CDT</strong> is an open source project that includes a family
-of Eclipse plug-ins and tools for multi-platform embedded Arm and RISC-V
-development, based on GNU toolchains. The project is hosted on
-<a href="https://github.com/eclipse-embed-cdt">GitHub</a>.</p>
-
-<h2 id="the-eclipse-embedded-cdt-plug-ins">The Eclipse Embedded CDT plug-ins</h2>
-
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for
-GNU embedded toolchains like
-<a href="https://xpack.github.io/arm-none-eabi-gcc/">xPack GNU Arm Embedded GCC</a>,
-<a href="https://xpack.github.io/riscv-none-embed-gcc/">xPack GNU RISC-V Embedded GCC</a>,
-etc.</p>
-
-<p>In short, the Eclipse Embedded CDT plug-ins allow to create, build,
-debug and in general to <strong>manage Arm &amp; RISC-V projects</strong> (executables
-and static/shared libraries, in both 32 and 64-bit versions) with the
-Eclipse framework (currently tested up to Eclipse 4.16, 2020-06).
-The plug-ins run on Windows, macOS and GNU/Linux. For more details
-please visit the <a href="/plugins/features/">Features</a> page.</p>
-
-<p><img src="/assets/images/2015/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
-
-<h2 id="additional-tools">Additional tools</h2>
-
-<p>Apart from the main Eclipse plug-ins, this project is accompanied by
-several other tools, distributed as separate packages.</p>
-
-<ul>
-  <li>
-    <p><strong>xPack Windows Build Tools</strong></p>
-
-    <p>The <a href="https://xpack.github.io/windows-build-tools/"><strong>xPack Windows Build Tools</strong></a>
-project includes the additional tools required to perform builds on Windows
-(<strong>make</strong> &amp; <strong>rm</strong>).</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU Arm Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a>
-project is an alternate binary distribution that complements the official
-<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Arm Embedded Toolchain</a> maintained by Arm. Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU RISC-V Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/riscv-none-embed-gcc/"><strong>xPack GNU RISC-V Embedded GCC</strong></a>
-project is a new distribution of the bare metal version of
-<a href="https://github.com/riscv/riscv-gcc">RISC-V GCC</a>, maintained by
-<a href="https://www.sifive.com">SiFive</a>. Binaries for Windows, macOS and GNU/Linux
-are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack OpenOCD</strong></p>
-
-    <p>The <a href="https://xpack.github.io/openocd/"><strong>xPack OpenOCD</strong></a> project is a
-new distribution of <a href="http://openocd.org/">OpenOCD</a>, customised for a
-better/more convenient integration with the <strong>OpenOCD Debugging</strong> plug-in.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack QEMU Arm</strong></p>
-
-    <p>The <a href="https://xpack.github.io/qemu-arm/"><strong>xPack QEMU Arm</strong></a> project is a
-fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator),
-intended to provide support for Cortex-M emulation in GNU MCU Eclipse.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-
-    <p><img src="/assets/images/2015/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
-  </li>
-</ul>
-
-<h2 id="notifications">Notifications</h2>
-
-<p>To stay up-to-date with new releases, the recommended way is
-to follow <a href="https://twitter.com/gnu-mcu-eclipse">@gnu-mcu-eclipse</a> on Twitter.</p>
-
-<p>Alternatively you can subscribe to this site RSS feed
-<a href="https://www.eclipse.org/embed-cdt/feed.xml">https://www.eclipse.org/embed-cdt/feed.xml</a>.</p>
-
-<p>To stay current with changes to individual projects, enable <strong>watching</strong>
-in the GitHub web interface for each project of interest.</p>
-
-<h2 id="license">License</h2>
-
-<p>Unless otherwise mentioned, all Eclipse plug-ins
-are provided <strong>free of charge</strong> under the terms of the
-<a href="https://projects.eclipse.org/license/epl-2.0">Eclipse Public License 2.0</a>.</p>
-
-<h2 id="let-us-know-if-you-enjoyed-using-this-project">Let us know if you enjoyed using this project!</h2>
-
-<p>If you enjoyed using this project, please let us know; here are some advices:</p>
-
-<ul>
-  <li>the best way to praise us would be to <strong>donate</strong>; if you want to speed
-up development and help future versions include more and more great
-features, please consider donating; any contribution, small or
-generous, will be highly appreciated;</li>
-  <li>star the projects you liked on GitHub
-(<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins">eclipse-plugins</a>);</li>
-  <li>follow the project on <a href="https://twitter.com/xpack_project">Twitter</a>,
-to get notifications on new releases.</li>
-</ul>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="." border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
-
-
+    <div class="post-content" itemprop="articleBody">
 
         
 
+        <p>Version 4.6.1-201909231407 is a new release; the main changes are the
+addition of support for
+the new <a href="https://xpack.github.io">xPack Dev Tools</a> and performance
+fixes for the <strong>CMSIS Packs</strong> manager.</p>
 
-    <div class="tags">
-        
+<p><a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/releases/tag/v4.6.1-201909231407/">Binary files »</a></p>
+
+<h2 id="the-xpack-dev-tools-scope">The <code class="highlighter-rouge">@xpack-dev-tools</code> scope</h2>
+
+<ul>
+  <li>c424f652 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/351">#351</a>]
+in the initial implementation, the binary tools were grouped in the
+<code class="highlighter-rouge">@gnu-mcu-eclipse</code> scope; since most of them were not related to Eclipse, they
+were moved to a separate <code class="highlighter-rouge">@xpack-dev-tools</code> scope; the Eclipse plug-ins were
+updated to support multiple xPack names and add the new names in the
+<code class="highlighter-rouge">@xpack-dev-tools</code> scope were added to each plug-in.</li>
+</ul>
+
+<p>The commands to install the new xPack are:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> xpm install <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest
+<span class="gp">$</span> xpm install <span class="nt">--global</span> @xpack-dev-tools/openocd@latest
+<span class="gp">$</span> xpm install <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest
+<span class="gp">$</span> xpm install <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@latest
+</code></pre></div></div>
+
+<h2 id="other-new-features">Other new features</h2>
+
+<ul>
+  <li>60359ef5 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/362">#362</a>] Show version date in Packs View</li>
+  <li>69ec486e - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/359">#359</a>] Add support for TrustZone (<code class="highlighter-rouge">--mcmse</code>)</li>
+</ul>
+
+<h2 id="addressed-bugs">Addressed bugs</h2>
+
+<ul>
+  <li>a90aeb0f - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/335">#335</a>] Retrieving the <strong>package size</strong> for some CMSIS packages (like Silicon Labs) failed due to the server sending the file in chunks and requiring a more complex processing; fixed.</li>
+  <li>7342e6d4 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/336">#336</a>] In certain conditions, computing the cluster address in the <strong>Peripheral registers</strong> view failed since the increment was not identified properly fixed.</li>
+  <li>e6de2688 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/347">#347</a>] Due to a problem in CDT, using <strong>libraries with spaces in names</strong> failed the build; fixed, and the issue was reported to Eclipse maintainers (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=551089">551089</a>)</li>
+  <li>142eee35 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/341">#341</a>] When initialising the CMSIS Packages plugin, if the location was changed from the default, the <code class="highlighter-rouge">Packages</code> folder was still created in the default location; fixed.</li>
+  <li>22bd0c77 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/346">#346</a>] The size reserved for the xPack version was too small on GNU/Linux; fixed.</li>
+  <li>8410a731 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/343">#343</a>] Due to a typo in SvdUtils, the ‘t’ prefix (for tera) was not recognised; fixed.</li>
+  <li>0eff481e - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/340">#340</a>] In order to accept more legal content in the IP address field of the J-Link Debug plug-in, the validator was removed and any characters are now allowed.</li>
+</ul>
+
+<h2 id="cmsis-packs-default-location">CMSIS Packs default location</h2>
+
+<ul>
+  <li>4345cd17 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/357">#357</a>]:
+in the initial implementation, the default location of CMSIS Packs was
+in the same folder as the workspace; when using multiple Eclipse
+workspaces, in different locations, this resulted in multiple CMSIS Packs
+folders; to avoid this, the default location of CMSIS Packs was changed
+from the current workspace folder to a unique folder in the user folder.</li>
+</ul>
+
+<p>The new location is platform dependent:</p>
+
+<ul>
+  <li>macOS: <code class="highlighter-rouge">${HOME}/Library/CMSIS-Packs</code></li>
+  <li>Linux: <code class="highlighter-rouge">${HOME}/opt/cmsis-packs</code></li>
+  <li>Windows: <code class="highlighter-rouge">%APPDATA%\CMSIS-Packs</code></li>
+</ul>
+
+<p>It is also possible to change these defaults by using the <code class="highlighter-rouge">CMSIS_PACKS_FOLDER</code>
+environment variable.</p>
+
+<p>The new default applies when installing new Eclipse environments; for
+compatibility reasons, if an
+existing environment contains a <code class="highlighter-rouge">Packages</code> folder in the same location as
+the workspace, then it will be used as before.</p>
+
+<h2 id="other-changes">Other changes</h2>
+
+<ul>
+  <li>2b053de3 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/338">#338</a>] the list of accepted devices/architectures was (<code class="highlighter-rouge">-mcpu</code> &amp; <code class="highlighter-rouge">-march</code>) was updated for GCC 8.x;</li>
+  <li>94409173 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/358">#358</a>] the list of accepted compiler standards (<code class="highlighter-rouge">-std=</code>) was updated for GCC 9;</li>
+  <li>7ee535e6 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/360">#360</a>] the <strong>Refresh All</strong> action in the Packs view was optimised and the pack size is retrieved only for the latest version;</li>
+  <li>903b4537 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/361">#361</a>] the CMSIS Packs manager now accepts to install recent packages up to CMSIS Packs v1.6.0 specs;</li>
+  <li>69090d90 - [Issue:<a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/issues/355">#355</a>] given the change in processing ABI warnings in GCC, the project templates no longer pass <code class="highlighter-rouge">-Wabi</code> to the created projects.</li>
+</ul>
+
+<h2 id="template-changes">Template changes</h2>
+
+<ul>
+  <li>none</li>
+</ul>
+
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>none</li>
+</ul>
+
+<h2 id="eclipse-packages">Eclipse packages</h2>
+
+<p>For convenience, this version of the plug-ins is also available as
+an Eclipse package:</p>
+
+<ul>
+  <li><a href="https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases/tag/v4.6.1-20190923-2019-09">GNU MCU Eclipse IDE for C/C++ Developers 2019-09 20190923</a> which packs together the <strong>2019-09</strong> version (Eclipse 4.13) of the  <strong>Eclipse IDE for C/C++ Developers</strong> standard distribution with the <strong>GNU MCU Eclipse plug-ins</strong>.</li>
+</ul>
+
+<p>For historical reasons, packages using the previous Eclipses are also available:</p>
+
+<ul>
+  <li><a href="https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases/tag/v4.6.1-20190923-2019-06">GNU MCU Eclipse IDE for C/C++ Developers 2019-06 20190923</a> which packs together the <strong>2019-06</strong> version (Eclipse 4.12) of the  <strong>Eclipse IDE for C/C++ Developers</strong> standard distribution with the <strong>GNU MCU Eclipse plug-ins</strong>;</li>
+  <li><a href="https://github.com/gnu-mcu-eclipse/org.eclipse.epp.packages/releases/tag/v4.6.1-20190923-2019-03">GNU MCU Eclipse IDE for C/C++ Developers 2019-03 20190923</a> which packs together the <strong>2019-03</strong> version (Eclipse 4.11) of the  <strong>Eclipse IDE for C/C++ Developers</strong> standard distribution with the <strong>GNU MCU Eclipse plug-ins</strong>;</li>
+</ul>
+
     </div>
 
+
+
+</article>
+
+    
+    <a target="_blank" rel="noopener" href="https://github.com/gnu-mcu-eclipse/web-jekyll/blob/master/_posts/plugins/releases/2019-09-23-plugins-v4.6.1-201909231407-released.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit</a>
+
     
 
 
-</div>
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'embed-cdt'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 <hr class="shaded"/>
 
@@ -567,7 +606,7 @@ to get notifications on new releases.</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 16, 2020<br/> Site last generated: Aug 17, 2020 <br />
+ Site last generated: Aug 17, 2020 <br />
                 </div>
             </div>
 </footer>

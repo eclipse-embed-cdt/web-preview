@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).">
-<meta name="keywords" content=" eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu">
-<title>Eclipse Embedded CDT</title>
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Templates | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Templates">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -236,7 +236,7 @@
           
           
           
-          <li class="active"><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/">Overview</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li class="active"><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT</h1>
+   <h1 class="post-title-main">Templates</h1>
 </div>
 
 
@@ -430,122 +430,140 @@
 <div class="post-content">
 
    
-    <div class="summary">Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).
-</div>
-   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
 
     
 
 
-   <p><strong>Eclipse Embedded CDT</strong> is an open source project that includes a family
-of Eclipse plug-ins and tools for multi-platform embedded Arm and RISC-V
-development, based on GNU toolchains. The project is hosted on
-<a href="https://github.com/eclipse-embed-cdt">GitHub</a>.</p>
+   <h2 id="quicklinks">Quicklinks</h2>
 
-<h2 id="the-eclipse-embedded-cdt-plug-ins">The Eclipse Embedded CDT plug-ins</h2>
-
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for
-GNU embedded toolchains like
-<a href="https://xpack.github.io/arm-none-eabi-gcc/">xPack GNU Arm Embedded GCC</a>,
-<a href="https://xpack.github.io/riscv-none-embed-gcc/">xPack GNU RISC-V Embedded GCC</a>,
-etc.</p>
-
-<p>In short, the Eclipse Embedded CDT plug-ins allow to create, build,
-debug and in general to <strong>manage Arm &amp; RISC-V projects</strong> (executables
-and static/shared libraries, in both 32 and 64-bit versions) with the
-Eclipse framework (currently tested up to Eclipse 4.16, 2020-06).
-The plug-ins run on Windows, macOS and GNU/Linux. For more details
-please visit the <a href="/plugins/features/">Features</a> page.</p>
-
-<p><img src="/assets/images/2015/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
-
-<h2 id="additional-tools">Additional tools</h2>
-
-<p>Apart from the main Eclipse plug-ins, this project is accompanied by
-several other tools, distributed as separate packages.</p>
+<p>If you know what this is all about and you only need to go to specific templates:</p>
 
 <ul>
-  <li>
-    <p><strong>xPack Windows Build Tools</strong></p>
-
-    <p>The <a href="https://xpack.github.io/windows-build-tools/"><strong>xPack Windows Build Tools</strong></a>
-project includes the additional tools required to perform builds on Windows
-(<strong>make</strong> &amp; <strong>rm</strong>).</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU Arm Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a>
-project is an alternate binary distribution that complements the official
-<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Arm Embedded Toolchain</a> maintained by Arm. Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU RISC-V Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/riscv-none-embed-gcc/"><strong>xPack GNU RISC-V Embedded GCC</strong></a>
-project is a new distribution of the bare metal version of
-<a href="https://github.com/riscv/riscv-gcc">RISC-V GCC</a>, maintained by
-<a href="https://www.sifive.com">SiFive</a>. Binaries for Windows, macOS and GNU/Linux
-are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack OpenOCD</strong></p>
-
-    <p>The <a href="https://xpack.github.io/openocd/"><strong>xPack OpenOCD</strong></a> project is a
-new distribution of <a href="http://openocd.org/">OpenOCD</a>, customised for a
-better/more convenient integration with the <strong>OpenOCD Debugging</strong> plug-in.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack QEMU Arm</strong></p>
-
-    <p>The <a href="https://xpack.github.io/qemu-arm/"><strong>xPack QEMU Arm</strong></a> project is a
-fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator),
-intended to provide support for Cortex-M emulation in GNU MCU Eclipse.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-
-    <p><img src="/assets/images/2015/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
-  </li>
+  <li><a href="/templates/cortexm/" title="Generic Cortex-M template">Cortex-M template</a></li>
+  <li><a href="/templates/stm32f/" title="STM32Fxx templates">STM32Fxx templates</a></li>
+  <li><a href="/templates/klxx/" title="KLxx template">Kinetis KLxx templates</a></li>
 </ul>
 
-<h2 id="notifications">Notifications</h2>
+<h2 id="overview">Overview</h2>
 
-<p>To stay up-to-date with new releases, the recommended way is
-to follow <a href="https://twitter.com/gnu-mcu-eclipse">@gnu-mcu-eclipse</a> on Twitter.</p>
+<p>In addition to cross build and debugging support, GNU MCU Eclipse plug-ins also provide several C/C++ project templates, that generate ready to run projects.</p>
 
-<p>Alternatively you can subscribe to this site RSS feed
-<a href="https://www.eclipse.org/embed-cdt/feed.xml">https://www.eclipse.org/embed-cdt/feed.xml</a>.</p>
+<p>These projects obviously are not full fledged applications, but provide a good starting point for writing such applications.</p>
 
-<p>To stay current with changes to individual projects, enable <strong>watching</strong>
-in the GitHub web interface for each project of interest.</p>
+<p>One of the main requirements is to build correctly, even if functionality is only sketchy.</p>
 
-<h2 id="license">License</h2>
+<h2 id="install">Install</h2>
 
-<p>Unless otherwise mentioned, all Eclipse plug-ins
-are provided <strong>free of charge</strong> under the terms of the
-<a href="https://projects.eclipse.org/license/epl-2.0">Eclipse Public License 2.0</a>.</p>
-
-<h2 id="let-us-know-if-you-enjoyed-using-this-project">Let us know if you enjoyed using this project!</h2>
-
-<p>If you enjoyed using this project, please let us know; here are some advices:</p>
+<p>The template plug-ins are installed using the same procedure as the other plug-ins:</p>
 
 <ul>
-  <li>the best way to praise us would be to <strong>donate</strong>; if you want to speed
-up development and help future versions include more and more great
-features, please consider donating; any contribution, small or
-generous, will be highly appreciated;</li>
-  <li>star the projects you liked on GitHub
-(<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins">eclipse-plugins</a>);</li>
-  <li>follow the project on <a href="https://twitter.com/xpack_project">Twitter</a>,
-to get notifications on new releases.</li>
+  <li>in the <em>Eclipse</em> menu, go to <strong>Help</strong> → <strong>Install New Software</strong></li>
+  <li>select <em>Work with:</em> <strong>GNU MCU Eclipse Plug-ins</strong></li>
+  <li>extend the <strong>GNU ARM C/C++ Cross Development Tools</strong></li>
+  <li>be sure the desired <strong>… Project Template</strong> are selected</li>
 </ul>
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="." border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
+<p><img src="/assets/images/2014/02/InstallTemplatePlugins.png" alt="Install the template plug-ins" /></p>
+
+<h2 id="c-vs-c">C vs C++</h2>
+
+<p>Most of the GNU MCU Eclipse templates are available for both C and C++ projects. The first difference between the two is the extension of the main source file: it is <strong>main.c</strong> for C projects and <strong>main.cpp</strong> for C++ projects. The content is usually the same, but more elaborate versions are planned to better exemplify the use of C++.</p>
+
+<p><strong>CMSIS</strong></p>
+
+<p>After defining a minimum common hardware implementation in the Cortex-M core, to be implemented by all vendors, ARM also defined CMSIS (pronounced sim-sys) as a common software interface, to be used with all Cortex-M implementations. CMSIS stands for <a href="http://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php">Cortex Microcontroller Software Interface Standard</a> and consists of several components (CORE, DSP, RTOS, SVD).</p>
+
+<p>The GNU MCU Eclipse plug-in uses the CMSIS-CORE code in all templates, as jointly provided by ARM and each vendor.</p>
+
+<h2 id="blinky-vs-empty">Blinky vs Empty</h2>
+
+<p>Based on a long tradition among the embedded application developers, the first challenge when encountering a new board is to make it blink a LED. It doesn’t seem much, but in fact there are many details that must fit together for this to work:</p>
+
+<ul>
+  <li>the startup code must be functional</li>
+  <li>the manufacturer CMSIS initialisations must set the desired clock</li>
+  <li>the GPIO definitions/drivers must be available</li>
+  <li>the memory map and the linker scripts must match the actual hardware</li>
+  <li>eventualy the newlib printf() must be directed to an available device for viewing the trace messages</li>
+</ul>
+
+<p>The <strong>Blinky</strong> templates do exactly this, take care of all these details. The observed functionality is relatively simple, the board blinks a LED with 1Hz. To exercise the interrupts, the time base is obtained with the SysTick configured at 1000Hz, with the delay() function counting ticks.</p>
+
+<p>Once all details are understood, a real life application does not really need the code to blink the LED, but rather start with an empty slate. This is the purpose of the <strong>Empty</strong> templates, that provide the entire environment of the <strong>Blinky</strong> templates, but without any code in main().</p>
+
+<h2 id="project-structure">Project structure</h2>
+
+<p>Most generated projects share a common folders structure, similar to the following:</p>
+
+<p><img src="/assets/images/2014/02/F4Project.png" alt="Project structure" /></p>
+
+<h3 id="application-code">Application code</h3>
+
+<p>The application code is located in the top level <strong>src</strong> and <strong>include</strong> folders. Add more files as required by your application.</p>
+
+<h3 id="linker-scripts">Linker scripts</h3>
+
+<p>The linker scripts are grouped in a <strong>ldscripts</strong> folder. For convenience, the definitions were split in separate files to define the memory map and the content of the sections, but any other structure is acceptable, only update the link configuration.</p>
+
+<h3 id="local-libraries">Local libraries</h3>
+
+<p>Various libraries are grouped in the <strong>system</strong> folder. According to ARM specifications, the Cortex Microcontroller Software Interface Standard (CMSIS) is used, and all related definitions are grouped in the CMSIS folder.</p>
+
+<h2 id="available-templates">Available templates</h2>
+
+<h3 id="generic-templates">Generic templates</h3>
+
+<ul>
+  <li><a href="/templates/cortexm/" title="Generic Cortex-M template">Cortex-M template</a></li>
+</ul>
+
+<h3 id="st-micro-templates">ST Micro templates</h3>
+
+<ul>
+  <li>STM32F0xx template</li>
+  <li>STM32F1xx template</li>
+  <li>STM32F2xx template</li>
+  <li>STM32F3xx template</li>
+  <li><a href="/templates/stm32f/" title="STM32Fxx templates">STM32F4xx template</a></li>
+</ul>
+
+<h3 id="freescale-templates">Freescale templates</h3>
+
+<ul>
+  <li><a href="/templates/klxx/" title="KLxx template">Kinetis KLxx templates</a></li>
+  <li>Processor Expert template</li>
+</ul>
+
+<p>Adding new templates</p>
+
+<p>Considering the large number of existing Cortex-M implementations, it is not realistic to expect templates for all of them.</p>
+
+<p>If you use a processor that has no template yet, and want to contribute to this project, the first step is to create a project that mimics the Blinky variant of an existing template. This means you need to have the CMSIS specific files publicly available (yes, this seems strange, but some manufacturers do not provide these files) and eventually the standard peripheral library.</p>
+
+<p>If you have such a project, you can register a new feature request and attach your project to the request, for us to review and eventually use as a base for a new template.</p>
 
 
 
@@ -567,7 +585,7 @@ to get notifications on new releases.</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 16, 2020<br/> Site last generated: Aug 17, 2020 <br />
+ Site last generated: Aug 17, 2020 <br />
                 </div>
             </div>
 </footer>

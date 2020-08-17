@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).">
-<meta name="keywords" content=" eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu">
-<title>Eclipse Embedded CDT</title>
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Toolchain path management | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Toolchain path management">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -236,7 +236,7 @@
           
           
           
-          <li class="active"><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/">Overview</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li class="active"><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT</h1>
+   <h1 class="post-title-main">Toolchain path management</h1>
 </div>
 
 
@@ -430,122 +430,127 @@
 <div class="post-content">
 
    
-    <div class="summary">Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).
-</div>
-   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
 
     
 
 
-   <p><strong>Eclipse Embedded CDT</strong> is an open source project that includes a family
-of Eclipse plug-ins and tools for multi-platform embedded Arm and RISC-V
-development, based on GNU toolchains. The project is hosted on
-<a href="https://github.com/eclipse-embed-cdt">GitHub</a>.</p>
+   <h2 id="overview">Overview</h2>
 
-<h2 id="the-eclipse-embedded-cdt-plug-ins">The Eclipse Embedded CDT plug-ins</h2>
+<p>Generally toolchain path management is an advanced feature, required when multiple toolchains are installed on a machine.</p>
 
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for
-GNU embedded toolchains like
-<a href="https://xpack.github.io/arm-none-eabi-gcc/">xPack GNU Arm Embedded GCC</a>,
-<a href="https://xpack.github.io/riscv-none-embed-gcc/">xPack GNU RISC-V Embedded GCC</a>,
-etc.</p>
+<h2 id="why-use-multiple-toolchains">Why use multiple toolchains?</h2>
 
-<p>In short, the Eclipse Embedded CDT plug-ins allow to create, build,
-debug and in general to <strong>manage Arm &amp; RISC-V projects</strong> (executables
-and static/shared libraries, in both 32 and 64-bit versions) with the
-Eclipse framework (currently tested up to Eclipse 4.16, 2020-06).
-The plug-ins run on Windows, macOS and GNU/Linux. For more details
-please visit the <a href="/plugins/features/">Features</a> page.</p>
+<h3 id="production-environments">Production environments</h3>
 
-<p><img src="/assets/images/2015/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
+<p>In production environments, when doing maintenance for old products, to obtain repetitive results, it is strongly recommended to build old versions with their original toolchain version.</p>
 
-<h2 id="additional-tools">Additional tools</h2>
+<p>Since toolchains developers are quite active, releasing several versions each year, it soon becomes necessary to manage multiple toolchains, each with multiple versions.</p>
 
-<p>Apart from the main Eclipse plug-ins, this project is accompanied by
-several other tools, distributed as separate packages.</p>
+<h3 id="rd-environments">R&amp;D environments</h3>
+
+<p>In addition to production environments, in research environments, developers usually experiment with multiple toolchains and toolchain versions, to test their programs.</p>
+
+<h2 id="path-management-in-commercial-ides">Path management in commercial IDEs</h2>
+
+<p>Most of the commercial IDEs include the toolchain packed in the distribution, and handle the path to it automatically and transparently for the user. When using the supplied toolchain, things are extremely easy. Using other toolchains/versions is a different story, more complicated and sometimes even impossible.</p>
+
+<h2 id="default-path-management-in-eclipse-cdt">Default path management in Eclipse CDT</h2>
+
+<p>By default, the Eclipse managed build plug-ins do not handle the toolchain path at all, and rely on the proper setting of the environment PATH to reach the toolchain binaries. The PATH can be set in different places:</p>
 
 <ul>
-  <li>
-    <p><strong>xPack Windows Build Tools</strong></p>
-
-    <p>The <a href="https://xpack.github.io/windows-build-tools/"><strong>xPack Windows Build Tools</strong></a>
-project includes the additional tools required to perform builds on Windows
-(<strong>make</strong> &amp; <strong>rm</strong>).</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU Arm Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a>
-project is an alternate binary distribution that complements the official
-<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Arm Embedded Toolchain</a> maintained by Arm. Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU RISC-V Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/riscv-none-embed-gcc/"><strong>xPack GNU RISC-V Embedded GCC</strong></a>
-project is a new distribution of the bare metal version of
-<a href="https://github.com/riscv/riscv-gcc">RISC-V GCC</a>, maintained by
-<a href="https://www.sifive.com">SiFive</a>. Binaries for Windows, macOS and GNU/Linux
-are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack OpenOCD</strong></p>
-
-    <p>The <a href="https://xpack.github.io/openocd/"><strong>xPack OpenOCD</strong></a> project is a
-new distribution of <a href="http://openocd.org/">OpenOCD</a>, customised for a
-better/more convenient integration with the <strong>OpenOCD Debugging</strong> plug-in.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack QEMU Arm</strong></p>
-
-    <p>The <a href="https://xpack.github.io/qemu-arm/"><strong>xPack QEMU Arm</strong></a> project is a
-fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator),
-intended to provide support for Cortex-M emulation in GNU MCU Eclipse.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-
-    <p><img src="/assets/images/2015/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
-  </li>
+  <li>in the environment where Eclipse is started (either a system global setting or a per user setting)</li>
+  <li>in the Eclipse workspace, common for all projects</li>
+  <li>in the project build configuration</li>
 </ul>
 
-<h2 id="notifications">Notifications</h2>
+<p>This mechanism can be both flexible and a source of nuisance. When only a single toolchain is installed, any global setting is acceptable and the exact method makes no real difference.</p>
 
-<p>To stay up-to-date with new releases, the recommended way is
-to follow <a href="https://twitter.com/gnu-mcu-eclipse">@gnu-mcu-eclipse</a> on Twitter.</p>
+<p>However, when multiple toolchains are installed, the use of any global setting is strongly discouraged, since it soon leads to serious problems generally due to messing headers and executables between different toolchains. In this case the only recommended solution is to define the toolchain path for each build configuration.</p>
 
-<p>Alternatively you can subscribe to this site RSS feed
-<a href="https://www.eclipse.org/embed-cdt/feed.xml">https://www.eclipse.org/embed-cdt/feed.xml</a>.</p>
+<p><img src="/assets/images/2017/project-environment.png" alt="Toolchain path in project environment" /></p>
 
-<p>To stay current with changes to individual projects, enable <strong>watching</strong>
-in the GitHub web interface for each project of interest.</p>
+<h2 id="cdt-cross-build-plug-in">CDT Cross build plug-in</h2>
 
-<h2 id="license">License</h2>
+<p>The integrated CDT Cross build plug-in does exactly this, defines a path for each projects. Unfortunately it stores this setting in the .cproject file, making it non-portable between different machines, and even worse between different platforms (Windows/Unix).</p>
 
-<p>Unless otherwise mentioned, all Eclipse plug-ins
-are provided <strong>free of charge</strong> under the terms of the
-<a href="https://projects.eclipse.org/license/epl-2.0">Eclipse Public License 2.0</a>.</p>
+<h2 id="what-is-project-portability">What is project portability?</h2>
 
-<h2 id="let-us-know-if-you-enjoyed-using-this-project">Let us know if you enjoyed using this project!</h2>
+<p>In short, a portable project is a project that can be used without changes on any workspace on any platform.</p>
 
-<p>If you enjoyed using this project, please let us know; here are some advices:</p>
+<p>For more details, please see the separate <a href="/eclipse/project/portability/" title="Project portability">Project portability</a> page.</p>
 
-<ul>
-  <li>the best way to praise us would be to <strong>donate</strong>; if you want to speed
-up development and help future versions include more and more great
-features, please consider donating; any contribution, small or
-generous, will be highly appreciated;</li>
-  <li>star the projects you liked on GitHub
-(<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins">eclipse-plugins</a>);</li>
-  <li>follow the project on <a href="https://twitter.com/xpack_project">Twitter</a>,
-to get notifications on new releases.</li>
-</ul>
+<h2 id="the-gnu-mcu-eclipse-solution">The GNU MCU Eclipse solution</h2>
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="." border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
+<p>Generating portable projects was one of the design requirements of the GNU MCU Eclipse cross build plug-in, at the same time with the apparently conflicting requirement for handling multiple toolchains and versions.</p>
+
+<p>To achieve this, the GNU MCU Eclipse cross build plug-in provides a large selection of existing toolchains, and associate each one with a separate path. For special projects that require a specific version, it also allows to associate a path to each project. In all cases this association is stored in the workspace internal folders, and not in the project configuration, so it is not passed via the repository from one developer to the other.</p>
+
+<p>The default (and the recommended) setting, is to use the global toolchain path.</p>
+
+<p><img src="/assets/images/2018/toolchain-properties.png" alt="Toolchains Properties" /></p>
+
+<p>The displayed path is associated with the selected toolchain. To change the toolchain path use the hyperlinks; it is recommended to use the global page, but, if needed, the toolchain path can also be configured per workspace or even per project.</p>
+
+<p><img src="/assets/images/2018/global-arm-toolchains-paths.png" alt="Global Tools Paths" /></p>
+
+<p>Clicking the <strong>xPack…</strong> button allows to enter the path by selecting the xPack version. (The button is enabled only for toolchains that are distributed as xPacks).</p>
+
+<p><img src="/assets/images/2018/global-arm-toolchains-paths-xpack.png" alt="Global Tools Paths" /></p>
+
+<blockquote>
+  <p>macOS note: due to a weird decision of the Eclipse macOS developers, the file system browser does not show file/folders starting with a dot; thus, the <code class="highlighter-rouge">.content/bin</code> final part of the path must be entered manually.</p>
+</blockquote>
+
+<p>Using the global toolchain path does not store any data in the project configuration files, but in the Eclipse folders, so the project portability is not affected.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="no-toolchain-path">No toolchain path</h3>
+
+<p>Forgetting to set the toolchain path, or setting a wrong value, is easy to diagnose, since the Eclipse editor will be full of red markers to all definitions related to system headers, and, even more explictly, the build will fail:</p>
+
+<p><img src="/assets/images/2014/02/NoToolchainPath.png" alt="Missing or wrong path" /></p>
+
+<p>If so, enter the project <strong>C/C++ Settings</strong>, the <strong>Toolchains</strong> tab, and add/correct the toolchain path (see above).</p>
+
+<h3 id="checking-the-compiler-version">Checking the compiler version</h3>
+
+<p>If you are not sure that the plug-in selected the desired toolchain, you can insert a pre-build action to display the version. The command to do this is</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>${cross_prefix}${cross_c}${cross_suffix} --version
+</code></pre></div></div>
+
+<p>The page to setup this is the project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Settings</strong> → <strong>Build Steps</strong>:</p>
+
+<p><img src="/assets/images/2014/02/PreBuildVersion.png" alt="Pre-build step to display compiler version" /></p>
+
+<h3 id="the-installer-already-updated-the-system-path">The installer already updated the system path</h3>
+
+<p>If you used an unfriendly installer, which already updated the system path without asking, you should manually fix this situation, and <strong>remove the toolchain path from the system path</strong>.</p>
 
 
 
@@ -567,7 +572,7 @@ to get notifications on new releases.</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 16, 2020<br/> Site last generated: Aug 17, 2020 <br />
+ Site last generated: Aug 17, 2020 <br />
                 </div>
             </div>
 </footer>

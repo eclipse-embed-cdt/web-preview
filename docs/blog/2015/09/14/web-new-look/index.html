@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).">
-<meta name="keywords" content=" eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu">
-<title>Eclipse Embedded CDT</title>
+<meta name="description" content="">
+<meta name="keywords" content=",  ">
+<title>The GNU ARM Eclipse project has a new home and a new look (GitHub) | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="The GNU ARM Eclipse project has a new home and a new look (GitHub)">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -236,7 +236,7 @@
           
           
           
-          <li class="active"><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/">Overview</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li class="active"><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -421,145 +421,142 @@
 
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
-            <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT</h1>
-</div>
+            <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">The GNU ARM Eclipse project has a new home and a new look (GitHub)</h1>
+        <p class="post-meta"><time datetime="2015-09-14T10:41:00+00:00" itemprop="datePublished">Sep 14, 2015</time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">/ Liviu Ionescu</span></span> /
+            
+            
+            
+
+        </p>
 
 
+    </header>
 
-<div class="post-content">
-
-   
-    <div class="summary">Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).
-</div>
-   
-
-    
-
-
-   <p><strong>Eclipse Embedded CDT</strong> is an open source project that includes a family
-of Eclipse plug-ins and tools for multi-platform embedded Arm and RISC-V
-development, based on GNU toolchains. The project is hosted on
-<a href="https://github.com/eclipse-embed-cdt">GitHub</a>.</p>
-
-<h2 id="the-eclipse-embedded-cdt-plug-ins">The Eclipse Embedded CDT plug-ins</h2>
-
-<p>These plug-ins provide Eclipse CDT (C/C++ Development Tooling) extensions for
-GNU embedded toolchains like
-<a href="https://xpack.github.io/arm-none-eabi-gcc/">xPack GNU Arm Embedded GCC</a>,
-<a href="https://xpack.github.io/riscv-none-embed-gcc/">xPack GNU RISC-V Embedded GCC</a>,
-etc.</p>
-
-<p>In short, the Eclipse Embedded CDT plug-ins allow to create, build,
-debug and in general to <strong>manage Arm &amp; RISC-V projects</strong> (executables
-and static/shared libraries, in both 32 and 64-bit versions) with the
-Eclipse framework (currently tested up to Eclipse 4.16, 2020-06).
-The plug-ins run on Windows, macOS and GNU/Linux. For more details
-please visit the <a href="/plugins/features/">Features</a> page.</p>
-
-<p><img src="/assets/images/2015/intro-new-f4-project.png" alt="Create new STM32F4 C++ project" /></p>
-
-<h2 id="additional-tools">Additional tools</h2>
-
-<p>Apart from the main Eclipse plug-ins, this project is accompanied by
-several other tools, distributed as separate packages.</p>
-
-<ul>
-  <li>
-    <p><strong>xPack Windows Build Tools</strong></p>
-
-    <p>The <a href="https://xpack.github.io/windows-build-tools/"><strong>xPack Windows Build Tools</strong></a>
-project includes the additional tools required to perform builds on Windows
-(<strong>make</strong> &amp; <strong>rm</strong>).</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU Arm Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a>
-project is an alternate binary distribution that complements the official
-<a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm">GNU Arm Embedded Toolchain</a> maintained by Arm. Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack GNU RISC-V Embedded GCC</strong></p>
-
-    <p>The <a href="https://xpack.github.io/riscv-none-embed-gcc/"><strong>xPack GNU RISC-V Embedded GCC</strong></a>
-project is a new distribution of the bare metal version of
-<a href="https://github.com/riscv/riscv-gcc">RISC-V GCC</a>, maintained by
-<a href="https://www.sifive.com">SiFive</a>. Binaries for Windows, macOS and GNU/Linux
-are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack OpenOCD</strong></p>
-
-    <p>The <a href="https://xpack.github.io/openocd/"><strong>xPack OpenOCD</strong></a> project is a
-new distribution of <a href="http://openocd.org/">OpenOCD</a>, customised for a
-better/more convenient integration with the <strong>OpenOCD Debugging</strong> plug-in.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-  </li>
-  <li>
-    <p><strong>xPack QEMU Arm</strong></p>
-
-    <p>The <a href="https://xpack.github.io/qemu-arm/"><strong>xPack QEMU Arm</strong></a> project is a
-fork of <a href="http://wiki.qemu.org/Main_Page">QEMU</a> (an open source machine emulator),
-intended to provide support for Cortex-M emulation in GNU MCU Eclipse.
-Binaries for Windows, macOS and GNU/Linux are available.</p>
-
-    <p><img src="/assets/images/2015/stm32f4-discovery-leds.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
-  </li>
-</ul>
-
-<h2 id="notifications">Notifications</h2>
-
-<p>To stay up-to-date with new releases, the recommended way is
-to follow <a href="https://twitter.com/gnu-mcu-eclipse">@gnu-mcu-eclipse</a> on Twitter.</p>
-
-<p>Alternatively you can subscribe to this site RSS feed
-<a href="https://www.eclipse.org/embed-cdt/feed.xml">https://www.eclipse.org/embed-cdt/feed.xml</a>.</p>
-
-<p>To stay current with changes to individual projects, enable <strong>watching</strong>
-in the GitHub web interface for each project of interest.</p>
-
-<h2 id="license">License</h2>
-
-<p>Unless otherwise mentioned, all Eclipse plug-ins
-are provided <strong>free of charge</strong> under the terms of the
-<a href="https://projects.eclipse.org/license/epl-2.0">Eclipse Public License 2.0</a>.</p>
-
-<h2 id="let-us-know-if-you-enjoyed-using-this-project">Let us know if you enjoyed using this project!</h2>
-
-<p>If you enjoyed using this project, please let us know; here are some advices:</p>
-
-<ul>
-  <li>the best way to praise us would be to <strong>donate</strong>; if you want to speed
-up development and help future versions include more and more great
-features, please consider donating; any contribution, small or
-generous, will be highly appreciated;</li>
-  <li>star the projects you liked on GitHub
-(<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins">eclipse-plugins</a>);</li>
-  <li>follow the project on <a href="https://twitter.com/xpack_project">Twitter</a>,
-to get notifications on new releases.</li>
-</ul>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="NXKFN7DJH8DJ6" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="." border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
-
-
+    <div class="post-content" itemprop="articleBody">
 
         
 
+        <p>The GNU ARM Eclipse project was migrated from <a href="https://sourceforge.net/projects/gnuarmeclipse/">SourceForge</a> to <a href="https://github.com/gnuarmeclipse">GitHub</a>.</p>
 
-    <div class="tags">
-        
+<h2 id="migration-to-github">Migration to GitHub</h2>
+
+<p>There are many reasons behind this decision (GitHub looks definitely cool!), but the main one is probably to reduce dependencies on custom DNS domains, like <code class="highlighter-rouge">livius.net</code>, which might not be available on long term.</p>
+
+<p><img src="/assets/images/2015/github-gae-header.png" alt="GNU ARM Eclipse GitHub Home" /></p>
+
+<h3 id="repositories">Repositories</h3>
+
+<p>Migrating the repositories was the easiest part, each project was pushed into its own repository.</p>
+
+<p>The current project repositories are:</p>
+
+<ul>
+  <li><a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins">plug-ins</a></li>
+  <li><a href="https://github.com/gnu-mcu-eclipse/windows-build-tools">windows-build-tools</a></li>
+  <li><a href="https://github.com/gnu-mcu-eclipse/openocd">openocd</a></li>
+  <li><a href="https://github.com/gnu-mcu-eclipse/qemu">qemu</a></li>
+  <li><a href="https://github.com/gnu-mcu-eclipse/build-scripts">build-scripts</a></li>
+</ul>
+
+<p><img src="/assets/images/2015/github-gae-projects.png" alt="GNU ARM Eclipse GitHub Projects" /></p>
+
+<h3 id="binary-files-as-releases">Binary files as Releases</h3>
+
+<p>Migration of binary files was a bit more complicated, and, due to GitHub current limitations, is not complete. The main problem was raised by the Eclipse update sites, which require a certain folder structure, and since GitHub does not support adding folders to releases, the Eclipse update sites will remain hosted on SourceForge.</p>
+
+<p>Note: We reported this problem to GitHub support, and in a future version they might allow to add folders to releases, but details are not available.</p>
+
+<p>Apart from the Eclipse update sites, all other binary files will be published as GitHub Releases, attached to the respective project repositories.</p>
+
+<p>The archive of past releases was also migrated from SourceForge to GitHub.</p>
+
+<p><img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases" /></p>
+
+<h3 id="issues-trackers">Issues trackers</h3>
+
+<p>The SourceForge trackers were replaced by the GitHub Issues trackers.</p>
+
+<p>The content of the old trackers was not moved to GitHub, since this is much too time consuming, but it is planned to still keep the old trackers themselves available, even if they are locked and new tickets cannot be created there. It is still possible to comment on existing tickets.</p>
+
+<h3 id="notifications-as-watched-projects">Notifications as watched projects</h3>
+
+<p>In the past, release notifications were handled by a WordPress plug-in, by subscribing to the project blog.</p>
+
+<p>Currently the only GitHub equivalent is to <strong>Watch</strong> projects, which will enable a notification for each project release.</p>
+
+<p>For those interested in receiving notifications, the recommendation is to subscribe to GitHub, by clicking the <strong>Watch</strong> button and selecting <strong>Watching</strong>).</p>
+
+<p><img src="/assets/images/2015/github-gae-releases.png" alt="GNU ARM Eclipse GitHub Releases" /></p>
+
+<p>Be sure you subscribe to <strong>Watch</strong> the <strong>gnuarmeclipse/gnuarmeclipse.github.io</strong> project to receive notifications for Web posts.</p>
+
+<h2 id="the-web-has-a-new-look">The Web has a new look</h2>
+
+<p>Finally, the most delicate issue, was to migrate the old documentation sites from the livius.net domain to a public domain.</p>
+
+<p>Since GitHub solution for providing documentation sites is <a href="https://pages.github.com">GitHub Pages</a>, and this service makes the sites available in the <code class="highlighter-rouge">github.io</code> domain, it was considered acceptable to migrate the WordPress and MediaWiki sites to GitHub Pages.</p>
+
+<p><img src="/assets/images/2015/github-io-gae-home.png" alt="GNU ARM Eclipse Home Page" /></p>
+
+<p>GitHub Pages uses <a href="http://jekyllrb.com">Jekyll</a> to generate static web sites, and the most convenient input format for Jekyll is <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a>, so the migration involved conversion from WordPress internal representation, to markdown. Given the differences, this conversion was not easy, and was done partly with scripts, partly manually. Similarly for MediaWiki, although the conversion from the MediaWiki format to markdown was easier.</p>
+
+<p>Given the complexity of this migration, we are aware that it is very likely that lots of mistakes are still present in the pages; we would appreciate any help in fixing them (use the <a href="https://github.com/gnu-mcu-eclipse/gnu-mcu-eclipse.github.io-source/issues">Web Issues</a> tracker for this).</p>
+
+<p>The web site has two dedicated projects:</p>
+
+<ul>
+  <li><a href="https://github.com/gnu-mcu-eclipse/gnu-mcu-eclipse.github.io">gnuarmeclipse.github.io</a></li>
+  <li><a href="https://github.com/gnu-mcu-eclipse/gnu-mcu-eclipse.github.io-source">gnuarmeclipse.github.io-source</a></li>
+</ul>
+
+<p>The first one stores the actual static pages of the Web site and the second stores the Jekyll source files for generating the Web site.</p>
+
+<h2 id="http-redirects">HTTP Redirects</h2>
+
+<p>We are aware that a lot of links to the previous sites are in use. To avoid breaking them, many redirects were installed from the <code class="highlighter-rouge">gnuarmeclipse.livius.net/*</code> to <code class="highlighter-rouge">gnuarmeclipse.github.io</code>. All other pages not matching the rules in these redirects will be served by the new <code class="highlighter-rouge">gnuarmeclipse.livius.net/redirected/</code> page, so both blog and wiki references should not be broken, but land in the new site.</p>
+
+<h2 id="old-sites">Old sites</h2>
+
+<p>The previous WordPress and MediaWiki sites were moved back to SourceForge and, for historical reasons, will be preserved there, but will no longer be maintained:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">http://gnuarmeclipse.sourceforge.net/blog/</code></li>
+  <li><code class="highlighter-rouge">http://gnuarmeclipse.sourceforge.net/wiki/</code></li>
+</ul>
+
     </div>
 
+
+
+</article>
+
+    
+    <a target="_blank" rel="noopener" href="https://github.com/gnu-mcu-eclipse/web-jekyll/blob/master/_posts/web/2015-09-14-web-new-look.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit</a>
+
     
 
 
-</div>
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'embed-cdt'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 <hr class="shaded"/>
 
@@ -567,7 +564,7 @@ to get notifications on new releases.</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 16, 2020<br/> Site last generated: Aug 17, 2020 <br />
+ Site last generated: Aug 17, 2020 <br />
                 </div>
             </div>
 </footer>
