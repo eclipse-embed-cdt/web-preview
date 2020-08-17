@@ -7,32 +7,32 @@
 <meta name="description" content="">
 <meta name="keywords" content=" ">
 <title>Tutorial: Create a Blinky Arm test project | Eclipse Embedded CDT</title>
-<link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/syntax.css">
+<link rel="stylesheet" href="gnu-mcu-eclipse.github.io/web-preview/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
-<link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/modern-business.css?202008050934">
+<link rel="stylesheet" href="gnu-mcu-eclipse.github.io/web-preview/css/modern-business.css?202008050934">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/customstyles.css?202008050934">
-<link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/boxshadowproperties.css?202008050934">
+<link rel="stylesheet" href="gnu-mcu-eclipse.github.io/web-preview/css/customstyles.css?202008050934">
+<link rel="stylesheet" href="gnu-mcu-eclipse.github.io/web-preview/css/boxshadowproperties.css?202008050934">
 <!-- most color styles are extracted out to here -->
-<link rel="stylesheet" href="https://www.eclipse.org/embed-cdt/css/theme-blue.css?202008050934">
+<link rel="stylesheet" href="gnu-mcu-eclipse.github.io/web-preview/css/theme-blue.css?202008050934">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="https://www.eclipse.org/embed-cdt/js/jquery.navgoco.min.js"></script>
+<script src="gnu-mcu-eclipse.github.io/web-preview/js/jquery.navgoco.min.js"></script>
 
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- Anchor.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
-<script src="https://www.eclipse.org/embed-cdt/js/toc.js"></script>
-<script src="https://www.eclipse.org/embed-cdt/js/customscripts.js"></script>
+<script src="gnu-mcu-eclipse.github.io/web-preview/js/toc.js"></script>
+<script src="gnu-mcu-eclipse.github.io/web-preview/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="https://www.eclipse.org/embed-cdt/images/favicon.ico">
+<link rel="shortcut icon" href="gnu-mcu-eclipse.github.io/web-preview/images/favicon.ico">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,7 +41,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://www.eclipse.org/embed-cdt/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="gnu-mcu-eclipse.github.io/web-preview/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -98,7 +98,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container topnavlinks" style="">
-        <div style="display: inline-block; float: left; margin-top: 8px; margin-left: auto; margin-right: 10px;"><img src="/images/company_logo.png" alt="logo" width="32px" height="32px"/></div>
+        <div style="display: inline-block; float: left; margin-top: 8px; margin-left: auto; margin-right: 10px;"><img src="/web-preview/images/company_logo.png" alt="logo" width="32px" height="32px"/></div>
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -106,7 +106,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="/">&nbsp;<span class="projectTitle"> Eclipse Embedded CDT</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="/web-preview/">&nbsp;<span class="projectTitle"> Eclipse Embedded CDT</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -120,7 +120,7 @@
                 
                 
                 
-                <li class="active"><a href="/news">News</a></li>
+                <li class="active"><a href="/web-preview/news">News</a></li>
                 
                 
                 
@@ -194,12 +194,12 @@
                         <input type="text" id="search-input" placeholder="search...">
                         <ul id="results-container"></ul>
                     </div>
-                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script src="/web-preview/js/jekyll-search.js" type="text/javascript"></script>
                     <script type="text/javascript">
                             SimpleJekyllSearch.init({
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
-                                dataSource: '/search.json',
+                                dataSource: '/web-preview/search.json',
                                 searchResultTemplate: '<li><a href="{url}" title="Tutorial: Create a Blinky Arm test project">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
@@ -236,28 +236,28 @@
           
           
           
-          <li><a title="Overview" href="/">Overview</a></li>
+          <li><a title="Overview" href="/web-preview/">Overview</a></li>
           
           
           
           
           
           
-          <li><a title="Features" href="/plugins/features/">Features</a></li>
+          <li><a title="Features" href="/web-preview/plugins/features/">Features</a></li>
           
           
           
           
           
           
-          <li><a title="Install prerequisites" href="/plugins/prerequisites/">Install prerequisites</a></li>
+          <li><a title="Install prerequisites" href="/web-preview/plugins/prerequisites/">Install prerequisites</a></li>
           
           
           
           
           
           
-          <li><a title="About" href="/about/">About</a></li>
+          <li><a title="About" href="/web-preview/about/">About</a></li>
           
           
           
@@ -273,21 +273,21 @@
           
           
           
-          <li><a title="Latest News" href="/news/">Latest News</a></li>
+          <li><a title="Latest News" href="/web-preview/news/">Latest News</a></li>
           
           
           
           
           
           
-          <li><a title="Archive" href="/news/archive/">Archive</a></li>
+          <li><a title="Archive" href="/web-preview/news/archive/">Archive</a></li>
           
           
           
           
           
           
-          <li><a title="Tags" href="/tags/">Tags</a></li>
+          <li><a title="Tags" href="/web-preview/tags/">Tags</a></li>
           
           
           
@@ -303,7 +303,7 @@
           
           
           
-          <li><a title="Overview" href="/support/">Overview</a></li>
+          <li><a title="Overview" href="/web-preview/support/">Overview</a></li>
           
           
           
@@ -326,14 +326,14 @@
           
           
           
-          <li><a title="Overview" href="/develop/">Overview</a></li>
+          <li><a title="Overview" href="/web-preview/develop/">Overview</a></li>
           
           
           
           
           
           
-          <li><a title="Links" href="/develop/links/">Links</a></li>
+          <li><a title="Links" href="/web-preview/develop/links/">Links</a></li>
           
           
           
@@ -349,7 +349,7 @@
           
           
           
-          <li><a title="Overview" href="/maintain/">Overview</a></li>
+          <li><a title="Overview" href="/web-preview/maintain/">Overview</a></li>
           
           
           
@@ -381,7 +381,7 @@
           
           
           
-          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          <li><a title="Eclipse Embedded CDT" href="/web-preview/">Eclipse Embedded CDT</a></li>
           
           
           
@@ -465,9 +465,9 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="prerequisites">Prerequisites</h2>
 
-<p>Before creating a new project, please be sure you checked all prerequisites described in the <a href="/plugins/prerequisites/">How to install GNU MCU Eclipse?</a> page, especially the need to install the <a href="https://xpack.github.io/windows-build-tools/install/">build tools</a> if you use Windows as your development platform.</p>
+<p>Before creating a new project, please be sure you checked all prerequisites described in the <a href="/web-preview/plugins/prerequisites/">How to install GNU MCU Eclipse?</a> page, especially the need to install the <a href="https://xpack.github.io/windows-build-tools/install/">build tools</a> if you use Windows as your development platform.</p>
 
-<p>It is also recommended to <a href="/eclipse/workspace/preferences/" title="Workspace preferences">set the workspace preferences</a> and to install the desired <a href="/plugins/packs-manager/">CMSIS packs</a>.</p>
+<p>It is also recommended to <a href="/web-preview/eclipse/workspace/preferences/" title="Workspace preferences">set the workspace preferences</a> and to install the desired <a href="/web-preview/plugins/packs-manager/">CMSIS packs</a>.</p>
 
 <p>Note: the multi-LED template is currently available only for ST32F4, and only for C++, since it allows to easily instantiate multiple BlinkLed objects.</p>
 
@@ -475,7 +475,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or the button in the upper left corner), and select the <strong>C++ Project</strong>:</p>
 
-<p><img src="/assets/images/2015/08/NewCppProject.png" alt="Create a new C++ project" /></p>
+<p><img src="/web-preview/assets/images/2015/08/NewCppProject.png" alt="Create a new C++ project" /></p>
 
 <p>In the <strong>C++ Project</strong> window:</p>
 
@@ -486,7 +486,7 @@ $('#toc').on('click', 'a', function() {
   <li>click the <strong>Next &gt;</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2015/08/NewCppBlinkyProject.png" alt="New C++ blinky project" /></p>
+<p><img src="/web-preview/assets/images/2015/08/NewCppBlinkyProject.png" alt="New C++ blinky project" /></p>
 
 <p>In the <strong>Target processor settings</strong> window be sure to:</p>
 
@@ -498,15 +498,15 @@ $('#toc').on('click', 'a', function() {
   <li>click the <strong>Next &gt;</strong> button.</li>
 </ul>
 
-<p><img src="/assets/images/2015/08/BlinkyProcessorSettings1.png" alt="Blinky processor settings" /></p>
+<p><img src="/web-preview/assets/images/2015/08/BlinkyProcessorSettings1.png" alt="Blinky processor settings" /></p>
 
 <p>In the <strong>Folders</strong> page leave the suggested folders unchanged and click the <strong>Next &gt;</strong> button.</p>
 
-<p><img src="/assets/images/2015/08/BlinkyFolderSettings.png" alt="Blinky project folder settings" /></p>
+<p><img src="/web-preview/assets/images/2015/08/BlinkyFolderSettings.png" alt="Blinky project folder settings" /></p>
 
 <p>In the <strong>Select Configurations</strong> page leave the suggested Debug/Release configurations checked and click the <strong>Next &gt;</strong> button.</p>
 
-<p><img src="/assets/images/2015/08/BlinkyConfigurations.png" alt="Blinky project configurations" /></p>
+<p><img src="/web-preview/assets/images/2015/08/BlinkyConfigurations.png" alt="Blinky project configurations" /></p>
 
 <p>In the <strong>Cross GNU ARM Toolchain</strong> window:</p>
 
@@ -516,17 +516,17 @@ $('#toc').on('click', 'a', function() {
   <li>click the <strong>Finish</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2015/08/BlinkyToolchain.png" alt="Blinky toolchain and path selection" /></p>
+<p><img src="/web-preview/assets/images/2015/08/BlinkyToolchain.png" alt="Blinky toolchain and path selection" /></p>
 
 <p>Note 1: when selecting the path, be sure you select the <strong>/bin</strong> folder where the programs with long, prefixed names are stored, and not the inner /bin folder where the short name programs may be available.</p>
 
 <p>Note 2: DO NOT SKIP this step, it is mandatory to have a correct toolchain path defined in order for the build to complete correctly.</p>
 
-<p><img src="/assets/images/2013/10/HelloToolchainPath.png" alt="Toolchain path" /></p>
+<p><img src="/web-preview/assets/images/2013/10/HelloToolchainPath.png" alt="Toolchain path" /></p>
 
 <p>The result of the wizard is a simple project, with a <strong>main()</strong> function printing a greeting on the standard output.</p>
 
-<p><img src="/assets/images/2015/08/BlinkyProject.png" alt="The new C++ project" /></p>
+<p><img src="/web-preview/assets/images/2015/08/BlinkyProject.png" alt="The new C++ project" /></p>
 
 <h2 id="build-the-project">Build the project</h2>
 
@@ -537,15 +537,15 @@ $('#toc').on('click', 'a', function() {
   <li>click the <strong>hammer</strong> icon</li>
 </ul>
 
-<p><img src="/assets/images/2013/10/HammerBuild1.png" alt="Hammer Build" /></p>
+<p><img src="/web-preview/assets/images/2013/10/HammerBuild1.png" alt="Hammer Build" /></p>
 
 <p>The build process should leave in the <em>Console</em> window a listing like this:</p>
 
-<p><img src="/assets/images/2015/08/BlinkyProjectBuildConsole.png" alt="The build console" /></p>
+<p><img src="/web-preview/assets/images/2015/08/BlinkyProjectBuildConsole.png" alt="The build console" /></p>
 
 <p>The files created by the build process are left in a folder named by the name of the configuration, for example <em>Debug</em> or <em>Release</em>.</p>
 
-<p><img src="/assets/images/2015/08/BlinkyBuildResult1.png" alt="Blinky Build Result" /></p>
+<p><img src="/web-preview/assets/images/2015/08/BlinkyBuildResult1.png" alt="Blinky Build Result" /></p>
 
 <p>As seen above, the <em>Debug</em> folder is populated with:</p>
 
@@ -559,7 +559,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="assign-a-board-and-device-to-the-project">Assign a board and device to the project</h2>
 
-<p>Although optional, it is highly recommended to assign a board and a device to the project, using the packs definitions. If you did not do it before, install the STM32F4 package, as explained in the <a href="/plugins/packs-manager/" title="Packs manager">Packs Manager</a> page.</p>
+<p>Although optional, it is highly recommended to assign a board and a device to the project, using the packs definitions. If you did not do it before, install the STM32F4 package, as explained in the <a href="/web-preview/plugins/packs-manager/" title="Packs manager">Packs Manager</a> page.</p>
 
 <p>To assign the board and device:</p>
 
@@ -575,11 +575,11 @@ $('#toc').on('click', 'a', function() {
   <li>click <strong>OK</strong></li>
 </ul>
 
-<p><img src="/assets/images/2015/08/BlinkyAssignDevice.png" alt="BlinkyAssignDevice" /></p>
+<p><img src="/web-preview/assets/images/2015/08/BlinkyAssignDevice.png" alt="BlinkyAssignDevice" /></p>
 
 <h2 id="run-the-test-with-qemu"><strong>Run the test with QEMU</strong></h2>
 
-<p>The most convenient way to run this test is to use the <a href="/debug/qemu/" title="The QEMU debugging Eclipse plug-in">QEMU Debugging plug-in</a>. Actually, with the latest plug-ins, you can directly Run the application, you do not need to Debug it.</p>
+<p>The most convenient way to run this test is to use the <a href="/web-preview/debug/qemu/" title="The QEMU debugging Eclipse plug-in">QEMU Debugging plug-in</a>. Actually, with the latest plug-ins, you can directly Run the application, you do not need to Debug it.</p>
 
 <p>As for any debugging plug-in,</p>
 
@@ -592,17 +592,17 @@ $('#toc').on('click', 'a', function() {
   <li>enable <strong>Extra verbose</strong></li>
 </ul>
 
-<p><img src="/assets/images/2015/08/BlinkyQEMUDebuggerTab.png" alt="The QEMU Debugger tab" /></p>
+<p><img src="/web-preview/assets/images/2015/08/BlinkyQEMUDebuggerTab.png" alt="The QEMU Debugger tab" /></p>
 
 <p>When done, click the <strong>Run</strong> button.</p>
 
 <p>If you did not disable the graphic windows, an animated image of the board is shown, with the 4 LEDs blinking.</p>
 
-<p><img src="/assets/images/2015/08/STM32F4-Discovery-LEDs.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
+<p><img src="/web-preview/assets/images/2015/08/STM32F4-Discovery-LEDs.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
 
 <p>The QEMU process also displays some information in its console:</p>
 
-<p><img src="/assets/images/2015/08/QEMUconsole.png" alt="QEMU console with semihosting output" /></p>
+<p><img src="/web-preview/assets/images/2015/08/QEMUconsole.png" alt="QEMU console with semihosting output" /></p>
 
 <h2 id="semihosting">Semihosting</h2>
 
@@ -610,7 +610,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="next-step">Next step</h2>
 
-<p>Once you checked the development environment to be functional, proceed with creating real projects using the <a href="/templates/stm32f/" title="STM32Fxx templates">STM32Fx</a> templates, Freescale <a href="/templates/klxx/" title="KLxx template">KLxx</a> templates, or, if your target processor is not yet supported, using the Generic <a href="/templates/cortexm/" title="Generic Cortex-M template">Cortex-M</a> template.</p>
+<p>Once you checked the development environment to be functional, proceed with creating real projects using the <a href="/web-preview/templates/stm32f/" title="STM32Fxx templates">STM32Fx</a> templates, Freescale <a href="/web-preview/templates/klxx/" title="KLxx template">KLxx</a> templates, or, if your target processor is not yet supported, using the Generic <a href="/web-preview/templates/cortexm/" title="Generic Cortex-M template">Cortex-M</a> template.</p>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -620,7 +620,7 @@ $('#toc').on('click', 'a', function() {
   <li>a wrong or missing toolchain path; go to the project <em>Properties</em> → <em>C/C++ Build</em> → <em>Settings</em> → the <em>Toolchains</em> tab and define the correct path;</li>
 </ul>
 
-<p><img src="/assets/images/2015/08/GlobalToolsPath.png" alt="Global Tools Path" /></p>
+<p><img src="/web-preview/assets/images/2015/08/GlobalToolsPath.png" alt="Global Tools Path" /></p>
 
 <p>Set the toolchain path for all projects and workspaces.</p>
 
@@ -629,11 +629,11 @@ $('#toc').on('click', 'a', function() {
   <li>a wrong or missing QEMU path; go to the project <strong>(Window →) Preferences</strong> → <strong>MCU</strong> → <strong>Global QEMU Path</strong> (or <strong>Workspace QEMU Path</strong>) and define the correct path;</li>
 </ul>
 
-<p><img src="/assets/images/2018/qemu-preferences.png" alt="The QEMU path" /></p>
+<p><img src="/web-preview/assets/images/2018/qemu-preferences.png" alt="The QEMU path" /></p>
 
 <h2 id="support">Support</h2>
 
-<p>If something went wrong and you cannot build the project, please check the <a href="/plugins/mbs/">How to use</a>, the <a href="/support/faq/">FAQ</a> and the <a href="/support/known-issues/">Known issues</a> pages. If you do not find the answer to your question, please read the <a href="/support/">Support</a> page on how to record a support request in the Support tracker. Do not post comments on this page unless they are related to the text (the phrasing is not correct, you discovered typos, etc).</p>
+<p>If something went wrong and you cannot build the project, please check the <a href="/web-preview/plugins/mbs/">How to use</a>, the <a href="/web-preview/support/faq/">FAQ</a> and the <a href="/web-preview/support/known-issues/">Known issues</a> pages. If you do not find the answer to your question, please read the <a href="/web-preview/support/">Support</a> page on how to record a support request in the Support tracker. Do not post comments on this page unless they are related to the text (the phrasing is not correct, you discovered typos, etc).</p>
 
 
 
