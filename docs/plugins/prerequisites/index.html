@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" npmxpackinstall">
+<meta name="description" content="Install Java 11, xpm, toolchains and debugging tools.">
+<meta name="keywords" content=" npmxpackinstalljavajdkxpm">
 <title>How to install the Eclipse prerequisites | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://gnu-mcu-eclipse.github.io/web-preview/css/syntax.css">
 
@@ -257,7 +257,121 @@
           
           
           
+          <li><a title="Install A New Eclipse" href="/web-preview/plugins/install/">Install A New Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Update An Existing Eclipse" href="/web-preview/plugins/update/">Update An Existing Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Alternate Installs" href="/web-preview/plugins/install-alternate/">Alternate Installs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Workspace Preferences" href="/web-preview/eclipse/workspace/preferences/">Workspace Preferences</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/web-preview/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="CMSIS Packs" href="/web-preview/plugins/packs-manager/">CMSIS Packs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SEGGER J-Link" href="/web-preview/debug/jlink/install/">SEGGER J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Troubleshoot" href="/web-preview/plugins/troubleshoot/">Troubleshoot</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="About" href="/web-preview/about/">About</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Debug" href="#">Debug</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/web-preview/debug/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install" href="/web-preview/debug/install/">Install</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="J-Link" href="/web-preview/debug/jlink/">J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD" href="/web-preview/debug/openocd/">OpenOCD</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="QEMU Arm" href="/web-preview/debug/qemu/">QEMU Arm</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Assign CMSIS Device" href="/web-preview/eclipse/project/assign-device/">Assign CMSIS Device</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Peripheral Registers" href="/web-preview/debug/peripheral-registers/">Peripheral Registers</a></li>
           
           
           
@@ -430,9 +544,32 @@
 <div class="post-content">
 
    
-    <div class="summary">
+    <div class="summary">Install Java 11, xpm, toolchains and debugging tools.
 </div>
    
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
 
     
 
@@ -476,6 +613,8 @@ for a wider range of platforms, see the <strong>Alternate solutions</strong> bel
 <div class="tab-content">
 	<div role="tabpanel" class="tab-pane active" id="windows_1">
 		
+<p>Current Windows distributions do not include Java.</p>
+
 <p>The recommended package is the latest version from the official
 <a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
 
@@ -509,6 +648,8 @@ which one to use by controlling the Path.</p>
 	</div>
 	<div role="tabpanel" class="tab-pane" id="macos_1">
 		
+<p>The current macOS releases no longer pack Java.</p>
+
 <p>The recommended package is the latest version from the official
 <a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
 
@@ -551,7 +692,8 @@ to configure the user path via <code class="highlighter-rouge">launchctl</code>:
 <span class="nb">sudo </span>reboot
 </code></pre></div></div>
 
-<p>For this configuration to become effective, it is necessary to reboot.</p>
+<p>As shown before, for this configuration to become effective, it is
+necessary to reboot.</p>
 
 <p>To check if the new path was configured properly:</p>
 
@@ -569,8 +711,15 @@ environment variable in the shell startup files (like <code class="highlighter-r
 	</div>
 	<div role="tabpanel" class="tab-pane" id="linux_1">
 		
-<p>On most modern Linux distributions, OpenJDK is available as a package,
-and can be installed via the sytem package manager.</p>
+<p>On most modern Linux distributions, OpenJDK is available as a package.</p>
+
+<p>To check if it is already installed, ask the version:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -version
+</code></pre></div></div>
+
+<p>If it is not installed, or it is not at least Java 11,
+install it via the package manager.</p>
 
 <p>For example on Ubuntu:</p>
 
@@ -614,7 +763,8 @@ mkdir <span class="nt">-p</span> <span class="k">${</span><span class="nv">HOME<
 manager without using a shell, you might need to set the GUI path in a way
 specific to the window manager.</p>
 
-<p>TODO: give some examples.</p>
+<p>On some distributions (like Ubuntu) this can be achieved via <code class="highlighter-rouge">~/.xsessionrc</code>,
+sourced from one of the files in <code class="highlighter-rouge">/etc/X11/Xsession.d/</code>.</p>
 
 <p>It is possible to install multiple versions on the same system, and chose
 which one to use by controlling the PATH.</p>
@@ -623,12 +773,15 @@ which one to use by controlling the PATH.</p>
 	</div>
 </div>
 
-<h2 id="alternate-solutions">Alternate solutions</h2>
+<h2 id="alternate-java-distributions">Alternate Java distributions</h2>
 
 <p>For those who prefer alternate solutions, the second recommendation
 goes to <a href="https://adoptopenjdk.net/">AdoptOpenJDK</a>
 which provides prebuilt OpenJDK binaries for an even wider
 range of platforms.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since recent Eclipses are all 64-bit, be sure
+you install a 64-bit Java.</div>
 
 <h2 id="install-node--xpm">Install node &amp; xpm</h2>
 
@@ -650,7 +803,8 @@ the <a href="https://xpack.github.io/install/">node</a> install page):</p>
 <span class="nb">exit</span>
 </code></pre></div></div>
 
-<p>In a new terminal, to benefit from the definitions added by the script:</p>
+<p>In a new terminal, to benefit from the environment variables
+added by the script:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm install <span class="nt">--lts</span> node
 nvm use node
@@ -682,8 +836,25 @@ xpm install <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-g
 <p>All xPacks are installed in a central folder in the user home; check
 the xpm output for the actual location.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since xPacks are installed in <em>dot</em> folders,
-be sure you configure your file manager to show hidden files.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since xPacks are installed in <em>.dot</em> folders,
+be sure to configure the file manager to show hidden files.</div>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+
+<h3 id="discontinued-32-bit-support">Discontinued 32-bit support</h3>
+
+<p>All recent Eclipses are 64-bit and require 64-bit platforms; using older
+32-bit systems is still possible with older Eclipse versions, but is
+discouraged.</p>
+
+<h3 id="eclipse-neon-and-later">Eclipse Neon and later</h3>
+
+<p>The Embedded CDT plug-ins are based on the API defined in CDT 9.2.1, which
+was published with <a href="https://www.eclipse.org/neon/">Eclipse 4.6 Neon</a>, released
+in 2016.</p>
+
+<p>If, for any reason, you need to use an older Eclipse (like, for example,
+for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
 
 
         
@@ -720,7 +891,7 @@ be sure you configure your file manager to show hidden files.</div>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Jul 14, 2020<br/> Site last generated: Aug 17, 2020 <br />
+<span>Page last updated:</span> Jul 14, 2020<br/> Site last generated: Aug 18, 2020 <br />
                 </div>
             </div>
 </footer>

@@ -68,6 +68,17 @@
 
 
 
+{
+"title": "Alternate ways to install the Eclipse Embedded CDT plug-ins",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/plugins/install-alternate/",
+"summary": "<p>Other ways to install the Embedded CDT plug-ins on an existing Eclipse.</p>"
+}
+,
+
+
+
 
 
 {
@@ -305,11 +316,11 @@
 
 
 {
-"title": "How to install the Eclipse Embedded CDT plug-ins",
+"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
 "tags": "",
 "keywords": "",
 "url": "/web-preview/plugins/install/",
-"summary": ""
+"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
 }
 ,
 
@@ -481,9 +492,9 @@
 {
 "title": "How to install the Eclipse prerequisites",
 "tags": "",
-"keywords": "npmxpackinstall",
+"keywords": "npmxpackinstalljavajdkxpm",
 "url": "/web-preview/plugins/prerequisites/",
-"summary": ""
+"summary": "<p>Install Java 11, xpm, toolchains and debugging tools.</p>"
 }
 ,
 
@@ -553,6 +564,28 @@
 
 
 
+
+{
+"title": "Troubleshooting Eclipse Embedded CDT install",
+"tags": "",
+"keywords": "install",
+"url": "/web-preview/plugins/troubleshoot/",
+"summary": ""
+}
+,
+
+
+
+
+
+{
+"title": "How to update the Eclipse Embedded CDT plug-ins",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/plugins/update/",
+"summary": ""
+}
+,
 
 
 
