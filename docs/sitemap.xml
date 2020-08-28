@@ -482,64 +482,12 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/about/</loc>
     <lastmod>2020-08-28T16:39:01+00:00</lastmod>
   </url>
+  
+  
   
   
   
@@ -605,10 +553,20 @@
   
   
   
+  
+  
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/tutorials/blinky-arm/</loc>
     <lastmod>2020-08-28T16:45:02+00:00</lastmod>
   </url>
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -631,6 +589,8 @@
   
   
   
+  
+  
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/support/faq/</loc>
     <lastmod>2020-08-28T16:39:00+00:00</lastmod>
@@ -644,6 +604,10 @@
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/plugins/features/</loc>
     <lastmod>2020-08-28T16:38:58+00:00</lastmod>
   </url>
+  
+  
+  
+  
   
   
   
@@ -723,6 +687,10 @@
   
   
   
+  
+  
+  
+  
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/debug/jlink/install/</loc>
     <lastmod>2020-08-28T16:45:02+00:00</lastmod>
@@ -734,6 +702,8 @@
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/debug/jlink/</loc>
     <lastmod>2020-08-28T16:45:02+00:00</lastmod>
   </url>
+  
+  
   
   
   
@@ -775,6 +745,12 @@
   
   
   
+  
+  
+  
+  
+  
+  
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/debug/openocd/riscv/</loc>
     <lastmod>2020-08-28T16:45:02+00:00</lastmod>
@@ -788,6 +764,8 @@
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/debug/openocd/</loc>
     <lastmod>2020-08-28T16:45:02+00:00</lastmod>
   </url>
+  
+  
   
   
   
@@ -811,6 +789,8 @@
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/debug/peripheral-registers/</loc>
     <lastmod>2020-08-28T16:45:02+00:00</lastmod>
   </url>
+  
+  
   
   
   
@@ -845,6 +825,8 @@
   
   
   
+  
+  
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/debug/qemu/</loc>
     <lastmod>2020-08-28T16:45:02+00:00</lastmod>
@@ -860,10 +842,28 @@
   
   
   
+  
+  
+  
+  
+  
+  
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/templates/stm32f/</loc>
     <lastmod>2020-08-28T16:45:02+00:00</lastmod>
   </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
