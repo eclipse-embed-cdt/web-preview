@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Eclipse Embedded CDT Plug-ins Features | Eclipse Embedded CDT</title>
+<title>Eclipse Embedded CDT Features | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://gnu-mcu-eclipse.github.io/web-preview/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/web-preview/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT Plug-ins Features">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT Features">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -257,14 +257,14 @@
           
           
           
-          <li><a title="Install A New Eclipse" href="/web-preview/plugins/install/">Install A New Eclipse</a></li>
+          <li><a title="Install a New Eclipse" href="/web-preview/plugins/install/">Install a New Eclipse</a></li>
           
           
           
           
           
           
-          <li><a title="Update An Existing Eclipse" href="/web-preview/plugins/update/">Update An Existing Eclipse</a></li>
+          <li><a title="Update an Existing Eclipse" href="/web-preview/plugins/update/">Update an Existing Eclipse</a></li>
           
           
           
@@ -279,13 +279,6 @@
           
           
           <li><a title="Workspace Preferences" href="/web-preview/eclipse/workspace/preferences/">Workspace Preferences</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Blinky Arm Tutorial" href="/web-preview/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
           
           
           
@@ -372,6 +365,59 @@
           
           
           <li><a title="Peripheral Registers" href="/web-preview/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/web-preview/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Templates" href="#">Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/web-preview/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/web-preview/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/web-preview/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/web-preview/templates/cortexm/">Generic Cortex-M Template</a></li>
           
           
           
@@ -536,7 +582,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Eclipse Embedded CDT Plug-ins Features</h1>
+   <h1 class="post-title-main">Eclipse Embedded CDT Features</h1>
 </div>
 
 
@@ -698,7 +744,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="the-packages-manager-perspective">The packages manager perspective</h2>
 
-<p>The GNU MCU Eclipse plug-ins were the first open source tools to benefit from the new CMSIS Packs technology promoted by Arm.</p>
+<p>The Eclipse Embedded CDT plug-ins were the first open source tools to benefit from the new CMSIS Packs technology promoted by Arm.</p>
 
 <p>Packages are a convenient way to distribute software components, hardware descriptions and documentation, in a structured way.</p>
 
@@ -741,14 +787,16 @@ $('#toc').on('click', 'a', function() {
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'embed-cdt'; // required: replace example with your forum shortname
+        var disqus_config = function () {
+            this.page.url = '/web-preview';  // Your page's canonical URL variable
+            this.page.identifier = '/plugins/features/'; // Your page's unique identifier variable
+        };
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -764,7 +812,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 10, 2015<br/> Site last generated: Aug 18, 2020 <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Aug 28, 2020 <br />
                 </div>
             </div>
 </footer>

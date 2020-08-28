@@ -257,14 +257,14 @@
           
           
           
-          <li><a title="Install A New Eclipse" href="/web-preview/plugins/install/">Install A New Eclipse</a></li>
+          <li><a title="Install a New Eclipse" href="/web-preview/plugins/install/">Install a New Eclipse</a></li>
           
           
           
           
           
           
-          <li><a title="Update An Existing Eclipse" href="/web-preview/plugins/update/">Update An Existing Eclipse</a></li>
+          <li><a title="Update an Existing Eclipse" href="/web-preview/plugins/update/">Update an Existing Eclipse</a></li>
           
           
           
@@ -279,13 +279,6 @@
           
           
           <li><a title="Workspace Preferences" href="/web-preview/eclipse/workspace/preferences/">Workspace Preferences</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Blinky Arm Tutorial" href="/web-preview/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
           
           
           
@@ -372,6 +365,59 @@
           
           
           <li><a title="Peripheral Registers" href="/web-preview/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/web-preview/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Templates" href="#">Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/web-preview/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="STM32Fxx Templates" href="/web-preview/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/web-preview/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/web-preview/templates/cortexm/">Generic Cortex-M Template</a></li>
           
           
           
@@ -573,7 +619,7 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="overview">Overview</h2>
 
-<p>STM provides a large range of Cortex-M micro-controllers, grouped in several families. The GNU MCU Eclipse plug-ins provide support for F0, F1, F2, F3 and F4. Since all templates share common characteristics, the examples shown here will refer only to the F4 family.</p>
+<p>STM provides a large range of Cortex-M micro-controllers, grouped in several families. The Eclipse Embedded CDT plug-ins provide support for F0, F1, F2, F3, F4 and F7. Since all templates share common characteristics, the examples shown here will refer only to the F4 family.</p>
 
 <h2 id="create-a-new-project">Create a new project</h2>
 
@@ -634,7 +680,8 @@ $('#toc').on('click', 'a', function() {
 
 <p>Some low cost development boards do not include the standard JTAG connector, but have an on-board version of a JTAG probe. For example, the STM32F4DISCOVERY includes a version of ST/LINK V2, and the board can be directly connected via USB to the development machine. The portable method of using the ST/LINK V2 is via OpenOCD.</p>
 
-<p>For more details on debugging, please refer to the specific <a href="/web-preview/debug/" title="Debugging">debug</a> pages.</p>
+<p>For more details on debugging, please refer to the specific 
+<a href="/web-preview/debug/">debug</a> pages.</p>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -644,7 +691,6 @@ $('#toc').on('click', 'a', function() {
   <li>a wrong or missing toolchain path; go to the project properties, C/C++ Build → Setting → the Toolchains tab and define the correct path;</li>
   <li>missing build tools (make &amp; rm) on Windows; install the build tools.</li>
 </ul>
-
 
 
         
@@ -665,7 +711,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
- Site last generated: Aug 18, 2020 <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Aug 28, 2020 <br />
                 </div>
             </div>
 </footer>

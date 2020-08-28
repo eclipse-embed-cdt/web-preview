@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>How to use the managed build plug-ins? | Eclipse Embedded CDT</title>
+<title>How to use the managed build plug-ins | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://gnu-mcu-eclipse.github.io/web-preview/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/web-preview/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="How to use the managed build plug-ins?">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="How to use the managed build plug-ins">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -257,14 +257,14 @@
           
           
           
-          <li><a title="Install A New Eclipse" href="/web-preview/plugins/install/">Install A New Eclipse</a></li>
+          <li><a title="Install a New Eclipse" href="/web-preview/plugins/install/">Install a New Eclipse</a></li>
           
           
           
           
           
           
-          <li><a title="Update An Existing Eclipse" href="/web-preview/plugins/update/">Update An Existing Eclipse</a></li>
+          <li><a title="Update an Existing Eclipse" href="/web-preview/plugins/update/">Update an Existing Eclipse</a></li>
           
           
           
@@ -279,13 +279,6 @@
           
           
           <li><a title="Workspace Preferences" href="/web-preview/eclipse/workspace/preferences/">Workspace Preferences</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Blinky Arm Tutorial" href="/web-preview/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
           
           
           
@@ -372,6 +365,59 @@
           
           
           <li><a title="Peripheral Registers" href="/web-preview/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/web-preview/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Templates" href="#">Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/web-preview/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/web-preview/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/web-preview/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/web-preview/templates/cortexm/">Generic Cortex-M Template</a></li>
           
           
           
@@ -536,7 +582,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">How to use the managed build plug-ins?</h1>
+   <h1 class="post-title-main">How to use the managed build plug-ins</h1>
 </div>
 
 
@@ -601,7 +647,7 @@ This program built for i386-apple-darwin11.3.0
 
 <p>Although the managed build process does not require special features from make, it is mandatory that it is a <strong>GNU Make</strong>, preferably as recent as possible.</p>
 
-<p>On Windows things are a bit more complicated, since neither make nor rm are part of the standard distribution, and need to be installed separately. For more information, please read the separate page <a href="https://xpack.github.io/windows-build-tools/" title="Build tools (make &amp; rm) on Windows">Build tools (make &amp; rm) on Windows</a>.</p>
+<p>On Windows things are a bit more complicated, since neither make nor rm are part of the standard distribution, and need to be installed separately. For more information, please read the separate page <a href="https://xpack.github.io/windows-build-tools/">Build tools (make &amp; rm) on Windows</a>.</p>
 
 <h3 id="toolchain-path">Toolchain path</h3>
 
@@ -619,7 +665,7 @@ This program built for i386-apple-darwin11.3.0
 
 <p><img src="/web-preview/assets/images/2013/10/NewCProject.png" alt="NewCProject" /></p>
 
-<p>For more details on creating projects, please see the <strong><a href="/web-preview/tutorials/blinky-arm/" title="Create a test project tutorial">Create test project tutorial</a></strong> separate page.</p>
+<p>For more details on creating projects, please see the <a href="/web-preview/tutorials/blinky-arm/">Create test project tutorial</a> separate page.</p>
 
 <h3 id="assign-a-device-to-the-project">Assign a device to the project</h3>
 
@@ -657,8 +703,8 @@ This program built for i386-apple-darwin11.3.0
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MEMORY
 {
-  FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 128K
-  RAM (rwx)  : ORIGIN = 0x20000000, LENGTH = 20K
+	FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 128K
+	RAM (rwx)  : ORIGIN = 0x20000000, LENGTH = 20K
 }
 </code></pre></div></div>
 
@@ -737,7 +783,7 @@ This program built for i386-apple-darwin11.3.0
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
- Site last generated: Aug 18, 2020 <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Aug 28, 2020 <br />
                 </div>
             </div>
 </footer>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>How to install the debugging components? | Eclipse Embedded CDT</title>
+<title>How to install the debugging components | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://gnu-mcu-eclipse.github.io/web-preview/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -200,7 +200,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/web-preview/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="How to install the debugging components?">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="How to install the debugging components">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -257,14 +257,14 @@
           
           
           
-          <li><a title="Install A New Eclipse" href="/web-preview/plugins/install/">Install A New Eclipse</a></li>
+          <li><a title="Install a New Eclipse" href="/web-preview/plugins/install/">Install a New Eclipse</a></li>
           
           
           
           
           
           
-          <li><a title="Update An Existing Eclipse" href="/web-preview/plugins/update/">Update An Existing Eclipse</a></li>
+          <li><a title="Update an Existing Eclipse" href="/web-preview/plugins/update/">Update an Existing Eclipse</a></li>
           
           
           
@@ -279,13 +279,6 @@
           
           
           <li><a title="Workspace Preferences" href="/web-preview/eclipse/workspace/preferences/">Workspace Preferences</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Blinky Arm Tutorial" href="/web-preview/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
           
           
           
@@ -372,6 +365,59 @@
           
           
           <li><a title="Peripheral Registers" href="/web-preview/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/web-preview/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Templates" href="#">Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/web-preview/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/web-preview/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/web-preview/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/web-preview/templates/cortexm/">Generic Cortex-M Template</a></li>
           
           
           
@@ -536,7 +582,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">How to install the debugging components?</h1>
+   <h1 class="post-title-main">How to install the debugging components</h1>
 </div>
 
 
@@ -603,7 +649,7 @@ $('#toc').on('click', 'a', function() {
   <li>the hardware <strong>drivers</strong> required by the JTAG/SWD probe</li>
 </ul>
 
-<p>The GNU MCU Eclipse project recommends three debugging solutions:</p>
+<p>The Eclipse Embedded CDT project recommends three debugging solutions:</p>
 
 <ul>
   <li>the <strong>SEGGER J-Link</strong> probe &amp; GDB server, as <strong>a highly professional solution</strong>, supporting both JTAG and SWD, plus SWO trace output;</li>
@@ -647,7 +693,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>J-Link and OpenOCD are not the only existing solutions, but probably are the most portable ones. J-Link is a single piece of hardware that can be used with most ARM processors. At the other end of the spectrum is OpenOCD, a single piece of software that, within limits, can be used with most JTAG probes, especially on GNU/Linux.</p>
 
-<p>If portability is not your concern, and you prefer other GDB servers, please feel free to use them, but GNU MCU Eclipse plug-ins do not provide support from them.</p>
+<p>If portability is not your concern, and you prefer other GDB servers, please feel free to use them, but Eclipse Embedded CDT does not provide support from them.</p>
 
 <p>To save you time, we compiled a list of other GDB servers, with some of their features and  limitations:</p>
 
@@ -664,7 +710,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="eclipse-debugging-plug-ins">Eclipse debugging plug-ins</h2>
 
-<p>The debugging plug-ins come together with the other GNU MCU Eclipse plug-ins, and should be installed in the same step, detailed in the <a href="/web-preview/plugins/install/" title="Plug-ins install">plug-ins install</a> page.</p>
+<p>The debugging plug-ins come together with the other Eclipse Embedded CDT plug-ins, and should be installed in the same step, detailed in the <a href="/web-preview/plugins/install/" title="Plug-ins install">plug-ins install</a> page.</p>
 
 <p>Be sure you enable the entries named <strong>GNU ARM C/C++ J-Link Debugging</strong>, <strong>GNU ARM C/C++ OpenOCD Debugging</strong> and <strong>GNU ARM C/C++ QEMU Debugging</strong>.</p>
 
@@ -698,7 +744,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
- Site last generated: Aug 18, 2020 <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Aug 28, 2020 <br />
                 </div>
             </div>
 </footer>

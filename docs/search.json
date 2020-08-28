@@ -210,7 +210,7 @@
 
 
 {
-"title": "Eclipse Embedded CDT Plug-ins Features",
+"title": "Eclipse Embedded CDT Features",
 "tags": "",
 "keywords": "",
 "url": "/web-preview/plugins/features/",
@@ -296,7 +296,7 @@
 "tags": "",
 "keywords": "eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu",
 "url": "/web-preview/",
-"summary": "<p>Eclipse Embedded C/C++ Development Tools (formerly GNU MCU/ARM Eclipse).</p>"
+"summary": "<p>Eclipse Embedded C/C++ Development Tools (formerly <strong>GNU MCU/ARM Eclipse</strong>).</p>"
 }
 ,
 
@@ -305,7 +305,7 @@
 
 
 {
-"title": "How to install the debugging components?",
+"title": "How to install the debugging components",
 "tags": "",
 "keywords": "",
 "url": "/web-preview/debug/install/",
@@ -329,7 +329,7 @@
 
 
 {
-"title": "How to install the SEGGER J-Link?",
+"title": "How to install the SEGGER J-Link",
 "tags": "",
 "keywords": "",
 "url": "/web-preview/debug/jlink/install/",
@@ -388,7 +388,7 @@
 
 
 {
-"title": "How to use the managed build plug-ins?",
+"title": "How to use the managed build plug-ins",
 "tags": "",
 "keywords": "",
 "url": "/web-preview/plugins/mbs/",
