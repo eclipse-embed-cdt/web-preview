@@ -649,15 +649,17 @@ $('#toc').on('click', 'a', function() {
 
    <p>If you are new to Arm development, it is recommended to follow this short
 tutorial and learn how to build a simple test executable program that will
-blink a LED.</p>
+blink a LED. You do not need any physical hardware for this, the test uses
+an emulated STM32F4DISCOVERY board.</p>
 
-<p>Note: this tutorial was created with <strong>GNU Arm GCC</strong> toolchains in mind,
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This tutorial was created with
+<strong>GNU Arm GCC</strong> toolchains in mind,
 like the <strong>xPack GNU Arm Embedded GCC</strong>, or <strong>GNU Arm Embedded Toolchain</strong>.
 Only when using this toolchain the build is guaranteed to succeed. Using
 other toolchains might be possible, but small changes might be necessary
-in the source code and in the linker options.</p>
+in the source code and in the linker options.</div>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Follow this steps <em>by the book</em>, without any
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Follow this steps <em>by the book</em>, without any
 alterations, especially if you are new to Eclipse. This will save you a
 lot of time.</div>
 
@@ -675,7 +677,7 @@ if you use Windows as your development platform.</p>
 and to install the desired
 <a href="/web-preview/plugins/packs-manager/">CMSIS packs</a>.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The multi-LED template is currently available
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The multi-LED template is currently available
 only for ST32F4DISCOVERY, since it has 4 LEDs, and only
 in C++, since it allows to easily instantiate multiple BlinkLed objects.</div>
 
@@ -781,14 +783,19 @@ correctly.</div>
   <li>a program map, with all symbols and their associated addresses (<strong>blinky.map</strong>)</li>
 </ul>
 
-<h2 id="assign-a-board-and-device-to-the-project">Assign a board and device to the project</h2>
+<h2 id="assign-a-board-and-a-device-to-the-project">Assign a board and a device to the project</h2>
 
 <p>Although optional, it is highly recommended to assign a board and a device
 to the project, using the packs definitions. If you did not do it before,
-install the STM32F4 package, as explained in the
+install the <strong>STM32F4xx_DFP</strong> package, as explained in the
 <a href="/web-preview/plugins/packs-manager/">Packs Manager</a> page.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Be sure you install the <strong>STM32F4xx_DFP</strong> package.</div>
+<p><img src="/web-preview/assets/images/2020/packs_filter_stm32f4.png" alt="BlinkyInstallPack" /></p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Be sure you really install the <strong>STM32F4xx_DFP</strong>
+package. Simply updating the list of packages is not enough, you need to
+navigate the <strong>Keil</strong> group, select the STM32F4xx_DFP package and install it,
+otherwise the boad will not show in the next step.</div>
 
 <p>To assign the board and device:</p>
 
@@ -806,19 +813,18 @@ install the STM32F4 package, as explained in the
 
 <p><img src="/web-preview/assets/images/2015/08/BlinkyAssignDevice.png" alt="BlinkyAssignDevice" /></p>
 
-<h2 id="run-the-test-with-qemu">Run the test with QEMU</h2>
+<h2 id="debug-the-test-with-qemu-arm">Debug the test with QEMU Arm</h2>
 
-<p>The most convenient way to run this test is to use the
-<a href="/web-preview/debug/qemu/">QEMU Debugging plug-in</a>.
-Actually, with the latest plug-ins, you can also directly Run the application,
-you do not need to Debug it.</p>
+<p>The most convenient way to run a debug session with this test is to use the
+<a href="/web-preview/debug/qemu/">QEMU Debugging plug-in</a>; you don’t need
+any physical hardware.</p>
 
 <p>As for any debugging plug-in,</p>
 
 <ul>
   <li>select the <strong>blinky.elf</strong> file</li>
-  <li>either with right click <em>Run As…</em> or in the <em>Run</em> menu,
-select <strong>Run Configurations</strong></li>
+  <li>either with right click <em>Debug As…</em> or in the <em>Debug</em> menu,
+select <strong>Debug Configurations</strong></li>
   <li>doble click the <em>GDB QEMU Debugging</em></li>
   <li>select the <em>Debugger</em> tab</li>
   <li>check if the <em>Board name:</em> and <em>Device name:</em> are correctly filled-in;
@@ -829,16 +835,28 @@ be filled in manually;</li>
 
 <p><img src="/web-preview/assets/images/2015/08/BlinkyQEMUDebuggerTab.png" alt="The QEMU Debugger tab" /></p>
 
-<p>When done, click the <strong>Run</strong> button.</p>
+<p>When done, click the <strong>Debug</strong> button.</p>
 
 <p>If you did not disable the graphic windows, an animated image of the board
 is shown, with the 4 LEDs blinking.</p>
 
 <p><img src="/web-preview/assets/images/2015/08/STM32F4-Discovery-LEDs.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
 
-<p>The QEMU process also displays some information in its console:</p>
+<p>The Eclipse debugger is active, with a breakpoint in <code class="highlighter-rouge">main()</code>. From here you
+can either step over several instructions, or click Resume
+(the green right pointing triangle) and watch the program run.</p>
+
+<p><img src="/web-preview/assets/images/2020/blinky_debug_halt.png" alt="blinky debug" /></p>
+
+<p>The QEMU process will display some information in its console:</p>
 
 <p><img src="/web-preview/assets/images/2015/08/QEMUconsole.png" alt="QEMU console with semihosting output" /></p>
+
+<h2 id="terminate">Terminate</h2>
+
+<p>The test will run for about 20 seconds, and terminate by itself.</p>
+
+<p>To cancel it earlier, click the Terminate button (the top red square).</p>
 
 <h2 id="semihosting">Semihosting</h2>
 
