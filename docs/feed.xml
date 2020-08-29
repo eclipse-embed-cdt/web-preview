@@ -5,8 +5,8 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://gnu-mcu-eclipse.github.io/web-preview/</link>
         <atom:link href="https://gnu-mcu-eclipse.github.io/web-preview/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 28 Aug 2020 20:50:06 +0000</pubDate>
-        <lastBuildDate>Fri, 28 Aug 2020 20:50:06 +0000</lastBuildDate>
+        <pubDate>Sat, 29 Aug 2020 10:50:10 +0000</pubDate>
+        <lastBuildDate>Sat, 29 Aug 2020 10:50:10 +0000</lastBuildDate>
         <generator>Jekyll v3.8.5</generator>
         
         <item>
@@ -85,7 +85,7 @@
         
         <item>
             <title>The GNU MCU Eclipse project has new forums</title>
-            <description>&lt;p&gt;The GNU MCU Eclipse forum was relocated from the &lt;a href=&quot;https://www.element14.com/community/groups/gnu-arm-eclipse&quot;&gt;Element14&lt;/a&gt; siteto a dedicated section in the&lt;a href=&quot;https://www.tapatalk.com/groups/xpack/&quot;&gt;xPack forum&lt;/a&gt;.&lt;/p&gt;</description>
+            <description>&lt;p&gt;The GNU MCU Eclipse forum was relocated from the&lt;a href=&quot;https://www.element14.com/community/groups/gnu-arm-eclipse&quot;&gt;Element14&lt;/a&gt; siteto a dedicated section in the&lt;a href=&quot;https://www.tapatalk.com/groups/xpack/&quot;&gt;xPack forum&lt;/a&gt;.&lt;/p&gt;</description>
             <pubDate>Wed, 25 Sep 2019 20:08:00 +0000</pubDate>
             <link>https://gnu-mcu-eclipse.github.io/web-preview/blog/2019/09/25/new-forums/</link>
             <guid isPermaLink="true">https://gnu-mcu-eclipse.github.io/web-preview/blog/2019/09/25/new-forums/</guid>
@@ -121,7 +121,7 @@
         
         <item>
             <title>GNU MCU Eclipse plug-ins v4.5.1-201901011632 released</title>
-            <description>&lt;p&gt;Version 4.5.1-201901011632 is a new release; it provides several bug fixes and enhancements. The main change is the removal ofsome RISC-V options from the Setting page.&lt;/p&gt;</description>
+            <description>&lt;p&gt;Version 4.5.1-201901011632 is a new release; it providesseveral bug fixes and enhancements. The main change is the removal ofsome RISC-V options from the Setting page.&lt;/p&gt;</description>
             <pubDate>Tue, 01 Jan 2019 16:09:00 +0000</pubDate>
             <link>https://gnu-mcu-eclipse.github.io/web-preview/blog/2019/01/01/plugins-v4.5.1-201901011632-released/</link>
             <guid isPermaLink="true">https://gnu-mcu-eclipse.github.io/web-preview/blog/2019/01/01/plugins-v4.5.1-201901011632-released/</guid>
@@ -141,7 +141,7 @@
         
         <item>
             <title>GNU MCU Eclipse plug-ins v4.4.2-201809300659 released</title>
-            <description>&lt;p&gt;Version 4.4.2-201809300659 is a maintenance release; it provides several bug fixes and enhancements.&lt;/p&gt;</description>
+            <description>&lt;p&gt;Version 4.4.2-201809300659 is a maintenance release; it providesseveral bug fixes and enhancements.&lt;/p&gt;</description>
             <pubDate>Thu, 30 Aug 2018 08:50:00 +0000</pubDate>
             <link>https://gnu-mcu-eclipse.github.io/web-preview/blog/2018/08/30/plugins-v4.4.2-201809300659-released/</link>
             <guid isPermaLink="true">https://gnu-mcu-eclipse.github.io/web-preview/blog/2018/08/30/plugins-v4.4.2-201809300659-released/</guid>
@@ -159,7 +159,7 @@
         
         <item>
             <title>GNU MCU Eclipse plug-ins v4.4.1-201807211108 released</title>
-            <description>&lt;p&gt;Version 4.4.1-201807211108 is a new release; the main addition is support for &lt;a href=&quot;https://docs.jumper.io&quot;&gt;Jumper Virtual Lab&lt;/a&gt;; it also provides several bug fixes and enhancements.&lt;/p&gt;</description>
+            <description>&lt;p&gt;Version 4.4.1-201807211108 is a new release; the main addition is support for&lt;a href=&quot;https://docs.jumper.io&quot;&gt;Jumper Virtual Lab&lt;/a&gt;; it also provides several bug fixes andenhancements.&lt;/p&gt;</description>
             <pubDate>Sat, 21 Jul 2018 11:22:00 +0000</pubDate>
             <link>https://gnu-mcu-eclipse.github.io/web-preview/blog/2018/07/21/plugins-v4.4.1-201807211108-released/</link>
             <guid isPermaLink="true">https://gnu-mcu-eclipse.github.io/web-preview/blog/2018/07/21/plugins-v4.4.1-201807211108-released/</guid>

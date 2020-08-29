@@ -391,6 +391,36 @@
       
   
   <li>
+      <a title="How It Works" href="#">How It Works</a>
+      <ul>
+          
+          
+          
+          <li><a title="The Managed Build System" href="/web-preview/plugins/managed-build/">The Managed Build System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The CDT Indexer" href="/web-preview/eclipse/cdt/indexer/">The CDT Indexer</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The Hardware Debug Plug-ins" href="/web-preview/eclipse/cdt/hardware-debug/">The Hardware Debug Plug-ins</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
       <a title="Templates" href="#">Templates</a>
       <ul>
           
@@ -622,31 +652,41 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="overview">Overview</h2>
 
-<p>The main prerequisite to run the Eclipse Embedded CDT is <strong>Java</strong>. Generally
-Java is not available by default on most platforms, and requires a separate
-installation.</p>
+<h3 id="java">Java</h3>
 
-<p>Although not mandatory, but highly recommended, the second prerequisite
-is <strong>xpm</strong> (the xPack Package Manager), which is a <strong>Node.js</strong>
-portable application.</p>
+<p>The main prerequisite to run the Eclipse Embedded CDT is Java.
+Generally Java is not available by default on most platforms, and requires
+a separate installation.</p>
 
-<p>To build projects, on Windows it is necessary to install <strong>make</strong>, available
-from the <strong>Windows Build Tools</strong>.</p>
+<h3 id="other-tools">Other tools</h3>
 
-<p>To build Arm projects, an <strong>Arm toolchain</strong> is required; similarly, for
-RISC-V projects, a <strong>RISC-V toolchain</strong> is required.</p>
+<p>Here is a list of other tools/packages that need to be installed <strong>before</strong>
+starting Eclipse.</p>
 
-<p>To debug projects, a JTAG probe is necessary together with the software
-to access it,
-for example the <strong>SEGGER J-Link</strong> software, or <strong>OpenOCD</strong>.</p>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you already started Eclipse, close it,
+install these tools, and reopen Eclipse.</div>
 
-<p>To run debug sessions without actual hardware, the <strong>QEMU Arm</strong> emulator is
-necessary (the blinky tutorial mandates it).</p>
+<ul>
+  <li><strong>node/npmxpm</strong> - although not mandatory, but highly recommended, the
+second prerequisite is <strong>xpm</strong> (the xPack Package Manager), which is
+a <strong>Node.js</strong> portable application;</li>
+  <li><strong>Windows Build Tools</strong> - to build projects, on Windows it is necessary
+to install <code class="highlighter-rouge">make</code>, available from the xPack Windows Build Tools;</li>
+  <li><strong>Arm toolchain</strong> - to build Arm projects, an Arm toolchain like
+the xPack GNU Arm Embedded GCC is required;</li>
+  <li><strong>RISC-V toolchain</strong> - similarly, for RISC-V projects, a RISC-V toolchain
+like the xPack GNU RISC-V Embedded GCC is required;</li>
+  <li><strong>SEGGER J-Link</strong> - to debug projects, a JTAG probe is necessary together
+with the software to access it, for example the SEGGER J-Link software;</li>
+  <li><strong>OpenOCD</strong> - for some boards, xPack OpenOCD might also be useful;</li>
+  <li><strong>QEMU Arm</strong> - to run debug sessions without actual hardware, the
+xPack QEMU Arm emulator is necessary (the blinky tutorial mandates it).</li>
+</ul>
 
-<p>All of these additional tools can be installed as xPacks, which makes
-<strong>xpm</strong> a very convenient tool.</p>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Many of the additional tools can be
+installed as xPacks, which makes <strong>xpm</strong> a very convenient tool.</div>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<h2 id="java-1">Java</h2>
 
 <p>The following section covers the common Windows/macOS/Linux platforms;
 for a wider range of platforms, see the <strong>Alternate solutions</strong> below.</p>
@@ -829,14 +869,14 @@ range of platforms.</p>
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since recent Eclipses are all 64-bit, be sure
 you install a 64-bit Java.</div>
 
-<h2 id="install-node--xpm">Install node &amp; xpm</h2>
+<h2 id="nodenpmxpm">node/npm/xpm</h2>
 
 <p>The next step is to install the xPack tools.</p>
 
 <p>For full details, please follow the steps in the separate install pages:</p>
 
 <ul>
-  <li><a href="https://xpack.github.io/install/">node</a></li>
+  <li><a href="https://xpack.github.io/install/">node/npm</a></li>
   <li><a href="https://xpack.github.io/xpm/install/">xpm</a></li>
 </ul>
 
@@ -949,7 +989,7 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Aug 28, 2020 <br />
+<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Aug 29, 2020 <br />
                 </div>
             </div>
 </footer>

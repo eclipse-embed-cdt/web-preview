@@ -196,6 +196,17 @@
 
 
 
+{
+"title": "The Hardware Debug Plug-ins",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/eclipse/cdt/hardware-debug/",
+"summary": ""
+}
+,
+
+
+
 
 
 {
@@ -265,6 +276,17 @@
 ,
 
 
+
+
+
+{
+"title": "The CDT Indexer",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/eclipse/cdt/indexer/",
+"summary": ""
+}
+,
 
 
 
@@ -354,6 +376,17 @@
 ,
 
 
+
+
+
+{
+"title": "The managed build",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/plugins/managed-build/",
+"summary": ""
+}
+,
 
 
 

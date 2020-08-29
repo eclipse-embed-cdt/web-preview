@@ -1197,7 +1197,7 @@ h4.panel-title {
 .right-align-image {
     float: right;
 }
-  
+ 
 /*set navbar breakpoint so that it converts to hamburger earlier */
 
 @media (max-width: 1200px) {

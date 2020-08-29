@@ -32,7 +32,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2019/09/25/new-forums/</loc>
-    <lastmod>2020-08-28T16:51:00+00:00</lastmod>
+    <lastmod>2020-08-29T10:47:00+00:00</lastmod>
   </url>
   
   
@@ -46,21 +46,21 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2019/01/01/plugins-v4.5.1-201901011632-released/</loc>
-    <lastmod>2020-08-28T16:50:58+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:58+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2018/08/30/plugins-v4.4.2-201809300659-released/</loc>
-    <lastmod>2020-08-28T16:50:58+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:59+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2018/07/21/plugins-v4.4.1-201807211108-released/</loc>
-    <lastmod>2020-08-28T16:50:58+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:58+00:00</lastmod>
   </url>
   
   
@@ -81,49 +81,49 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2018/01/10/plugins-v4.3.1-201801092051-released/</loc>
-    <lastmod>2020-08-28T16:50:57+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:58+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2017/11/10/plugins-v4.2.1-201711101735-released/</loc>
-    <lastmod>2020-08-28T16:50:59+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:59+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2017/07/11/plugins-v4.1.1-201707111115-released/</loc>
-    <lastmod>2020-08-28T16:50:59+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:59+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2017/07/09/sourceforge-to-netlify-migration/</loc>
-    <lastmod>2020-08-28T16:51:00+00:00</lastmod>
+    <lastmod>2020-08-29T10:47:00+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2017/05/02/sourceforge-to-bintray-migration/</loc>
-    <lastmod>2020-08-28T16:51:00+00:00</lastmod>
+    <lastmod>2020-08-29T10:47:00+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2017/04/25/plugins-v3.4.1-201704251808-released/</loc>
-    <lastmod>2020-08-28T16:50:59+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:59+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2017/02/25/plugins-v3.3.1-201702251311-released/</loc>
-    <lastmod>2020-08-28T16:50:57+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:58+00:00</lastmod>
   </url>
   
   
@@ -151,7 +151,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2016/12/02/plugins-install-issue/</loc>
-    <lastmod>2020-08-28T16:50:59+00:00</lastmod>
+    <lastmod>2020-08-29T10:47:00+00:00</lastmod>
   </url>
   
   
@@ -263,7 +263,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/blog/2015/04/06/plugins-v2.8.1-201504061754-released/</loc>
-    <lastmod>2020-08-28T16:50:58+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:58+00:00</lastmod>
   </url>
   
   
@@ -493,7 +493,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/plugins/install-alternate/</loc>
-    <lastmod>2020-08-28T16:44:59+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:55+00:00</lastmod>
   </url>
   
   
@@ -516,14 +516,14 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/articles/arm-com-2015-11/</loc>
-    <lastmod>2020-08-28T16:44:59+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:55+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/articles/arm-com-2015-12-09/</loc>
-    <lastmod>2020-08-28T16:44:59+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:55+00:00</lastmod>
   </url>
   
   
@@ -623,6 +623,13 @@
   
   
   
+  <url>
+    <loc>https://gnu-mcu-eclipse.github.io/web-preview/eclipse/cdt/hardware-debug/</loc>
+    <lastmod>2020-08-29T10:46:55+00:00</lastmod>
+  </url>
+  
+  
+  
   
   
   <url>
@@ -664,10 +671,17 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/</loc>
-    <lastmod>2020-08-28T16:39:00+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:57+00:00</lastmod>
   </url>
   
   
+  
+  
+  
+  <url>
+    <loc>https://gnu-mcu-eclipse.github.io/web-preview/eclipse/cdt/indexer/</loc>
+    <lastmod>2020-08-29T10:46:54+00:00</lastmod>
+  </url>
   
   
   
@@ -680,7 +694,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/plugins/install/</loc>
-    <lastmod>2020-08-28T16:44:59+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:55+00:00</lastmod>
   </url>
   
   
@@ -733,6 +747,13 @@
   
   
   <url>
+    <loc>https://gnu-mcu-eclipse.github.io/web-preview/plugins/managed-build/</loc>
+    <lastmod>2020-08-29T10:46:55+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/plugins/mbs/</loc>
     <lastmod>2020-08-28T16:44:59+00:00</lastmod>
   </url>
@@ -753,7 +774,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/debug/openocd/riscv/</loc>
-    <lastmod>2020-08-28T16:45:02+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:58+00:00</lastmod>
   </url>
   
   
@@ -771,7 +792,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/plugins/packs-manager/</loc>
-    <lastmod>2020-08-28T16:44:59+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:55+00:00</lastmod>
   </url>
   
   
@@ -814,7 +835,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/plugins/prerequisites/</loc>
-    <lastmod>2020-08-28T16:38:58+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:55+00:00</lastmod>
   </url>
   
   
@@ -829,7 +850,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/debug/qemu/</loc>
-    <lastmod>2020-08-28T16:45:02+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:58+00:00</lastmod>
   </url>
   
   
@@ -850,7 +871,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/templates/stm32f/</loc>
-    <lastmod>2020-08-28T16:45:02+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:57+00:00</lastmod>
   </url>
   
   
@@ -894,7 +915,7 @@
   
   <url>
     <loc>https://gnu-mcu-eclipse.github.io/web-preview/plugins/troubleshoot/</loc>
-    <lastmod>2020-08-28T16:38:58+00:00</lastmod>
+    <lastmod>2020-08-29T10:46:55+00:00</lastmod>
   </url>
   
   
