@@ -666,7 +666,7 @@ lot of time.</div>
 <p>Before creating a new project, please be sure you checked all prerequisites
 described in the
 <a href="/web-preview/plugins/prerequisites/">Prerequisites</a>
-page, especially the need to install the
+page, including the need to install the
 <a href="https://xpack.github.io/windows-build-tools/install/">build tools</a>
 if you use Windows as your development platform.</p>
 
@@ -676,7 +676,7 @@ and to install the desired
 <a href="/web-preview/plugins/packs-manager/">CMSIS packs</a>.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> The multi-LED template is currently available
-only for ST32F4, and only
+only for ST32F4DISCOVERY, since it has 4 LEDs, and only
 in C++, since it allows to easily instantiate multiple BlinkLed objects.</div>
 
 <h2 id="create-a-new-c-project">Create a new C++ project</h2>
@@ -684,18 +684,23 @@ in C++, since it allows to easily instantiate multiple BlinkLed objects.</div>
 <p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or
 the button in the upper left corner), and select the <strong>C++ Project</strong>:</p>
 
-<p><img src="/web-preview/assets/images/2015/08/NewCppProject.png" alt="Create a new C++ project" /></p>
+<p><img src="/web-preview/assets/images/2020/new_c_cpp_project.png" alt="Create a new C++ project" /></p>
+
+<p>In the <em>New C/C++ Project</em> window, select <strong>C/C++ Managed Build</strong> and
+click the <strong>Next &gt;</strong> button.</p>
+
+<p><img src="/web-preview/assets/images/2020/new_c_cpp_managed_build_project.png" alt="Create a new C++ project" /></p>
 
 <p>In the <strong>C++ Project</strong> window:</p>
 
 <ul>
   <li>in the <em>Project name:</em> field enter the name of the new project, for example <strong>blinky</strong></li>
   <li>in the <em>Project type:</em> section expand the <strong>Executable</strong> type and select <strong>STM32F4xx C/C++ Project</strong></li>
-  <li>in the <em>Toolchains:</em> section select <strong>Cross ARM GCC</strong></li>
+  <li>in the <em>Toolchains:</em> section select <strong>ARM Cross GCC</strong></li>
   <li>click the <strong>Next &gt;</strong> button</li>
 </ul>
 
-<p><img src="/web-preview/assets/images/2015/08/NewCppBlinkyProject.png" alt="New C++ blinky project" /></p>
+<p><img src="/web-preview/assets/images/2020/new_c_cpp_blinky_project.png" alt="New C++ blinky project" /></p>
 
 <p>In the <strong>Target processor settings</strong> window be sure to:</p>
 
@@ -900,7 +905,7 @@ emails.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Aug 29, 2020 <br />
+<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Aug 29, 2020 <br />
                 </div>
             </div>
 </footer>
