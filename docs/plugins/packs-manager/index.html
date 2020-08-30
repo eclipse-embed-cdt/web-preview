@@ -649,7 +649,7 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="overview">Overview</h2>
 
-<p>CMSIS Packs are a Keil/ARM technology, intended to handle distribution of
+<p>CMSIS Packs are an Arm/Keil technology, intended to handle distribution of
 software and documentation in Keil MDK. The main difference from usual
 libraries or source archives is that the actual source/object files are
 accompanied by some form of metadata, defining, among other things,
@@ -660,24 +660,33 @@ peripheral registers.</p>
 
 <h2 id="limitations">Limitations</h2>
 
-<p>The current Keil/ARM packs are intended for Cortex cores only.</p>
+<p>The current Arm/Keil packs are intended for Cortex cores only.</p>
 
 <p>From the metadata present in the CMSIS Packs, only the peripheral
 registers are of interest for Eclipse Embedded CDT users.</p>
 
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Initialy it was hoped that CMSIS Packs
+will get wide acceptance, and that xPacks could be build on top of them.
+At the time of this writing, major vendors like ST, still did not join it.
+This, plus the major design issues observed (like the unnecessary high
+complexity and the permanent out of date index) contributed to the
+decision to search for another solution for xPack (found at npm),
+thus postponing all developments for CMSIS Packs.</div>
+
 <h2 id="prerequisites">Prerequisites</h2>
 
 <p>To have access to the new packs features, you need to install the
-<strong>Eclipse Embedded CDT Packs Support</strong> plug-in (currently with experimental status):</p>
+<strong>Eclipse Embedded CDT CMSIS Packs Support</strong> plug-in (currently with
+experimental status):</p>
 
-<p><img src="/web-preview/assets/images/2014/07/InstallPacks.png" alt="Install packs support plug-in" /></p>
+<p><img src="/web-preview/assets/images/2020/install-packs.png" alt="Install packs support plug-in" /></p>
 
 <h2 id="the-packs-support-plug-in">The Packs Support plug-in</h2>
 
 <p>The Eclipse Embedded CDT Packs Support plug-in is intended to manage
 (list/install/inspect/remove) packs from multiple sources. It currently
 implements the specifications of <strong>CMSIS Packs</strong>, as defined by
-<a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html">ARM/Keil</a>,
+<a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html">Arm/Keil</a>,
 with some extensions.</p>
 
 <h2 id="configuration">Configuration</h2>
@@ -690,7 +699,7 @@ installed packages and need to download them again).</p>
 <p>By default, this folder is called Packages and is located at the same
 level as the current workspace.</p>
 
-<p><img src="/web-preview/assets/images/2014/07/PacksPath.png" alt="Path to packages" /></p>
+<p><img src="/web-preview/assets/images/2020/mcu-packages-path.png" alt="Path to packages" /></p>
 
 <p>If you use multiple Eclipses with multiple workspaces, it is recommended
 to adjust this path to a single location and have the same packs install
@@ -700,12 +709,12 @@ folder for all workspaces.</p>
 load packs. Currently only the Keil URL is relevant, but in case others
 will appear, they can be added to the list.</p>
 
-<p><img src="/web-preview/assets/images/2014/07/PacksURLs.png" alt="URLs of packs repositories" /></p>
+<p><img src="/web-preview/assets/images/2020/mcu-packages-repo.png" alt="URLs of packs repositories" /></p>
 
-<h2 id="the-packs-perspective">The Packs perspective</h2>
+<h2 id="the-cmsis-packs-perspective">The CMSIS Packs perspective</h2>
 
 <p>The packs manager uses a separate perspective, with selection views and
-outline views. To make this perspective visible, click the <strong>Packs</strong>
+outline views. To make this perspective visible, click the <strong>CMSIS Packs</strong>
 button available on the Eclipse toolbar:</p>
 
 <p><img src="/web-preview/assets/images/2014/07/PacksToolbarButton.png" alt="Make the packs perspective visible" /></p>
@@ -727,7 +736,20 @@ connection is active and click the yellow arrows <strong>Refresh</strong> button
 (Since at first this is a bit tricky to spot, it is marked with a red
 arrow on the above picture).</p>
 
-<p>After a few minutes, the window will change and show the list of packages:</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> At the first run, since the CMSIS Packs index
+does not provide many details, all the packages listed in
+the index must be checked, which means the package description file (.pdsc)
+must be downloaded. There are probably several hundred packages, and
+this may take quite a while, like 15-20 minutes. Subsequent runs 
+should be faster, since only updated packages are checked.</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Due to a design issue, the CMSIS Packs index
+kept on the Arm/Keil site can go out of sync with the actual packages kept
+on vendor servers, and the Refresh action may trigger lots of errors; there
+is not much that can be done, except to ignore them for now and possibly
+retry at a later date.</div>
+
+<p>When ready, the window will change and show the list of packages:</p>
 
 <p><img src="/web-preview/assets/images/2014/07/PacksPerspective.png" alt="The Packs perspective" /></p>
 
@@ -765,10 +787,10 @@ vendors, and the list of packs will be reduces even more:</p>
 corresponding view in the left window and select the desired filters
 (with multiple selections possible).</p>
 
-<h2 id="pack-versions">Pack versions</h2>
+<h2 id="cmsis-pack-versions">CMSIS Pack versions</h2>
 
-<p>Each pack may have multiple versions.  Generally these versions should
-be preserved, at least a while, when new releases are issued, to help
+<p>Each CMSIS Pack may have multiple versions. Generally these versions should
+be preserved, at least for a while, when new releases are issued, to help
 applications cope with possible incompatible versions.</p>
 
 <p>All current and past versions are shown in the packs tree below each
@@ -785,15 +807,16 @@ the components, bundles and examples.</p>
 <p>The brief outline is displayed in the right window, when an uninstalled 
 package or the latest version is selected (see previous picture).</p>
 
-<h2 id="pack-install">Pack install</h2>
+<h2 id="cmsis-pack-install">CMSIS Pack install</h2>
 
 <p>Once the desired packages are identified, they must be installed, i.e.
-copied locally, so that their content can be made available to the various projects.</p>
+copied locally, so that their content can be made available to the
+various projects.</p>
 
 <p>Usually you would need to install the latest available version, but,
 for special cases a specific version can be also installed. For this
 you need to select either the package or the version, and click the
-Install button in the view toolbar:</p>
+<strong>Install</strong> button in the view toolbar:</p>
 
 <p><img src="/web-preview/assets/images/2014/07/InstallVersion.png" alt="Install a package version" /></p>
 
@@ -824,7 +847,7 @@ opens the appropriate viewers for your platform.</p>
 
 <p><img src="/web-preview/assets/images/2014/07/ViewHeaderFile.png" alt="View a header file" /></p>
 
-<h2 id="pack-uninstall">Pack uninstall</h2>
+<h2 id="cmsis-pack-uninstall">CMSIS Pack uninstall</h2>
 
 <p>If the packages are no longer needed, they can be removed from the
 local folder, in order to save space (some packages can be hundreds
@@ -840,7 +863,7 @@ unarchived folder, then changes the icons back to grey.</p>
 
 <h2 id="examples">Examples</h2>
 
-<p>For installed packages, the plug-in presents the list of available
+<p>For installed CMSIS Packs, the plug-in presents the list of available
 examples below each pack version.</p>
 
 <p><img src="/web-preview/assets/images/2014/07/PackExamples.png" alt="Pack examples" /></p>
@@ -859,7 +882,7 @@ Eclipse and GCC environments.</p>
 in.</p>
 
 <p>Later on, the limits of the technology were revealed, especially the
-tight connection to Keil/MDK and ARM tools.</p>
+tight connection to Keil/MDK and Arm tools.</p>
 
 <p>For the moment all plans to further develop CMSIS Packs are
 postponed, and resources are directed to <strong>xPacks</strong>, a more flexible
@@ -884,7 +907,7 @@ technology.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Aug 29, 2020 <br />
+<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Aug 30, 2020 <br />
                 </div>
             </div>
 </footer>
