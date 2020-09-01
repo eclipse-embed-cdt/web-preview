@@ -350,6 +350,13 @@
           
           
           
+          <li><a title="OpenOCD RISC-V" href="/web-preview/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="QEMU Arm" href="/web-preview/debug/qemu/">QEMU Arm</a></li>
           
           
@@ -649,38 +656,55 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="overview">Overview</h2>
 
-<p>One of the advantages of using the new packs technology is that the extra metadata (which include a complete list of devices, grouped by vendor, family, sub-family, and a list of development boards) can be used to automate the creation of other configurations, like project build configurations and debugging configurations, or assist other processes, like providing detailed register/field definitions to the debugger.</p>
+<p>One of the advantages of using the new packs technology is that
+the extra metadata (which include a complete list of devices,
+grouped by vendor, family, sub-family, and a list of development
+boards) can be used to automate the creation of other configurations,
+like project build configurations and debugging configurations, or
+assist other processes, like providing detailed register/field
+definitions to the debugger.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
 <h3 id="a-project-created-by-eclipse-embedded-cdt">A project created by Eclipse Embedded CDT</h3>
 
-<p>The <strong>Devices</strong> tab is visible in the <strong>Settings</strong> properties page only for projects created by the Eclipse Embedded CDT plug-ins.</p>
+<p>The <strong>Devices</strong> tab is visible in the <strong>Settings</strong> properties page
+only for projects created by the Eclipse Embedded CDT plug-ins.</p>
 
-<p>It is not possible to assign devices/boards to projects created by other plug-ins, because they lack the mechanisms to handle such additional data.</p>
+<p>It is not possible to assign devices/boards to projects created by
+other plug-ins, because they lack the mechanisms to handle such
+additional data.</p>
 
 <h3 id="the-packs-are-available">The Packs are available</h3>
 
 <p>For the device list to be populated, it is required that:</p>
 
 <ul>
-  <li>the Packs plug-ins are first installed (<a href="/web-preview/plugins/packs-manager/">Packs manager</a>)</li>
-  <li>the packages related to the devices used by the projects under development are installed</li>
+  <li>the Packs plug-ins are first installed
+(<a href="/web-preview/plugins/packs-manager/">Packs manager</a>)</li>
+  <li>the packages related to the devices used by the projects
+under development are installed</li>
 </ul>
 
-<p>Please note that failure to do so will prevent the device selection window to make the desired device available for selection.</p>
+<p>Please note that failure to do so will prevent the device selection
+window to make the desired device available for selection.</p>
 
 <h2 id="assign-device">Assign device</h2>
 
-<blockquote>
-  <p><strong>Notice</strong>: for an even higher flexibility, different devices can be assigned to different <strong>build configuration</strong>, so it is possible to have different devices for different configurations.</p>
-</blockquote>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For an even higher flexibility,
+different devices
+can be assigned to different <strong>build configuration</strong>, so it is
+possible to have different devices for different configurations.</div>
 
-<p>One direct consequence is that you need to be careful to associate the appropriate devices to <strong>all</strong> configurations. The Eclipse interface allows to configure <strong>All configurations</strong> at a time; select this option in the top selection.</p>
+<p>One direct consequence is that you need to be careful to associate
+the appropriate devices to <strong>all</strong> configurations. The Eclipse
+interface allows to configure <strong>All configurations</strong> at a time;
+select this option in the top selection.</p>
 
-<blockquote>
-  <p><strong>Notice</strong>: The Devices tab is visible in the <strong>Settings</strong> properties page only for projects created by the Eclipse Embedded CDT plug-ins.</p>
-</blockquote>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Devices tab is visible in the
+<strong>Settings</strong>
+properties page only for projects created by the Eclipse Embedded CDT
+plug-ins.</div>
 
 <p>To assign devices to projects:</p>
 
@@ -694,7 +718,10 @@ $('#toc').on('click', 'a', function() {
   <li>click <strong>OK</strong></li>
 </ul>
 
-<p>If you are using a development board, and this board has a corresponding definition in a package, it is recommended to associate the device below the board instead of the individual device from the Devices section, since this will also make available the board documentation files.</p>
+<p>If you are using a development board, and this board has a corresponding
+definition in a package, it is recommended to associate the device below
+the board instead of the individual device from the Devices section,
+since this will also make available the board documentation files.</p>
 
 <p><img src="/web-preview/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" /></p>
 
@@ -703,14 +730,22 @@ $('#toc').on('click', 'a', function() {
 <p>The benefits of assigning a device to the project are:</p>
 
 <ul>
-  <li>when creating J-Link debug configurations, the device name will be automatically set to the selected device</li>
-  <li>during the debugging session, the Peripheral view will be populated with the device peripheral registers</li>
-  <li>the documentation view (available in the C/C++ view, next to the Outline view) will be populated with the files available for the device</li>
+  <li>when creating J-Link debug configurations, the device name will
+be automatically set to the selected device</li>
+  <li>during the debugging session, the Peripheral view will be populated
+with the device peripheral registers</li>
+  <li>the documentation view (available in the C/C++ view, next to the
+Outline view) will be populated with the files available for the device</li>
 </ul>
 
-<p>An even better packs integration (planned for the future release), will make this setting even more convenient, by starting the projects templates with this selection; it is also planned to use this extra data to automatically set the build ARM family.</p>
+<p>An even better packs integration (planned for the future release), will
+make this setting even more convenient, by starting the projects templates
+with this selection; it is also planned to use this extra data to
+automatically set the build ARM family.</p>
 
-<p>Accompanying the device there is also a set of definition for the memory map, which will be used in a future release to automatically generate the linker scripts.</p>
+<p>Accompanying the device there is also a set of definition for the
+memory map, which will be used in a future release to automatically
+generate the linker scripts.</p>
 
 
         
@@ -731,7 +766,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Aug 30, 2020 <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 1, 2020 <br />
                 </div>
             </div>
 </footer>

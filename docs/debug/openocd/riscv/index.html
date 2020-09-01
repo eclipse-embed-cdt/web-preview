@@ -350,6 +350,13 @@
           
           
           
+          <li><a title="OpenOCD RISC-V" href="/web-preview/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="QEMU Arm" href="/web-preview/debug/qemu/">QEMU Arm</a></li>
           
           
@@ -649,21 +656,26 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="risc-v-specific-configuration-details">RISC-V specific configuration details</h2>
 
-<p>Although OpenOCD works the same for RISC-V as for ARM, there are some details that need to be considered.</p>
+<p>Although OpenOCD works the same for RISC-V as for Arm, there are some
+details that need to be considered.</p>
 
 <h3 id="the-debugger-tab">The Debugger tab</h3>
 
 <p><img src="/web-preview/assets/images/2017/openocd-riscv-debugger-tab.png" alt="OpenOCD RISC-V Debugger tab" /></p>
 
-<p>The RISC-V specific configuration files must be entered in the <strong>Config options:</strong> field.</p>
+<p>The RISC-V specific configuration files must be entered in the
+<strong>Config options:</strong> field.</p>
 
-<p>For boards with integrated JTAG adapters (like SiFive HiFive1), use the board file</p>
+<p>For boards with integrated JTAG adapters (like SiFive HiFive1), use
+the board file</p>
 
 <ul>
   <li><code class="highlighter-rouge">-f "board/sifive-hifive1.cfg"</code></li>
 </ul>
 
-<p>For the Arty synthesised boards, use multiple commands, with separate interface and board files, for example for <strong>E31Arty</strong> with Olimex USB probes:</p>
+<p>For the Arty synthesised boards, use multiple commands, with
+separate interface and board files, for example for <strong>E31Arty</strong>
+with Olimex USB probes:</p>
 
 <ul>
   <li><code class="highlighter-rouge">-c "adapter_khz 5000" -f "interface/ftdi/olimex-arm-usb-tiny-h.cfg" -f "board/sifive-e31arty.cfg"</code></li>
@@ -677,32 +689,44 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">-c "adapter_khz 5000" -f "interface/ftdi/olimex-arm-usb-ocd.cfg" -f "board/sifive-e51arty.cfg"</code></li>
 </ul>
 
-<p>For the SiFive configuration files, future OpenOCD are expected to include them in the distribution. If they are not yet there, please download them from <a href="https://github.com/gnu-mcu-eclipse/openocd/tree/gnu-mcu-eclipse-dev/tcl/board">GitHub</a> and copy them to the openOCD <code class="highlighter-rouge">scripts</code> folder.</p>
+<p>For the SiFive configuration files, future OpenOCD are expected to
+include them in the distribution. If they are not yet there, please
+download them from
+<a href="https://github.com/gnu-mcu-eclipse/openocd/tree/gnu-mcu-eclipse-dev/tcl/board">GitHub</a>
+and copy them to the openOCD <code class="highlighter-rouge">scripts</code> folder.</p>
 
-<p>The second mandatory setting is the architecture, in the <strong>GDB</strong> → <strong>Commands</strong> field.</p>
+<p>The second mandatory setting is the architecture, in the
+<strong>GDB</strong> → <strong>Commands</strong> field.</p>
 
 <p>For 32-bit devices, use:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set arch riscv:rv32
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">set arch riscv:rv32
 set remotetimeout 250
-</code></pre></div></div>
+</span></code></pre></div></div>
 
 <p>For 64-bit devices, use:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set arch riscv:rv64
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">set arch riscv:rv64
 set remotetimeout 250
-</code></pre></div></div>
+</span></code></pre></div></div>
 
 <h3 id="the-startup-tab">The Startup tab</h3>
 
 <p><img src="/web-preview/assets/images/2017/openocd-riscv-startup-tab.png" alt="OpenOCD RISC-V Startup tab" /></p>
 
-<p>Since for the moment semihosting is not available on RISC-V, disable the <strong>ARM semihosting</strong> option in the <strong>Initialization Commands</strong> section.</p>
+<p>Since for the moment semihosting is not available on RISC-V, disable
+the <strong>Arm semihosting</strong> option in the <strong>Initialization Commands</strong> section.</p>
 
-<p>For some obscure reasons related to the way the devices boot, disable the <strong>Pre-run/Restart reset</strong> in the <strong>Run/Restart Commands</strong> section. Unfortunately this will also prevent the <strong>Restart</strong> button to function properly.</p>
+<p>For some obscure reasons related to the way the devices boot, disable
+the <strong>Pre-run/Restart reset</strong> in the <strong>Run/Restart Commands</strong> section.
+Unfortunately this will also prevent the <strong>Restart</strong> button to function
+properly.</p>
 
-<p>For some targets (like the Arty synthesised ones), it might help to explicitly define the initial program counter, for example to <code class="highlighter-rouge">40400000</code>. If the debugged application is an ELF image, a safer solution is to be sure the actual reset address is defined in the linker scripts, for example as <code class="highlighter-rouge">ENTRY(riscv_reset_entry)</code>.</p>
-
+<p>For some targets (like the Arty synthesised ones), it might help to
+explicitly define the initial program counter, for example to <code class="highlighter-rouge">40400000</code>.
+If the debugged application is an ELF image, a safer solution is to be
+sure the actual reset address is defined in the linker scripts, for
+example as <code class="highlighter-rouge">ENTRY(riscv_reset_entry)</code>.</p>
 
 
         
@@ -723,7 +747,7 @@ set remotetimeout 250
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Aug 30, 2020 <br />
+<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Sep 1, 2020 <br />
                 </div>
             </div>
 </footer>

@@ -350,6 +350,13 @@
           
           
           
+          <li><a title="OpenOCD RISC-V" href="/web-preview/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="QEMU Arm" href="/web-preview/debug/qemu/">QEMU Arm</a></li>
           
           
@@ -649,62 +656,130 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="quicklinks">Quicklinks</h2>
 
-<p>If you know all about debugging, and all you need is how to install/configure/use the debugging plug-ins, the direct links are below.</p>
-
-<p>In short, for bare metal embedded development, we highly recommend solutions that can be used on all major platforms (Windows, macOS and GNU/Linux), with hardware probes that implement the SWD protocol and support tracing via the SWO pin. The preferred probes that match the above requirements are <a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a>/<a href="http://www.segger.com/jlink_base.html">J-Link</a>, from <a href="http://www.segger.com/">SEGGER</a>.</p>
+<p>If you know what you are doing, you can directly skip to:</p>
 
 <ul>
-  <li><a href="/web-preview/debug/jlink/install/">J-Link install</a></li>
-  <li><a href="/web-preview/debug/jlink/">J-Link plug-in usage</a></li>
+  <li><a href="/web-preview/debug/jlink/install/">SEGGER J-Link install</a></li>
+  <li><a href="/web-preview/debug/jlink/">SEGGER J-Link plug-in usage</a></li>
   <li><a href="https://xpack.github.io/openocd/install/">xPack OpenOCD install</a></li>
-  <li><a href="/web-preview/debug/openocd/">xPack OpenOCD plug-in usage</a></li>
+  <li><a href="/web-preview/debug/openocd/">OpenOCD plug-in usage</a></li>
   <li><a href="https://xpack.github.io/qemu-arm/">xPack QEMU Arm install</a></li>
-  <li><a href="/web-preview/debug/qemu/">xPack QEMU Arm plug-in usage</a></li>
-  <li><a href="/web-preview/debug/peripheral-registers/">The Peripherals registers view</a></li>
+  <li><a href="/web-preview/debug/qemu/">QEMU Arm plug-in usage</a></li>
+  <li><a href="/web-preview/debug/peripheral-registers/">The Peripherals Registers view</a></li>
 </ul>
 
-<h2 id="overview">Overview</h2>
+<h2 id="recommandations">Recommandations</h2>
 
-<p>Although it varies a lot depending on personal skills and experience, debugging can be one of the most time consuming activities during software development, and any solutions intended to address it are welcome.</p>
+<p>In short, for bare metal embedded development, we highly recommend
+solutions that can be used on all major platforms (Windows, macOS and
+GNU/Linux), with hardware probes that implement the SWD protocol and
+possibly support tracing via the SWO pin.</p>
+
+<p>The preferred probes that
+match the above requirements are
+the <a href="https://www.segger.com/products/debug-probes/j-link/">J-Link Debug Probes</a>
+from <a href="http://www.segger.com/">SEGGER</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> For educational purposes and hobbyists,
+SEGGER offers the same functionality as the J-Link BASE, but at a
+promotional price as
+<a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a>.</div>
+
+<h2 id="debugging-overview">Debugging overview</h2>
+
+<p>Although it varies a lot depending on personal skills and experience,
+debugging can be one of the most time consuming activities during software
+development, and any solutions intended to address it are welcome.</p>
 
 <p>Generally there are two approaches:</p>
 
 <ul>
-  <li>manually stepping through the code to check the program flow and inspect various status variables</li>
-  <li>letting the program run and automatically collect various tracing messages (like the traditional printf() calls) and/or execution events (enter/exit interrupt handlers, memory location change, etc)</li>
+  <li>manually stepping through the code to check the program flow and
+inspect various status variables</li>
+  <li>letting the program run and automatically collect various tracing
+messages (like the traditional printf() calls) and/or execution events
+(enter/exit interrupt handlers, memory location change, etc)</li>
 </ul>
 
-<p>To be noted that these approaches are not exclusive, but complement each other, since they better serve different purposes, and have specific advantages and disadvantages.</p>
+<p>To be noted that these approaches are not exclusive, but complement
+each other, since they better serve different purposes, and have
+specific advantages and disadvantages.</p>
 
 <h3 id="manual-stepping">Manual stepping</h3>
 
-<p>Manually stepping through the code is great for debugging a standalone linear piece of code, to check if the implementation of an algorithm is correct, to detect off-by-one errors (accessing past the size of an array or collection). It is also useful to get an initial understanding of the functionality of a piece of code written by someone else. Its main drawback is severely distorting the time behaviour of the debugged code, which, if the debugged device is interacting with other external devices, will most likely trigger timeouts. For complex code, with multiple iterations and multiple processes, it is quite tedious, requiring a lot of manual interactions with the debugger to reach the desired point in time, especially when the sessions are expected to be restarted often.</p>
+<p>Manually stepping through the code is great for debugging a standalone
+linear piece of code, to check if the implementation of an algorithm is
+correct, to detect off-by-one errors (accessing past the size of an array
+or collection). It is also useful to get an initial understanding of the
+functionality of a piece of code written by someone else. Its main
+drawback is severely distorting the time behaviour of the debugged
+code, which, if the debugged device is interacting with other external
+devices, will most likely trigger timeouts. For complex code, with
+multiple iterations and multiple processes, it is quite tedious,
+requiring a lot of manual interactions with the debugger to reach
+the desired point in time, especially when the sessions are expected
+to be restarted often.</p>
 
-<p>The manual stepping approach generally requires a generic debugger and a specific method to connect it to the application to be debugged. The GNU toolchains provide a standard <strong>gdb</strong> command line tool to interact with the debugged application, and Eclipse provides various plug-ins to integrate the command line tool into the IDE.</p>
+<p>The manual stepping approach generally requires a generic debugger
+and a specific method to connect it to the application to be debugged.
+The GNU toolchains provide a standard <strong>GDB</strong> command line tool to
+interact with the debugged application, and Eclipse provides various
+plug-ins to integrate the command line tool into the IDE.</p>
 
-<p>The recommended way to connect gdb, running on the development machine, to the application, running on an embedded device, is to use a gdb server. If the debugged application is a GNU/Linux ARM application, running on an embedded device like BeagleBone or Raspberry, the gdb server must be first installed and started on it, then the gdb client needs to be instructed to connect via tcp/ip to it and start the debug session.</p>
+<p>The recommended way to connect GDB, running on the development machine,
+to the application, running on an embedded device, is to use a
+<strong>GDB server</strong>. If the debugged application is a GNU/Linux Arm
+application, running on a SBC like BeagleBone or Raspberry, the GDB
+server must be first installed and started on it, then the GDB client
+needs to be instructed to connect via TCP/IP to it and start the debug
+session.</p>
 
-<p>If the debugged application runs on a bare metal device, then it is necessary to use a physical probe, to load the device memory and to assist during the debugging session. The standard way is to use a JTAG or SWD probe, paired with a custom gdb server, able to talk to it on one side, and to accept the standard gdb commands on the other side.</p>
+<p>If the debugged application runs on a bare metal device, then it is
+necessary to use a physical probe, to load the device memory and to
+assist during the debugging session. The standard way is to use a
+JTAG or SWD probe, paired with a custom GDB server, able to talk to
+it on one side, and to accept the standard GDB commands on the other side.</p>
 
 <h3 id="using-trace-messages">Using trace messages</h3>
 
-<p>Collecting tracing messages and events, when used wisely, can be a valuable source of information regarding the flow of a complex application, with multiple interacting threads, being especially useful when the debug sessions are restarted often. Once the trace messages are added, the dynamic life of various threads/handlers can be seen with a simple view of the trace log. In addition to classical printf() messages that need to be manually inserted in the code, for embedded applications, modern ARM cores, including those in the Cortex-M families, provide special support for collecting hardware events, like accurate timestamps when an interrupt handler was entered/exited, when a memory location was accessed, and more.</p>
+<p>Collecting tracing messages and events, when used wisely, can be a
+valuable source of information regarding the flow of a complex
+application, with multiple interacting threads, being especially useful
+when the debug sessions are restarted often. Once the trace messages are
+added, the dynamic life of various threads/handlers can be seen with a
+simple view of the trace log. In addition to classical printf() messages
+that need to be manually inserted in the code, for embedded applications,
+modern Arm cores, including those in the Cortex-M families, provide special
+support for collecting hardware events, like accurate timestamps when an
+interrupt handler was entered/exited, when a memory location was accessed,
+and more.</p>
 
-<p>Recognising the importance of these methods, the designers of the ARM families added special support, like the <strong>SWO</strong> (Serial Wire Output) pin in Cortex-M processors, or even more elaborate interfaces for larger ARM processors.</p>
+<p>Recognising the importance of these methods, the designers of the Arm
+families added special support, like the <strong>SWO</strong> (Serial Wire Output)
+pin in Cortex-M processors, or even more elaborate interfaces for larger
+Arm processors.</p>
 
 <h2 id="gdb">GDB</h2>
 
-<p>The tool used by Eclipse Embedded CDT for debugging is the Arm version of GDB, the venerable GNU debugging tool.</p>
+<p>The tool used by Eclipse Embedded CDT for debugging is the Arm version
+of GDB, the venerable GNU debugging tool.</p>
 
 <h3 id="no-initialisation-files">No initialisation files</h3>
 
-<p>For having a total control of the debugging session, the debugging plug-ins start the GDB client process with the <code class="highlighter-rouge">--nx</code> option, which prevents the execution of the commands found in any initialization file; none of the standard files (<code class="highlighter-rouge">system.gdbinit</code>, <code class="highlighter-rouge">~/.gdbinit</code>, <code class="highlighter-rouge">./.gdbinit</code>) are loaded.</p>
+<p>For having a total control of the debugging session, the debugging
+plug-ins start the GDB client process with the <code class="highlighter-rouge">--nx</code> option, which
+prevents the execution of the commands found in any initialization
+file; none of the standard files (<code class="highlighter-rouge">system.gdbinit</code>, <code class="highlighter-rouge">~/.gdbinit</code>,
+<code class="highlighter-rouge">./.gdbinit</code>) are loaded.</p>
 
-<p>To add more commands to the GDB initialisation sequence, use the <em>Commands:</em> field in the <em>GDB Client Setup</em> section:</p>
+<p>To add more commands to the GDB initialisation sequence, use the
+<em>Commands:</em> field in the <em>GDB Client Setup</em> section:</p>
 
 <p><img src="/web-preview/assets/images/2015/launch-jlink-debugger-client.png" alt="Launch J-Link debugger client" /></p>
 
-<p>All commands listed here are passed to the GDB client. By convention, commands prefixed with <code class="highlighter-rouge">mon</code> will be further passed from the GDB client to the GDB server.</p>
+<p>All commands listed here are passed to the GDB client. By convention,
+commands prefixed with <code class="highlighter-rouge">mon</code> will be further passed by the GDB
+client to the GDB server.</p>
 
 
         
@@ -725,7 +800,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Aug 30, 2020 <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 1, 2020 <br />
                 </div>
             </div>
 </footer>
