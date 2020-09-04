@@ -5,14 +5,14 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/web-preview/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/web-preview/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 03 Sep 2020 23:45:10 +0300</pubDate>
-        <lastBuildDate>Thu, 03 Sep 2020 23:45:10 +0300</lastBuildDate>
+        <pubDate>Fri, 04 Sep 2020 09:39:14 +0000</pubDate>
+        <lastBuildDate>Fri, 04 Sep 2020 09:39:14 +0000</lastBuildDate>
         <generator>Jekyll v3.8.5</generator>
         
         <item>
             <title>The Eclipse Embedded CDT project web has a new look!</title>
             <description>&lt;p&gt;After several re-branding iterations, the &lt;strong&gt;Eclipse Embedded CDT&lt;/strong&gt; project,available from&lt;a href=&quot;https://github.com/eclipse-embed-cdt&quot;&gt;GitHub&lt;/a&gt;, has a &lt;strong&gt;new web site&lt;/strong&gt;.&lt;/p&gt;</description>
-            <pubDate>Wed, 05 Aug 2020 12:47:00 +0300</pubDate>
+            <pubDate>Wed, 05 Aug 2020 09:47:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2020/08/05/new-web-look/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2020/08/05/new-web-look/</guid>
             
@@ -26,7 +26,7 @@
         <item>
             <title>Eclipse Embedded CDT plug-ins v5.1.1-202007271621 released</title>
             <description>&lt;p&gt;Version &lt;a href=&quot;https://projects.eclipse.org/projects/iot.embed-cdt/releases/5.1.1&quot;&gt;5.1.1&lt;/a&gt;is the first release after the project migration to the Eclipse Foundation.&lt;/p&gt;</description>
-            <pubDate>Tue, 28 Jul 2020 16:52:00 +0300</pubDate>
+            <pubDate>Tue, 28 Jul 2020 13:52:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2020/07/28/plugins-v5.1.1-202007271621-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2020/07/28/plugins-v5.1.1-202007271621-released/</guid>
             
@@ -46,7 +46,7 @@
         <item>
             <title>GNU MCU Eclipse plug-ins v4.7.2-202001271244 released</title>
             <description>&lt;p&gt;Version 4.7.2-202001271244 is a maintenance release to fix the issue relatedto the change introduced by the update to https for the CMSIS Pack index.&lt;/p&gt;</description>
-            <pubDate>Mon, 27 Jan 2020 13:07:00 +0200</pubDate>
+            <pubDate>Mon, 27 Jan 2020 11:07:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2020/01/27/plugins-v4.7.2-202001271244-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2020/01/27/plugins-v4.7.2-202001271244-released/</guid>
             
@@ -66,7 +66,7 @@
         <item>
             <title>GNU MCU Eclipse plug-ins v4.7.1-201911052135 released</title>
             <description>&lt;p&gt;Version 4.7.1-201911052135 is a maintenance release; the main change is anenhancement in the logic to update the list of CMSIS Packs.&lt;/p&gt;</description>
-            <pubDate>Wed, 06 Nov 2019 10:36:00 +0200</pubDate>
+            <pubDate>Wed, 06 Nov 2019 08:36:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2019/11/06/plugins-v4.7.1-201911052135-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2019/11/06/plugins-v4.7.1-201911052135-released/</guid>
             
@@ -86,7 +86,7 @@
         <item>
             <title>The GNU MCU Eclipse project has new forums</title>
             <description>&lt;p&gt;The GNU MCU Eclipse forum was relocated from the&lt;a href=&quot;https://www.element14.com/community/groups/gnu-arm-eclipse&quot;&gt;Element14&lt;/a&gt; siteto a dedicated section in the&lt;a href=&quot;https://www.tapatalk.com/groups/xpack/&quot;&gt;xPack forum&lt;/a&gt;.&lt;/p&gt;</description>
-            <pubDate>Wed, 25 Sep 2019 23:08:00 +0300</pubDate>
+            <pubDate>Wed, 25 Sep 2019 20:08:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2019/09/25/new-forums/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2019/09/25/new-forums/</guid>
             
@@ -102,7 +102,7 @@
         <item>
             <title>GNU MCU Eclipse plug-ins v4.6.1-201909231407 released</title>
             <description>&lt;p&gt;Version 4.6.1-201909231407 is a new release; the main changes are theaddition of support forthe new &lt;a href=&quot;https://xpack.github.io&quot;&gt;xPack Dev Tools&lt;/a&gt; and performancefixes for the &lt;strong&gt;CMSIS Packs&lt;/strong&gt; manager.&lt;/p&gt;</description>
-            <pubDate>Mon, 23 Sep 2019 18:20:00 +0300</pubDate>
+            <pubDate>Mon, 23 Sep 2019 15:20:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2019/09/23/plugins-v4.6.1-201909231407-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2019/09/23/plugins-v4.6.1-201909231407-released/</guid>
             
@@ -122,7 +122,7 @@
         <item>
             <title>GNU MCU Eclipse plug-ins v4.5.1-201901011632 released</title>
             <description>&lt;p&gt;Version 4.5.1-201901011632 is a new release; it providesseveral bug fixes and enhancements. The main change is the removal ofsome RISC-V options from the Setting page.&lt;/p&gt;</description>
-            <pubDate>Tue, 01 Jan 2019 18:09:00 +0200</pubDate>
+            <pubDate>Tue, 01 Jan 2019 16:09:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2019/01/01/plugins-v4.5.1-201901011632-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2019/01/01/plugins-v4.5.1-201901011632-released/</guid>
             
@@ -142,7 +142,7 @@
         <item>
             <title>GNU MCU Eclipse plug-ins v4.4.2-201809300659 released</title>
             <description>&lt;p&gt;Version 4.4.2-201809300659 is a maintenance release; it providesseveral bug fixes and enhancements.&lt;/p&gt;</description>
-            <pubDate>Thu, 30 Aug 2018 11:50:00 +0300</pubDate>
+            <pubDate>Thu, 30 Aug 2018 08:50:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2018/08/30/plugins-v4.4.2-201809300659-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2018/08/30/plugins-v4.4.2-201809300659-released/</guid>
             
@@ -160,7 +160,7 @@
         <item>
             <title>GNU MCU Eclipse plug-ins v4.4.1-201807211108 released</title>
             <description>&lt;p&gt;Version 4.4.1-201807211108 is a new release; the main addition is support for&lt;a href=&quot;https://docs.jumper.io&quot;&gt;Jumper Virtual Lab&lt;/a&gt;; it also provides several bug fixes andenhancements.&lt;/p&gt;</description>
-            <pubDate>Sat, 21 Jul 2018 14:22:00 +0300</pubDate>
+            <pubDate>Sat, 21 Jul 2018 11:22:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2018/07/21/plugins-v4.4.1-201807211108-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2018/07/21/plugins-v4.4.1-201807211108-released/</guid>
             
@@ -180,7 +180,7 @@
         <item>
             <title>GNU MCU Eclipse plug-ins v4.3.3-201804191501 released</title>
             <description>&lt;p&gt;Version 4.3.3-201804191501 is a maintenance release; the main changes are bug fixes and enhancements.&lt;/p&gt;</description>
-            <pubDate>Thu, 19 Apr 2018 18:38:00 +0300</pubDate>
+            <pubDate>Thu, 19 Apr 2018 15:38:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/web-preview/blog/2018/04/19/plugins-v4.3.3-201804191501-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/web-preview/blog/2018/04/19/plugins-v4.3.3-201804191501-released/</guid>
             

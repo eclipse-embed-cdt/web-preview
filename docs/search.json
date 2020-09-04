@@ -205,43 +205,10 @@
 
 
 {
-"title": "Maintainer info",
-"tags": "",
-"keywords": "",
-"url": "/web-preview/maintain/",
-"summary": "<p>Resources for the projects maintainers.</p>"
-}
-,
-
-
-
-{
 "title": "Templates",
 "tags": "",
 "keywords": "",
 "url": "/web-preview/templates/",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Contributor Info",
-"tags": "",
-"keywords": "",
-"url": "/web-preview/develop/",
-"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
-}
-,
-
-
-
-{
-"title": "How to get support",
-"tags": "",
-"keywords": "",
-"url": "/web-preview/support/",
 "summary": ""
 }
 ,
@@ -262,6 +229,39 @@
 
 
 {
+"title": "How to get support",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/support/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Maintainer info",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/maintain/",
+"summary": "<p>Resources for the projects maintainers.</p>"
+}
+,
+
+
+
+{
+"title": "Contributor Info",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/develop/",
+"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
+}
+,
+
+
+
+{
 "title": "Eclipse Embedded CDT",
 "tags": "",
 "keywords": "eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu",
@@ -269,6 +269,8 @@
 "summary": "<p>Eclipse Embedded C/C++ Development Tools (formerly <strong>GNU MCU/ARM Eclipse</strong>).</p>"
 }
 ,
+
+
 
 
 
@@ -280,8 +282,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -297,22 +297,22 @@
 
 
 {
-"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
+"title": "How to install the debugging components",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/plugins/install/",
-"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
+"url": "/web-preview/debug/install/",
+"summary": ""
 }
 ,
 
 
 
 {
-"title": "How to install the debugging components",
+"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/debug/install/",
-"summary": ""
+"url": "/web-preview/plugins/install/",
+"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
 }
 ,
 
@@ -432,6 +432,8 @@
 
 
 
+
+
 {
 "title": "The OpenOCD debugging Eclipse plug-in",
 "tags": "",
@@ -440,8 +442,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -527,6 +527,8 @@
 
 
 
+
+
 {
 "title": "The QEMU debugging Eclipse plug-in",
 "tags": "",
@@ -535,8 +537,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 
@@ -617,6 +617,8 @@
 
 
 
+
+
 {
 "title": "How to update the Eclipse Embedded CDT plug-ins",
 "tags": "",
@@ -625,8 +627,6 @@
 "summary": "<p>Update the plug-ins installed on an Eclipse instance.</p>"
 }
 ,
-
-
 
 
 
