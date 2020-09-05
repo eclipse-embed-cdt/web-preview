@@ -762,9 +762,9 @@ which one to use by controlling the Path.</p>
 <p>In the <strong>Builds</strong> section, download the <strong>macOS/x64</strong> .tar.gz file.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
-<span class="nb">tar </span>xf openjdk-14.0.1_osx-x64_bin.tar.gz
-xattr <span class="nt">-d</span> com.apple.quarantine openjdk-14.0.1_osx-x64_bin.tar.gz
-<span class="nb">sudo </span>mv jdk-14.0.1.jdk/ /Library/Java/JavaVirtualMachines/
+xattr <span class="nt">-d</span> com.apple.quarantine openjdk-14.<span class="k">*</span>_osx-x64_bin.tar.gz
+<span class="nb">tar </span>xf openjdk-14.<span class="k">*</span>_osx-x64_bin.tar.gz
+<span class="nb">sudo </span>mv jdk-14.<span class="k">*</span>.jdk/ /Library/Java/JavaVirtualMachines/
 </code></pre></div></div>
 
 <p>Check version:</p>
@@ -786,6 +786,10 @@ links <code class="highlighter-rouge">/usr/bin/java</code> to it.</p>
 </code></pre></div></div>
 
 <p>How exactly it gets from here to the actual location is a bit of Apple magic.</p>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Installing the latest Java may
+not be possble on older systems, for example Java 14 fails to
+start on macOS 10.10.</div>
 
 <p>Since it is possible to install multiple version on the same system,
 if you want to override this mechanism and use a different version, try
