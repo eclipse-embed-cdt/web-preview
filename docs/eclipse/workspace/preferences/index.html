@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="Settings to consider for your workspace">
 <meta name="keywords" content=" ">
 <title>Workspace preferences | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/web-preview/css/syntax.css">
@@ -637,6 +637,9 @@
 <div class="post-content">
 
    
+    <div class="summary">Settings to consider for your workspace
+</div>
+   
 
     
     
@@ -664,85 +667,59 @@ $('#toc').on('click', 'a', function() {
     
 
 
-   <p>Eclipse has some unusual defaults, and this is one of the reasons sometimes Eclipse fails to meet beginner expectations. Fortunately this can be easily fixed, each time after creating a new workspace it is recommended to check and maybe change the settings below.</p>
+   <p>Eclipse has some unusual defaults, and this is one of the reasons
+sometimes Eclipse fails to meet beginner expectations. Fortunately
+this can be easily fixed, each time after creating a new workspace
+it is recommended to check and maybe change the settings below.</p>
 
 <h2 id="locate-the-preferences-menu">Locate the Preferences menu</h2>
 
-<p>Eclipse has lots of settings, and they are a bit confusing for beginners. Apart form various objects <strong>Properties</strong>, accessible with <strong>Right click</strong> in most situations, there are settings that apply to the entire workspace, and these settings are named <strong>Preferenceces</strong>, accessible in the top menu.</p>
+<p>Eclipse has lots of settings, and they are a bit confusing for beginners.
+Apart from various objects <strong>Properties</strong>, accessible with <strong>Right click</strong>
+in most situations, there are settings that apply to the entire workspace,
+and these settings are named <strong>Preferenceces</strong>, accessible in the top menu.</p>
 
-<blockquote>
-  <p>Note: the Preferences menu has different locations on Windows/Linux (search for the last entry below the <strong>Window</strong> menu) and on macOS (below Eclipse, and it is shown as “Preferences…””, with three dots).</p>
-</blockquote>
-
-<h2 id="save-automatically-and-text-file-encoding">Save automatically and Text file encoding</h2>
-
-<p>Sometimes users are very confused to see that after the edit/compile/run cycle nothing changed in the program behaviour, although the editor clearly shows the changes. Usually the main reason is that the file was not actually saved and the build process used the previous version of the file. To automatically save edited files before build,</p>
-
-<ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>General</strong> → <strong>Workspace</strong></li>
-  <li>enable <strong>Save automatically before build</strong></li>
-</ul>
-
-<p>In the same page, select the default text file encoding to <strong>UTF-8</strong>. Without this setting, special characters like diacritics, are generally replaced with question marks (for example the µOS++ name used in the template generated source files is shown as ??OS++ or even ��OS++).</p>
-
-<ul>
-  <li>in the <strong>Text file encoding</strong> section</li>
-  <li>click the <strong>Other</strong> button</li>
-  <li>select <strong>UTF-8</strong> in the combo box</li>
-</ul>
-
-<p>It is also recommended to:</p>
-
-<ul>
-  <li>check the <strong>New text file line delimiter</strong> to be set to Unix</li>
-  <li>disable the <strong>Build automatically</strong> option</li>
-</ul>
-
-<p>When you’re done:</p>
-
-<ul>
-  <li>click the <strong>Apply</strong> button</li>
-</ul>
-
-<p><img src="/web-preview/assets/images/2014/06/PreferencesSave.png" alt="Preferences: Save automatically" /></p>
-
-<h2 id="show-line-numbers">Show line numbers</h2>
-
-<p>Although not critical, while editing source files, it is useful to see the line numbers, and also a hint that the line may be too long:</p>
-
-<ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong></li>
-  <li>enable <strong>Show line numbers</strong></li>
-  <li>enable <strong>Show print margin</strong></li>
-  <li>set the <strong>Print margin column</strong> at 80</li>
-  <li>click the <strong>Apply</strong> button</li>
-</ul>
-
-<p><img src="/web-preview/assets/images/2014/06/PreferencesLineNumbers.png" alt="Editor preferences" /></p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Preferences menu has different
+locations on Windows/Linux (search for the last entry below the
+<strong>Window</strong> menu) and on macOS (below Eclipse, and it is shown as
+<strong>Preferences…</strong>, with three dots).</div>
 
 <h2 id="use-active-build-configuration-for-indexing">Use active build configuration for indexing</h2>
 
-<p>Eclipse CDT has a very powerful indexer, which parses the source code on the fly and provides hints, auto-completion help, error reporting, etc while editing, without having to start the build process. For this indexer to be accurate, it must be in sync with the compiler, in terms of options and environment. For the indexer to automatically sync when changing from one configuration to another, check if the indexer was set to use the active configuration:</p>
+<p>Eclipse CDT has a very powerful indexer, which parses the source code on
+the fly and provides hints, auto-completion help, error reporting, etc
+while editing, without having to start the build process. For this
+indexer to be accurate, it must be in sync with the compiler, in terms
+of options and environment. For the indexer to automatically sync when
+changing from one configuration to another, check if the indexer was set
+to use the active configuration:</p>
 
 <ul>
   <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Indexer</strong></li>
+  <li>disable <strong>Index source files not included in the build</strong></li>
+  <li>disable <strong>Index unused headers</strong></li>
   <li>enable <strong>Use active build configuration</strong></li>
   <li>click the <strong>Apply</strong> button</li>
 </ul>
 
-<p><img src="/web-preview/assets/images/2014/06/PreferencesIndexer.png" alt="Indexer: Use active build configuration" /></p>
+<p><img src="/web-preview/assets/images/2020/preferences-ccpp-indxer.png" alt="Indexer: Use active build configuration" /></p>
 
 <h2 id="editor-folding">Editor folding</h2>
 
 <p>To better view the entire content of the source files, it is recommended to disable editor folding:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Editor</strong> → <strong>Folding</strong></li>
-  <li>disable <strong>Header Comments</strong> (in fact it is recommended to disable all foldings)</li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/++</strong> →
+<strong>Editor</strong> → <strong>Folding</strong></li>
+  <li>enable <strong>Enable folding of preprocessor branches</strong></li>
+  <li>enable <strong>Enable folding of control flow statements</strong></li>
+  <li>enable <strong>Inactive Preprocessor Branches</strong></li>
+  <li>disable all entries in the <strong>Initially fold these region types</strong>, especially
+the <strong>Header Comments</strong></li>
   <li>click the <strong>Apply</strong> button</li>
 </ul>
 
-<p><img src="/web-preview/assets/images/2014/06/PreferencesFolding.png" alt="Disable folding" /></p>
+<p><img src="/web-preview/assets/images/2020/preferences-ccpp-editor-folding.png" alt="Disable folding" /></p>
 
 <h2 id="code-formatter">Code formatter</h2>
 
@@ -782,25 +759,112 @@ $('#toc').on('click', 'a', function() {
 
 <p><img src="/web-preview/assets/images/2014/06/Show_white_spaces.png" alt="Show whitespace characters" /></p>
 
-<blockquote>
-  <p>Note: the solution to configure the editor to enter spaces instead of Tabs prevents editing special files that mandates Tabs, like Make files.</p>
-</blockquote>
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The solution to configure the editor to
+enter spaces instead of Tabs prevents editing special files that mandates
+Tabs, like Make files.</div>
 
-<h2 id="build-console">Build console</h2>
+<h2 id="show-source-roots">Show source roots</h2>
 
-<p>The build console is the place where the progress of the build process is presented, and where the compile/link errors are shown.</p>
-
-<p>The CDT defaults need some tweaks, to increase the number of lines and to make the lines wrap:</p>
+<p>For large projects, with many source folders, you might want to disable
+showing the source folders:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Build</strong> → <strong>Console</strong></li>
-  <li>enable <strong>Wrap lines on the console</strong></li>
-  <li>enable <strong>Bring console to top when building</strong></li>
-  <li>increase the <strong>Limit console output:</strong> field, for example from 500 to 5000 lines</li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> →
+<strong>Appearance</strong></li>
+  <li>disable <strong>Show source roots at top of project</strong>.</li>
+</ul>
+
+<p><img src="/web-preview/assets/images/2017/preferences-show-source-roots.png" alt="Show source roots" /></p>
+
+<hr />
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The following settings are configured
+as defaults in the <strong>Eclipse IDE for Embedded C/C++ Developers</strong> package,
+so when installing it the settings should be already applied.</div>
+
+<h2 id="save-automatically">Save automatically</h2>
+
+<p>Sometimes users are very confused to see that after the edit/compile/run cycle nothing changed in the program behaviour, although the editor clearly shows the changes. Usually the main reason is that the file was not actually saved and the build process used the previous version of the file. To automatically save edited files before build,</p>
+
+<ul>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>General</strong> → <strong>Workspace</strong> → <strong>Build</strong></li>
+  <li>enable <strong>Save automatically before manual build</strong></li>
+</ul>
+
+<p>It is also recommended to:</p>
+
+<ul>
+  <li>disable the <strong>Build automatically</strong> option</li>
+</ul>
+
+<p>When you’re done:</p>
+
+<ul>
   <li>click the <strong>Apply</strong> button</li>
 </ul>
 
-<p><img src="/web-preview/assets/images/2014/06/PreferencesBuildConsole.png" alt="Build console preferences" /></p>
+<p><img src="/web-preview/assets/images/2020/preferences-general-workspace-build.png" alt="Preferences: Save automatically" /></p>
+
+<h2 id="text-file-encoding">Text file encoding</h2>
+
+<p>In the parent page, select the default text file encoding to <strong>UTF-8</strong>.
+Without this setting, special characters like diacritics, are generally
+replaced with question marks (for example the µOS++ name used in the
+template generated source files is shown as ??OS++ or even ��OS++).</p>
+
+<ul>
+  <li>in the <strong>Text file encoding</strong> section</li>
+  <li>if the default is not already UTF-8, click the <strong>Other</strong> button</li>
+  <li>select <strong>UTF-8</strong> in the combo box</li>
+</ul>
+
+<p>It is also recommended to:</p>
+
+<ul>
+  <li>check the <strong>New text file line delimiter</strong> to be set to Unix</li>
+</ul>
+
+<p>When you’re done:</p>
+
+<ul>
+  <li>click the <strong>Apply</strong> button</li>
+</ul>
+
+<p><img src="/web-preview/assets/images/2020/preferences-general-workspace.png" alt="Preferences: Text encoding" /></p>
+
+<h2 id="show-line-numbers">Show line numbers</h2>
+
+<p>Although not critical, while editing source files, it is useful to see the
+line numbers, and also a hint that the line may be too long:</p>
+
+<ul>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong></li>
+  <li>enable <strong>Show line numbers</strong></li>
+  <li>enable <strong>Show print margin</strong></li>
+  <li>set the <strong>Print margin column</strong> at 80</li>
+  <li>click the <strong>Apply</strong> button</li>
+</ul>
+
+<p><img src="/web-preview/assets/images/2020/preferences-general-editors-texteditors.png" alt="Editor preferences" /></p>
+
+<h2 id="build-console">Build console</h2>
+
+<p>The build console is the place where the progress of the build process is
+presented, and where the compile/link errors are shown.</p>
+
+<p>The CDT defaults need some tweaks, to increase the number of lines and to
+make the lines wrap:</p>
+
+<ul>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> →
+<strong>Build</strong> → <strong>Console</strong></li>
+  <li>enable <strong>Bring console to top when building</strong></li>
+  <li>enable <strong>Wrap lines on the console</strong></li>
+  <li>increase the <strong>Maximum number of lines to enable word wrap:</strong> field, for example from to 50000 lines</li>
+  <li>increase the <strong>Limit console output:</strong> field, for example to 50000 lines</li>
+  <li>click the <strong>Apply</strong> button</li>
+</ul>
+
+<p><img src="/web-preview/assets/images/2020/preferences-ccpp-build-console.png" alt="Build console preferences" /></p>
 
 <p>When all settings are done, click the <strong>OK</strong> button.</p>
 
@@ -813,36 +877,48 @@ $('#toc').on('click', 'a', function() {
   <li>select <strong>Doxygen</strong> in the Documentation tool comments</li>
 </ul>
 
-<p>This will allow, for example, auto-completion for Doxygen comments, you can type only <strong>/</strong>** and the rest of the comment is automatically inserted.</p>
+<p>This will allow, for example, auto-completion for Doxygen comments, you can
+type only <code class="highlighter-rouge">/**</code> and the rest of the comment is automatically inserted.</p>
 
-<p>Note: currently only JavaDoc style comments are supported, i.e. with /** comments and @ commands.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Currently only JavaDoc style comments are
+supported, i.e. with <code class="highlighter-rouge">/**</code> comments and <code class="highlighter-rouge">@</code> commands.</div>
 
-<p><img src="/web-preview/assets/images/2014/06/Doxygen.png" alt="Enable Doxygen support" /></p>
+<p><img src="/web-preview/assets/images/2020/preferences-ccpp-editor.png" alt="Enable Doxygen support" /></p>
 
 <h2 id="debug-previous-application">Debug previous application</h2>
 
-<p>Another Eclipse default that needs to be changed is the way programs are debugged. Eclipse remembers the previous debug configuration used and can present it as the default for the main debug button.</p>
+<p>Another Eclipse default that needs to be changed is the way programs are
+debugged. Eclipse remembers the previous debug configuration used and can
+present it as the default for the main debug button.</p>
 
 <p>To change this setting:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> → <strong>Launching</strong></li>
-  <li>select <strong>Always launch the previously launched application</strong> in the <strong>Launch Operation</strong> section.</li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> →
+<strong>Launching</strong></li>
+  <li>select <strong>Always launch the previously launched application</strong> in the
+<strong>Launch Operation</strong> section.</li>
 </ul>
 
-<p><img src="/web-preview/assets/images/2014/06/LaunchPrevious.png" alt="Launch previously used application" /></p>
+<p><img src="/web-preview/assets/images/2020/preferences-rundebug-launching.png" alt="Launch previously used application" /></p>
 
-<h2 id="show-source-roots">Show source roots</h2>
+<h2 id="enable-gdb-trace-console">Enable GDB trace console</h2>
 
-<p>For large projects, with many source folders, you might want to disable showing the source folders:</p>
+<p>While debugging, it is sometimes useful to see the dialog between Eclipse and
+GDB. For this, it is necessary to enable the GDB Trace console.</p>
+
+<p>To change this setting:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Appearance</strong></li>
-  <li>disable <strong>Show source roots at top of project</strong>.</li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> →
+<strong>Debug</strong> → <strong>GDB</strong></li>
+  <li>select <strong>Show the GDB traces console</strong> in the
+<strong>General Behaviour</strong> section.</li>
 </ul>
 
-<p><img src="/web-preview/assets/images/2017/preferences-show-source-roots.png" alt="Show source roots" /></p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The GDB entry is displayd belod Debug only after the debug plug-ins are initialised, i.e. after starting a debug session.</div>
 
+<p><img src="/web-preview/assets/images/2020/preferences-ccpp-debug-gdb.png" alt="Enable Doxygen support" /></p>
 
 
         
@@ -863,7 +939,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 5, 2020 <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 6, 2020 <br />
                 </div>
             </div>
 </footer>

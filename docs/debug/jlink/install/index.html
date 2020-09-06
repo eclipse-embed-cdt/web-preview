@@ -672,11 +672,11 @@ SEGGER J-Link, the short answer is: <strong>because of
 The long answer may include the following:</p>
 
 <ul>
-  <li><strong>wide processor support</strong> (there is probably no unsupported Arm processor
-in the entire galaxy, and if you find one in a remote quadrant, I’m pretty
-sure it’ll be shortly added to the list)</li>
+  <li><strong>wide processor support</strong> (probably you won’t find an unsupported Arm
+processor in the entire galaxy, and if you do find one, in a remote quadrant,
+I’m pretty sure it’ll be shortly added to the list)</li>
   <li>it is a true <strong>multi-platform</strong> solution, providing drivers for
-<strong>Windows</strong>, <strong>macOS</strong> and <strong>GNU/Linux</strong></li>
+<strong>Windows</strong>, <strong>macOS</strong> and <strong>GNU/Linux</strong>, Intel and Arm.</li>
   <li>it comes with a <strong>standard GDB server</strong> implementation, compatible with
 existing Arm toolchains</li>
   <li>in addition to the classical <strong>JTAG</strong> protocol, it implements the
@@ -690,7 +690,7 @@ V8, and even up to <strong>100 MHz SWO</strong> for the high-performance
   <li>it supports all possible target voltages, from <strong>1.2V to 5V</strong></li>
   <li>in addition to the regular debugging functionality, it is also able
 to write the internal flash, and, even more, it uses a smart flash
-writing algorithm, to avoid useless writes if the flash blocks did
+writing algorithm, to avoid unnecessary writes if the flash blocks did
 not change</li>
   <li>it is a mature, proven product, with a great support team</li>
   <li>it provides an entire range of probes,
@@ -702,7 +702,7 @@ many distributors, for example from Farnell)</li>
 </ul>
 
 <p>The J-Link was present on the JTAG market for many years, but,
-considering the initial prices, only the big companies could afford them.
+considering the initial prices, only commercial companies could afford them.
 After a fierce fight against Chinese clones, sold for a fraction of the
 price, in 2012 <a href="http://www.segger.com/">SEGGER</a> decided to introduce a
 low price version, <a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a>,
@@ -732,7 +732,7 @@ better matches your system.</p>
 
 <p>The J-Link GDB server is documented in the
 <a href="https://www.segger.com/downloads/jlink/UM08001_JLink.pdf">UM08001</a> manual,
-available from the
+available either in the installed folder, or from the
 <a href="http://www.segger.com/jlink-software.html">SEGGER J-Link page</a>.</p>
 
 <h2 id="install">Install</h2>
@@ -745,21 +745,20 @@ available from the
 <div class="tab-content">
 	<div role="tabpanel" class="tab-pane active" id="windows_1">
 		
-<p>The Windows file is a ZIP archive, named like <code class="highlighter-rouge">JLink_Windows.exe</code>.</p>
+<p>The Windows file is an executable installer, named like <code class="highlighter-rouge">JLink_WindowsV684.exe</code>.</p>
 
 <ul>
   <li>double click it to start the installation process</li>
   <li>enter the administrative password</li>
   <li>accept the license</li>
-  <li>accept the destination folder (<code class="highlighter-rouge">C:\Program Files\SEGGER\JLinkARM_V480</code>)</li>
+  <li>accept the destination folder (<code class="highlighter-rouge">C:\Program Files (x86)\SEGGER\JLink</code>)</li>
   <li>accept the default USB driver</li>
 </ul>
 
-<p>The result of the install is a folder (a new folder for each new version
-installed), and a set of driver files installed in the system folders,
-overwritten with each new install.</p>
+<p>The result of the install is a folder, and a set of driver files installed
+in the system folders, all overwritten with each new install.</p>
 
-<p><img src="/web-preview/assets/images/2014/01/Segger-win.png" alt="SEGGER Windows distribution" /></p>
+<p><img src="/web-preview/assets/images/2020/segger-win.png" alt="SEGGER Windows distribution" /></p>
 
 <p>Please note that on Windows, SEGGER provides both graphical interface
 and <strong>command line versions</strong> (having the names suffixed with <code class="highlighter-rouge">CL</code>) for
@@ -771,7 +770,7 @@ only the command line version of the  J-Link GDB server
 	</div>
 	<div role="tabpanel" class="tab-pane" id="macos_1">
 		
-<p>The macOS download is an macOS package installer, like <code class="highlighter-rouge">JLink_MacOSX.pkg</code>.</p>
+<p>The macOS download is an macOS package installer, like <code class="highlighter-rouge">JLink_MacOSX_V684.pkg</code>.</p>
 
 <ul>
   <li>double click it to start the installation process</li>
@@ -780,16 +779,17 @@ only the command line version of the  J-Link GDB server
 <code class="highlighter-rouge">/Applications</code> folder</li>
 </ul>
 
-<p>The result of the install is a folder like <code class="highlighter-rouge">/Applications/SEGGER/JLink_V641b/</code>
+<p>The result of the install is a folder like <code class="highlighter-rouge">/Applications/SEGGER/JLink_V684/</code>
 (a different folder for each version) where all executables and libraries are
 stored; please note that, as for many macOS applications, no other driver
-files are installed in the system folders, but some symbolic links are
+files are installed in the system folders, but some symbolic links to the latest
+installed version are
 created in the <code class="highlighter-rouge">/usr/local/bin</code> folder.</p>
 
 <p>Be sure to update the path in Eclipse preferences page to point to the
 latest SEGGER J-Link software.</p>
 
-<p><img src="/web-preview/assets/images/2014/01/Segger-OSX.png" alt="SEGGER macOS distribution" /></p>
+<p><img src="/web-preview/assets/images/2020/segger-mac.png" alt="SEGGER macOS distribution" /></p>
 
 <h3 id="usb">USB</h3>
 
@@ -808,19 +808,38 @@ versions, or plain TGZ archives. Select the one appropriate for you system
 and use the specific tools to install the package. For example, on Ubuntu,
 to install the 64-bit .deb file, use the following command:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>dpkg <span class="nt">-i</span> ~/Downloads/JLink_Linux_x86_64.deb
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>dpkg <span class="nt">-i</span> ~/Downloads/JLink_Linux_V684_x86_64.deb
 </code></pre></div></div>
 
-<p>The J-Link executables are installed in <code class="highlighter-rouge">/usr/bin</code>.</p>
+<p>The package is installed in a folder like <code class="highlighter-rouge">/opt/SEGGER/JLink_V684/</code>,
+but some symbolic links to the latest
+installed version are created in the <code class="highlighter-rouge">/usr/bin</code> folder.</p>
 
-<p>In case you have a 64-bit machine and install the 32-bit SEGGER package,
-you might need several 32-bit libraries, depending on distribution.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> In case you have a 64-bit machine and install
+the 32-bit SEGGER package,
+you might need several 32-bit libraries, depending on distribution.</div>
+
+<h3 id="raspberry-pi-os">Raspberry Pi OS</h3>
+
+<p>On a Raspberry Pi OS 64-bit, use the 64-bit .tgz file, and unpack
+it in <code class="highlighter-rouge">${HOME}/opt/SEGGER</code></p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> mkdir <span class="nt">-p</span> ~/opt/SEGGER
+<span class="gp">$</span> <span class="nb">cd</span> ~/opt/SEGGER
+<span class="gp">$</span> <span class="nb">tar </span>xf ~/Downloads/JLink_Linux_V684_arm64.tgz
+<span class="gp">$</span> <span class="nb">ls</span> <span class="nt">-l</span> ~/opt/SEGGER/JLink_Linux_V684_arm64
+</code></pre></div></div>
 
 <h3 id="udev">UDEV</h3>
 
-<p>The install procedure automatically adds
-<strong>/etc/udev/rules.d/99-jlink.rules</strong> to define the USB IDs of the
+<p>If you use the .deb or .rpm, the install procedure automatically adds
+<code class="highlighter-rouge">/etc/udev/rules.d/99-jlink.rules</code> to define the USB IDs of the
 J-Link devices. No other drivers are required.</p>
+
+<p>If you manually unpacked the .tgz, you need to copy the rules file:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">sudo </span>cp ~/opt/SEGGER/JLink_Linux_V684_arm64/99-jlink.rules /etc/udev/rules.d/99-jlink.rule
+</code></pre></div></div>
 
 
 	</div>
@@ -835,53 +854,59 @@ default, J-Link GDBServer will try JTAG but if only SWD is wired
 the interface (-if SWD). The device name is needed for targets which
 require special handling on connect (e.g. due to silicon bugs which
 make auto-detection impossible). For a list of available device names,
-please refer to the SEGGER <a href="http://www.segger.com/jlink_supported_devices.html">Supported devices</a> page. Below is an example how to test a
-JTAG connection to a STM32F103 evaluation board (-device STM32F103RB)
+please refer to the SEGGER <a href="http://www.segger.com/jlink_supported_devices.html">Supported devices</a> page.</p>
+
+<p>Here is an example how to test a
+SWD connection to a STM32F407 evaluation board (-device STM32F407VG)
 on macOS.</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /Applications/SEGGER/JLink/JLinkGDBServer <span class="nt">-if</span> JTAG <span class="nt">-device</span> STM32F103RB
-<span class="go">SEGGER J-Link GDB Server V4.80 Command Line Version
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /Applications/SEGGER/JLink/JLinkGDBServer <span class="nt">-if</span> SWD <span class="nt">-device</span> STM32F407VG
+<span class="go">SEGGER J-Link GDB Server V6.84 Command Line Version
 
-JLinkARM.dll V4.80 (DLL compiled Dec 20 2013 19:44:31)
+JLinkARM.dll V6.84 (DLL compiled Sep  4 2020 16:12:40)
 
+Command line: -if SWD -device STM32F407VG
 -----GDB Server start settings-----
-GDBInit file:                  none
-GDB Server Listening port:     2331
+GDBInit file:                  none
+GDB Server Listening port:     2331
 SWO raw output listening port: 2332
-Terminal I/O port:             2333
-Accept remote connection:      yes
-Generate logfile:              on
-Verify download:               on
-Init regs on start:            on
-Silent mode:                   off
-Single run mode:               off
+Terminal I/O port:             2333
+Accept remote connection:      yes
+Generate logfile:              off
+Verify download:               off
+Init regs on start:            off
+Silent mode:                   off
+Single run mode:               off
+Target connection timeout:     0 ms
 ------J-Link related settings------
-J-Link script:                 none
-Target interface:              JTAG
-Host interface:                USB
-Target endian:                 little
-Target interface speed:        0kHz
+J-Link Host interface:         USB
+J-Link script:                 none
+J-Link settings file:          none
+------Target related settings------
+Target device:                 STM32F407VG
+Target interface:              SWD
+Target interface speed:        4000kHz
+Target endian:                 little
 
 Connecting to J-Link...
 J-Link is connected.
-Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
-Hardware: V8.00
+Firmware: J-Link Pro V4 compiled Jul 17 2020 16:24:59
+Hardware: V4.00
 S/N: XXXXXXXXX
-OEM: SEGGER-EDU
-Feature(s): FlashBP, GDB
+Feature(s): RDI, FlashBP, FlashDL, JFlash, GDB
 Checking target voltage...
+Target voltage: 3.00 V
 Listening on TCP/IP port 2331
 Connecting to target...
-J-Link found 2 JTAG devices, Total IRLen = 9
-JTAG ID: 0x3BA00477 (Cortex-M3)
 Connected to target
 Waiting for GDB connection...
 ^C
 </span></code></pre></div></div>
 
-<p>On Windows, to start the GDB server, use back-slashes in the path and the CL (command line) version:</p>
+<p>On Windows, to start the GDB server, use back-slashes in the path and the
+CL (command line) version:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\&gt;</span>C:<span class="se">\P</span>rogram Files<span class="se">\S</span>EGGER<span class="se">\J</span>LinkARM_V480<span class="se">\J</span>LinkGDBServerCL
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\&gt;</span>C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class="o">)</span><span class="se">\S</span>EGGER<span class="se">\J</span>LinkARM_V684<span class="se">\J</span>LinkGDBServerCL
 </code></pre></div></div>
 
 <p>On Ubuntu the command is simple:</p>
@@ -916,7 +941,7 @@ page documenting how to use the Eclipse Embedded CDT
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 5, 2020 <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 6, 2020 <br />
                 </div>
             </div>
 </footer>
