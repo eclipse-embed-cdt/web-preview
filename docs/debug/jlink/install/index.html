@@ -639,29 +639,6 @@
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-
-});
-</script>
-
-<div id="toc"></div>
-
-    
 
 
    <h2 id="why-j-link">Why J-Link?</h2>
@@ -745,7 +722,8 @@ available either in the installed folder, or from the
 <div class="tab-content">
 	<div role="tabpanel" class="tab-pane active" id="windows_1">
 		
-<p>The Windows file is an executable installer, named like <code class="highlighter-rouge">JLink_WindowsV684.exe</code>.</p>
+<p>The Windows download is an executable installer, named like
+<code class="highlighter-rouge">JLink_WindowsV684.exe</code>.</p>
 
 <ul>
   <li>double click it to start the installation process</li>
@@ -770,7 +748,8 @@ only the command line version of the  J-Link GDB server
 	</div>
 	<div role="tabpanel" class="tab-pane" id="macos_1">
 		
-<p>The macOS download is an macOS package installer, like <code class="highlighter-rouge">JLink_MacOSX_V684.pkg</code>.</p>
+<p>The macOS download is an macOS package installer, named like
+<code class="highlighter-rouge">JLink_MacOSX_V684.pkg</code>.</p>
 
 <ul>
   <li>double click it to start the installation process</li>
@@ -783,8 +762,7 @@ only the command line version of the  J-Link GDB server
 (a different folder for each version) where all executables and libraries are
 stored; please note that, as for many macOS applications, no other driver
 files are installed in the system folders, but some symbolic links to the latest
-installed version are
-created in the <code class="highlighter-rouge">/usr/local/bin</code> folder.</p>
+installed version are created in the <code class="highlighter-rouge">/usr/local/bin</code> folder.</p>
 
 <p>Be sure to update the path in Eclipse preferences page to point to the
 latest SEGGER J-Link software.</p>
@@ -803,43 +781,49 @@ configurations are required.</p>
 	<div role="tabpanel" class="tab-pane" id="linux_1">
 		
 <p>As already mentioned, there are multiple packages available for GNU/Linux
-on the SEGGER download site, built as Debian/Red Hat packages, in 32/64-bit
-versions, or plain TGZ archives. Select the one appropriate for you system
-and use the specific tools to install the package. For example, on Ubuntu,
-to install the 64-bit .deb file, use the following command:</p>
+on the SEGGER download site, in 32/64-bit
+versions. Preferably download the .tgz and install it in your home folder.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>dpkg <span class="nt">-i</span> ~/Downloads/JLink_Linux_V684_x86_64.deb
+<p>For example, on Ubuntu,
+to install the 64-bit .tgz file, use the following commands:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> mkdir <span class="nt">-p</span> ~/opt/SEGGER
+<span class="gp">$</span> <span class="nb">cd</span> ~/opt/SEGGER
+<span class="gp">$</span> <span class="nb">tar </span>xf ~/Downloads/JLink_Linux_V684_x86_64.tgz
+<span class="gp">$</span> chmod a-w ~/opt/SEGGER/JLink_Linux_V684_x86_64
+<span class="gp">$</span> <span class="nb">ls</span> <span class="nt">-l</span> ~/opt/SEGGER/JLink_Linux_V684_x86_64
 </code></pre></div></div>
 
-<p>The package is installed in a folder like <code class="highlighter-rouge">/opt/SEGGER/JLink_V684/</code>,
-but some symbolic links to the latest
-installed version are created in the <code class="highlighter-rouge">/usr/bin</code> folder.</p>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> In case you have a 64-bit machine and install
-the 32-bit SEGGER package,
-you might need several 32-bit libraries, depending on distribution.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> In case you have a 64-bit machine, it is
+highly recommended to install the 64-bit archive. If, for any reasons you
+have to install the 32-bit SEGGER package,
+you might need to also install several 32-bit libraries,
+depending on distribution.</div>
 
 <h3 id="raspberry-pi-os">Raspberry Pi OS</h3>
 
 <p>On a Raspberry Pi OS 64-bit, use the 64-bit .tgz file, and unpack
-it in <code class="highlighter-rouge">${HOME}/opt/SEGGER</code></p>
+it in <code class="highlighter-rouge">${HOME}/opt/SEGGER</code>:</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> mkdir <span class="nt">-p</span> ~/opt/SEGGER
 <span class="gp">$</span> <span class="nb">cd</span> ~/opt/SEGGER
 <span class="gp">$</span> <span class="nb">tar </span>xf ~/Downloads/JLink_Linux_V684_arm64.tgz
+<span class="gp">$</span> chmod a-w ~/opt/SEGGER/JLink_Linux_V684_arm64
 <span class="gp">$</span> <span class="nb">ls</span> <span class="nt">-l</span> ~/opt/SEGGER/JLink_Linux_V684_arm64
 </code></pre></div></div>
 
 <h3 id="udev">UDEV</h3>
 
-<p>If you use the .deb or .rpm, the install procedure automatically adds
-<code class="highlighter-rouge">/etc/udev/rules.d/99-jlink.rules</code> to define the USB IDs of the
-J-Link devices. No other drivers are required.</p>
+<p>After manually unpacking the .tgz, you need to copy the rules file:</p>
 
-<p>If you manually unpacked the .tgz, you need to copy the rules file:</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">sudo </span>cp ~/opt/SEGGER/JLink_Linux_V684_arm64/99-jlink.rules /etc/udev/rules.d/99-jlink.rule
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">sudo </span>cp ~/opt/SEGGER/JLink_Linux_V684_<span class="k">*</span>/99-jlink.rules /etc/udev/rules.d/99-jlink.rule
 </code></pre></div></div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Although perfectly possible to install
+the J-Link Software in any folder, it is highly recommended to use the
+<code class="highlighter-rouge">~/opt/SEGGER</code> path, since by default the Eclipse Embedded CDT plug-ins
+search for the executables in this location. Be sure you respect the case,
+it is all upper-case SEGGER.</div>
 
 
 	</div>
@@ -854,10 +838,11 @@ default, J-Link GDBServer will try JTAG but if only SWD is wired
 the interface (-if SWD). The device name is needed for targets which
 require special handling on connect (e.g. due to silicon bugs which
 make auto-detection impossible). For a list of available device names,
-please refer to the SEGGER <a href="http://www.segger.com/jlink_supported_devices.html">Supported devices</a> page.</p>
+please refer to the SEGGER
+<a href="http://www.segger.com/jlink_supported_devices.html">Supported devices</a> page.</p>
 
 <p>Here is an example how to test a
-SWD connection to a STM32F407 evaluation board (-device STM32F407VG)
+SWD connection to a STM32F407 evaluation board (<code class="highlighter-rouge">-device STM32F407VG</code>)
 on macOS.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /Applications/SEGGER/JLink/JLinkGDBServer <span class="nt">-if</span> SWD <span class="nt">-device</span> STM32F407VG
@@ -906,7 +891,7 @@ Waiting for GDB connection...
 <p>On Windows, to start the GDB server, use back-slashes in the path and the
 CL (command line) version:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\&gt;</span>C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class="o">)</span><span class="se">\S</span>EGGER<span class="se">\J</span>LinkARM_V684<span class="se">\J</span>LinkGDBServerCL
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\&gt;C:\Program Files (x86)\SEGGER\JLinkARM_V684\JLinkGDBServerCL
 </code></pre></div></div>
 
 <p>On Ubuntu the command is simple:</p>
@@ -941,7 +926,7 @@ page documenting how to use the Eclipse Embedded CDT
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 6, 2020 <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 7, 2020 <br />
                 </div>
             </div>
 </footer>
