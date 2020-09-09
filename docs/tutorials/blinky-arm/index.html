@@ -9,8 +9,28 @@
 <title>Tutorial: Create a Blinky Arm test project | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/web-preview/css/syntax.css">
 
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/web-preview/feed.xml"/>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Tutorial: Create a Blinky Arm test project</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Tutorial: Create a Blinky Arm test project" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/web-preview/tutorials/blinky-arm/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/web-preview/tutorials/blinky-arm/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-09-11T16:25:00+00:00" />
+<script type="application/ld+json">
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/web-preview/tutorials/blinky-arm/","headline":"Tutorial: Create a Blinky Arm test project","datePublished":"2015-09-11T16:25:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/tutorials/blinky-arm/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/web-preview/css/modern-business.css?202008050934">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -32,7 +52,25 @@
 <script src="https://eclipse-embed-cdt.github.io/web-preview/js/toc.js"></script>
 <script src="https://eclipse-embed-cdt.github.io/web-preview/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon.ico">
+<!-- Use absolute URLs, to cover preview cases too -->
+<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,7 +79,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/web-preview/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://eclipse-embed-cdt.github.io/web-preview/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -750,7 +788,7 @@ configurations checked and click the <strong>Next &gt;</strong> button.</p>
 <ul>
   <li>select the <em>Toolchain name:</em> <strong>xPack GNU Arm Embedded GCC</strong> (mandatory)</li>
   <li>if the xPack was installed via xpm, the path is already filled in; otherwise
-browse for the <code class="highlighter-rouge">bin</code> folder within the toolchain folder; don’t be afraid
+browse for the <code class="language-plaintext highlighter-rouge">bin</code> folder within the toolchain folder; don’t be afraid
 to use the absolute path, it is not stored in the project</li>
   <li>click the <strong>Finish</strong> button</li>
 </ul>
@@ -758,9 +796,9 @@ to use the absolute path, it is not stored in the project</li>
 <p><img src="/web-preview/assets/images/2015/08/BlinkyToolchain.png" alt="Blinky toolchain and path selection" /></p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When selecting the path, be sure you select
-the top <code class="highlighter-rouge">/bin</code> folder
+the top <code class="language-plaintext highlighter-rouge">/bin</code> folder
 where the programs with long, prefixed names are stored, and not the inner
-<code class="highlighter-rouge">/bin</code> folder where the short name programs may be available.</div>
+<code class="language-plaintext highlighter-rouge">/bin</code> folder where the short name programs may be available.</div>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> DO NOT SKIP this step, it is mandatory
 to have a correct toolchain path defined in order for the build to complete
@@ -860,7 +898,7 @@ is shown, with the 4 LEDs blinking.</p>
 
 <p><img src="/web-preview/assets/images/2015/08/STM32F4-Discovery-LEDs.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
 
-<p>The Eclipse debugger is active, with a breakpoint in <code class="highlighter-rouge">main()</code>. From here you
+<p>The Eclipse debugger is active, with a breakpoint in <code class="language-plaintext highlighter-rouge">main()</code>. From here you
 can either step over several instructions, or click Resume
 (the green right pointing triangle) and watch the program run.</p>
 
@@ -941,7 +979,7 @@ emails.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Sep 7, 2020 <br />
+<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 9, 2020 <br />
                 </div>
             </div>
 </footer>
@@ -957,11 +995,19 @@ emails.</p>
 
 </body>
 
-<!-- the google_analytics_id gets auto inserted from the config file -->
 
 
 
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-16767008-16','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-16767008-19"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-16767008-19');
+</script>
 
 
 </html>

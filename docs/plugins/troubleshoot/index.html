@@ -9,8 +9,28 @@
 <title>Troubleshooting Eclipse Embedded CDT install | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/web-preview/css/syntax.css">
 
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/web-preview/feed.xml"/>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Troubleshooting Eclipse Embedded CDT install</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Troubleshooting Eclipse Embedded CDT install" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/web-preview/plugins/troubleshoot/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/web-preview/plugins/troubleshoot/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-18T10:04:00+00:00" />
+<script type="application/ld+json">
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/web-preview/plugins/troubleshoot/","headline":"Troubleshooting Eclipse Embedded CDT install","datePublished":"2020-08-18T10:04:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/plugins/troubleshoot/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/web-preview/css/modern-business.css?202008050934">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -32,7 +52,25 @@
 <script src="https://eclipse-embed-cdt.github.io/web-preview/js/toc.js"></script>
 <script src="https://eclipse-embed-cdt.github.io/web-preview/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon.ico">
+<!-- Use absolute URLs, to cover preview cases too -->
+<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://eclipse-embed-cdt.github.io/web-preview/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,7 +79,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/web-preview/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://eclipse-embed-cdt.github.io/web-preview/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -671,7 +709,7 @@ system is matching the version from the release announcement (for example
 <strong>Version 2.6.1-201502281154 released</strong>) with existing plug-ins/features.</p>
 
 <p>The short answer is that the announced version refers to the update site.
-The same version is also used for the <code class="highlighter-rouge">ilg.gnuarmeclipse.core</code> plug-in:</p>
+The same version is also used for the <code class="language-plaintext highlighter-rouge">ilg.gnuarmeclipse.core</code> plug-in:</p>
 
 <p><img src="/web-preview/assets/images/2017/plugins-versions.png" alt="Installed plug-ins" /></p>
 
@@ -692,19 +730,19 @@ cannot be found in the list of the features:</p>
 distributions. To overcome this, disable the use of GTK 3, by adding the
 following line to your environment:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">export </span><span class="nv">SWT_GTK3</span><span class="o">=</span>0
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">export </span><span class="nv">SWT_GTK3</span><span class="o">=</span>0
 </code></pre></div></div>
 
 <p>If, for any reason, a global setting is not possible, the GTK version can be
-set in <code class="highlighter-rouge">eclipse.ini</code>:</p>
+set in <code class="language-plaintext highlighter-rouge">eclipse.ini</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--launcher.GTK_version
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--launcher.GTK_version
 2
 </code></pre></div></div>
 
 <p>You might need to place this definition before:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--launcher.appendVmargs
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--launcher.appendVmargs
 </code></pre></div></div>
 
 <p>This requirement is anecdotal and appears on some forums; the Eclipse
@@ -716,12 +754,12 @@ documentation does not mention it.</p>
 and subject to various restrictions, for example path randomization, which
 prevents Eclipse to maintain persistent preferences (for more details see
 <a href="https://ilgthegeek.wordpress.com/2017/07/13/macos-com-apple-quarantine/">blog post</a>).
-To disable this, remove the <code class="highlighter-rouge">com.apple.quarantine</code> extended attribute
-from <code class="highlighter-rouge">Eclipse.app</code>:</p>
+To disable this, remove the <code class="language-plaintext highlighter-rouge">com.apple.quarantine</code> extended attribute
+from <code class="language-plaintext highlighter-rouge">Eclipse.app</code>:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> xattr Eclipse.app
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>xattr Eclipse.app
 <span class="go">com.apple.quarantine
-</span><span class="gp">$</span> xattr <span class="nt">-dr</span> com.apple.quarantine Eclipse.app
+</span><span class="gp">$</span><span class="w"> </span>xattr <span class="nt">-dr</span> com.apple.quarantine Eclipse.app
 </code></pre></div></div>
 
 <h3 id="incomplete-eclipse">Incomplete Eclipse</h3>
@@ -815,7 +853,7 @@ emails.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Sep 7, 2020 <br />
+<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 9, 2020 <br />
                 </div>
             </div>
 </footer>
@@ -831,11 +869,19 @@ emails.</p>
 
 </body>
 
-<!-- the google_analytics_id gets auto inserted from the config file -->
 
 
 
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-16767008-16','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-16767008-19"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-16767008-19');
+</script>
 
 
 </html>
