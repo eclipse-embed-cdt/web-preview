@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T19:27:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/web-preview/templates/stm32f/","headline":"STM32Fxx templates","datePublished":"2015-09-11T19:27:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/templates/stm32f/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/web-preview/templates/stm32f/","headline":"STM32Fxx templates","datePublished":"2015-09-11T19:27:00+00:00","dateModified":"2020-09-14T19:18:37+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/templates/stm32f/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -696,7 +696,10 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="overview">Overview</h2>
 
-<p>STM provides a large range of Cortex-M micro-controllers, grouped in several families. The Eclipse Embedded CDT plug-ins provide support for F0, F1, F2, F3, F4 and F7. Since all templates share common characteristics, the examples shown here will refer only to the F4 family.</p>
+<p>STM provides a large range of Cortex-M micro-controllers, grouped in several
+families. The Eclipse Embedded CDT plug-ins provide support for F0, F1, F2,
+F3, F4 and F7. Since all templates share common characteristics, the
+examples shown here will refer only to the F4 family.</p>
 
 <h2 id="create-a-new-project">Create a new project</h2>
 
@@ -725,7 +728,9 @@ $('#toc').on('click', 'a', function() {
 
 <p><img src="/web-preview/assets/images/2014/04/Toolchain.png" alt="Toolchain path" /></p>
 
-<p>Note: DO NOT SKIP this step, it is mandatory to have a correct toolchain path defined in order for the build to complete correctly.</p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> DO NOT SKIP this step, it is mandatory
+to have a correct toolchain path defined in order for the build to complete
+correctly.</div>
 
 <p>The generated project has the following structure:</p>
 
@@ -733,29 +738,47 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="associate-a-device-to-the-project">Associate a device to the project</h3>
 
-<p>Future releases of the wizard will this automatically but for now it is recommended to do it manually.</p>
+<p>Future releases of the wizard will this automatically but for now it is
+recommended to do it manually.</p>
 
-<p>For more details, please visit the <a href="/web-preview/eclipse/project/assign-device/">separate page</a>.</p>
+<p>For more details, please visit the
+<a href="/web-preview/eclipse/project/assign-device/">separate page</a>.</p>
 
 <p><img src="/web-preview/assets/images/2013/10/Devices.png" alt="Assign a device to the project" /></p>
 
 <h2 id="build">Build</h2>
 
-<p>As seen in the above picture, the project builds without errors and runs on the STM32F4DISCOVERY board, blinking the LED and printing trace lines on the debugger output window.</p>
+<p>As seen in the above picture, the project builds without errors and runs
+on the STM32F4DISCOVERY board, blinking the LED and printing trace lines
+on the debugger output window.</p>
 
 <h2 id="exclude-unused">Exclude unused</h2>
 
-<p>By default, the template wizard enables the <strong>Exclude unused</strong> option. The result is that unused device drivers source files, although copied in the project, are excluded from build, mainly to save some build time.</p>
+<p>By default, the template wizard enables the <strong>Exclude unused</strong> option.
+The result is that unused device drivers source files, although copied
+in the project, are excluded from build, mainly to save some build time.</p>
 
-<p>If you need to re-include some of the source files you need to right click on the file, select <strong>Resource Configurations</strong> → <strong>Exclude from Build…</strong> and deselect the build configuration you want to include the file.</p>
+<p>If you need to re-include some of the source files you need to right
+click on the file, select <strong>Resource Configurations</strong> →
+<strong>Exclude from Build…</strong> and deselect the build configuration you
+want to include the file.</p>
 
 <h2 id="load-flash-and-debug">Load flash and debug</h2>
 
-<p>Once you successfully built the project (be sure the text size in the Print Size step is not zero), you need to connect the board to your development machine and download the program into the board flash memory.</p>
+<p>Once you successfully built the project (be sure the text size in
+the <strong>Print Size</strong> step is not zero), you need to connect the board
+to your development machine and download the program into the board
+flash memory.</p>
 
-<p>For ARM devices, this is done using a JTAG or SWD probe. Most professional development boards include the standard JTAG connector, and a professional JTAG probe, like J-Link, can be used directly.</p>
+<p>For Arm devices, this is done using a JTAG or SWD probe. Most professional
+development boards include the standard JTAG connector, and a professional
+JTAG probe, like J-Link, can be used directly.</p>
 
-<p>Some low cost development boards do not include the standard JTAG connector, but have an on-board version of a JTAG probe. For example, the STM32F4DISCOVERY includes a version of ST/LINK V2, and the board can be directly connected via USB to the development machine. The portable method of using the ST/LINK V2 is via OpenOCD.</p>
+<p>Some low cost development boards do not include the standard JTAG
+connector, but have an on-board version of a JTAG probe. For example,
+the STM32F4DISCOVERY includes a version of ST/LINK V2, and the board can
+be directly connected via USB to the development machine. The portable
+method of using the ST/LINK V2 is via OpenOCD.</p>
 
 <p>For more details on debugging, please refer to the specific
 <a href="/web-preview/debug/">debug</a> pages.</p>
@@ -765,7 +788,9 @@ $('#toc').on('click', 'a', function() {
 <p>The usual sources for build failures are:</p>
 
 <ul>
-  <li>a wrong or missing toolchain path; go to the project properties, C/C++ Build → Setting → the Toolchains tab and define the correct path;</li>
+  <li>a wrong or missing toolchain path; go to the project properties,
+<strong>C/C++ Build</strong> → <strong>Setting</strong> → the <strong>Toolchains</strong> tab and define the
+correct path;</li>
   <li>missing build tools (make &amp; rm) on Windows; install the build tools.</li>
 </ul>
 
@@ -788,7 +813,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 14, 2020<br/> Site last generated: Sep 14, 2020 <br />
                 </div>
             </div>
 </footer>
