@@ -480,6 +480,13 @@
 
   
   
+  <url>
+    <loc>https://eclipse-embed-cdt.github.io/web-preview/articles/2020-09-08-raspberrypi-org-eclipse/</loc>
+    <lastmod>2020-09-18T13:57:46+00:00</lastmod>
+  </url>
+  
+  
+  
   
   
   <url>
@@ -584,9 +591,11 @@
   
   
   
+  
+  
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/support/faq/</loc>
-    <lastmod>2020-09-18T10:44:41+00:00</lastmod>
+    <lastmod>2020-09-18T16:40:01+00:00</lastmod>
   </url>
   
   
@@ -736,7 +745,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/support/known-issues/</loc>
-    <lastmod>2020-09-18T10:44:41+00:00</lastmod>
+    <lastmod>2020-09-18T16:40:01+00:00</lastmod>
   </url>
   
   
@@ -843,7 +852,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/plugins/prerequisites/</loc>
-    <lastmod>2020-09-15T04:58:57+00:00</lastmod>
+    <lastmod>2020-09-18T16:40:01+00:00</lastmod>
   </url>
   
   
@@ -860,6 +869,8 @@
     <loc>https://eclipse-embed-cdt.github.io/web-preview/debug/qemu/</loc>
     <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
+  
+  
   
   
   

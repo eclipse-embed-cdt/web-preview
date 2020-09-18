@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-15T15:18:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/web-preview/support/known-issues/","headline":"Known issues","datePublished":"2020-08-15T15:18:00+00:00","dateModified":"2020-09-18T10:44:41+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/support/known-issues/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/web-preview/support/known-issues/","headline":"Known issues","datePublished":"2020-08-15T15:18:00+00:00","dateModified":"2020-09-18T16:40:01+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/support/known-issues/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -723,6 +723,30 @@ such a broken project; you have to create a new project and copy the
 content (this is a CDT bug, not a plug-in bug).</p>
 
 <h2 id="annoying-bugs">Annoying bugs</h2>
+
+<h3 id="the-qt-plug-ins-fail-to-start-with-java-15">The Qt plug-ins fail to start with Java 15</h3>
+
+<p>Java 15 removed support for JavaScript, and the Qt plug-ins no longer start,
+throwing a message box:</p>
+
+<blockquote>
+  <p>An internal error occurred during: “Load QML Analyzer”.
+Cannot invoke “javax.script.ScriptEngine.getContext()” because “this.engine” is null</p>
+</blockquote>
+
+<p>If you need the Qt plug-ins, the workaround is to downgrade to Java 14.</p>
+
+<p>Otherwise, to get rid of the message box, it is possible to uninstall the
+Qt plugins:</p>
+
+<ul>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) About Eclipse IDE</strong></li>
+  <li>click the <strong>Installation Details</strong> button</li>
+  <li>click the <strong>Installed Software</strong> tab</li>
+  <li>select the <strong>C/C++ Qt Support</strong> feature</li>
+  <li>click the <strong>Uninstall</strong> button</li>
+  <li>click <strong>Finish</strong></li>
+</ul>
 
 <h3 id="build-fails-after-rename">Build fails after rename</h3>
 
