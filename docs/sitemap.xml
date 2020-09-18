@@ -541,7 +541,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/eclipse/project/assign-device/</loc>
-    <lastmod>2020-09-15T05:00:15+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -550,7 +550,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/tutorials/blinky-arm/</loc>
-    <lastmod>2020-09-17T06:53:47+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -571,7 +571,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/templates/cortexm/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -586,7 +586,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/support/faq/</loc>
-    <lastmod>2020-09-09T08:37:28+00:00</lastmod>
+    <lastmod>2020-09-18T10:44:41+00:00</lastmod>
   </url>
   
   
@@ -595,7 +595,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/plugins/features/</loc>
-    <lastmod>2020-09-15T04:58:57+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -622,7 +622,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/eclipse/cdt/hardware-debug/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -633,7 +633,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/templates/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -642,14 +642,14 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/debug/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/support/</loc>
-    <lastmod>2020-09-09T08:37:28+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:44+00:00</lastmod>
   </url>
   
   
@@ -679,7 +679,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/eclipse/cdt/indexer/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -693,7 +693,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/debug/install/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -713,14 +713,14 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/debug/jlink/install/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/debug/jlink/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -729,14 +729,14 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/templates/klxx/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/support/known-issues/</loc>
-    <lastmod>2020-09-09T08:37:28+00:00</lastmod>
+    <lastmod>2020-09-18T10:44:41+00:00</lastmod>
   </url>
   
   
@@ -753,8 +753,8 @@
   
   
   <url>
-    <loc>https://eclipse-embed-cdt.github.io/web-preview/plugins/managed-build/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <loc>https://eclipse-embed-cdt.github.io/web-preview/eclipse/cdt/managed-build/</loc>
+    <lastmod>2020-09-18T11:16:18+00:00</lastmod>
   </url>
   
   
@@ -782,7 +782,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/debug/openocd/riscv/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -791,7 +791,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/debug/openocd/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -800,7 +800,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/plugins/packs-manager/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -816,7 +816,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/debug/peripheral-registers/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -836,7 +836,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/eclipse/workspace/preferences/</loc>
-    <lastmod>2020-09-15T05:00:15+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -858,7 +858,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/debug/qemu/</loc>
-    <lastmod>2020-09-15T04:56:51+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -879,7 +879,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/templates/stm32f/</loc>
-    <lastmod>2020-09-17T06:55:29+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
@@ -923,7 +923,7 @@
   
   <url>
     <loc>https://eclipse-embed-cdt.github.io/web-preview/plugins/troubleshoot/</loc>
-    <lastmod>2020-09-15T04:58:57+00:00</lastmod>
+    <lastmod>2020-09-18T11:15:16+00:00</lastmod>
   </url>
   
   
