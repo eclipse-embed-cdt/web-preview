@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Update the plug-ins installed on an Eclipse instance.">
+<meta name="description" content="Tools required to build the plug-ins locally and run debug sessions.">
 <meta name="keywords" content=" ">
-<title>How to update the Eclipse Embedded CDT plug-ins | Eclipse Embedded CDT</title>
+<title>Build prerequisites | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/web-preview/css/syntax.css">
 
 
@@ -14,19 +14,19 @@
 <link type="application/rss+xml" rel="alternate" title="" href="https://eclipse-embed-cdt.github.io/web-preview/feed.xml">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>How to update the Eclipse Embedded CDT plug-ins</title>
+<title>Build prerequisites</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="How to update the Eclipse Embedded CDT plug-ins" />
+<meta property="og:title" content="Build prerequisites" />
 <meta name="author" content="Liviu Ionescu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
 <meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
-<link rel="canonical" href="https://eclipse-embed-cdt.github.io/web-preview/plugins/update/" />
-<meta property="og:url" content="https://eclipse-embed-cdt.github.io/web-preview/plugins/update/" />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/web-preview/develop/build-prerequisites/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/web-preview/develop/build-prerequisites/" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-08-17T15:33:00+00:00" />
+<meta property="article:published_time" content="2015-09-10T17:20:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/web-preview/plugins/update/","headline":"How to update the Eclipse Embedded CDT plug-ins","datePublished":"2020-08-17T15:33:00+00:00","dateModified":"2020-09-15T04:56:51+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/plugins/update/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/web-preview/develop/build-prerequisites/","headline":"Build prerequisites","datePublished":"2015-09-10T17:20:00+00:00","dateModified":"2020-11-06T15:58:16+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/develop/build-prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -256,7 +256,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/web-preview/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="How to update the Eclipse Embedded CDT plug-ins">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Build prerequisites">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -320,7 +320,7 @@
           
           
           
-          <li class="active"><a title="Update an Existing Eclipse" href="/web-preview/plugins/update/">Update an Existing Eclipse</a></li>
+          <li><a title="Update an Existing Eclipse" href="/web-preview/plugins/update/">Update an Existing Eclipse</a></li>
           
           
           
@@ -680,7 +680,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">How to update the Eclipse Embedded CDT plug-ins</h1>
+   <h1 class="post-title-main">Build prerequisites</h1>
 </div>
 
 
@@ -688,7 +688,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Update the plug-ins installed on an Eclipse instance.
+    <div class="summary">Tools required to build the plug-ins locally and run debug sessions.
 </div>
    
 
@@ -718,56 +718,488 @@ $('#toc').on('click', 'a', function() {
     
 
 
-   <h2 id="for-those-in-a-hurry">For those in a hurry</h2>
+   <h2 id="install--configure-eclipse">Install &amp; Configure Eclipse</h2>
 
-<p>The Eclipse Embedded CDT plug-ins use the standard Eclipse update
-mechanism:</p>
+<h3 id="install-git-for-windows">Install Git for Windows</h3>
+
+<p>On Windows, the <code class="language-plaintext highlighter-rouge">git</code> command is available in the
+<a href="https://git-scm.com/download/win">Git for Windows</a> package.</p>
+
+<p>It also comes with a minimal POSIX environment. To access it, start
+the <code class="language-plaintext highlighter-rouge">bash.exe</code> program.</p>
+
+<h3 id="install-sourcetree">Install Sourcetree</h3>
+
+<p>For a convenient access to Git, it is recommended to install
+<a href="https://www.sourcetreeapp.com/">Sourcetree</a>, available for macOS and Windows.</p>
+
+<p>For GNU/Linux, either use GitKraken, or directly the command line Git.</p>
+
+<h3 id="install-java">Install Java</h3>
+
+<p>Starting with Eclipse 2020-09, the minimum requirement is Java 11.
+The builds running on the Eclipse infrastructure currently use
+<a href="https://adoptopenjdk.net">AdoptOpenJDK</a> version <strong>11</strong> (LTS).
+For consistency reasons, it is recommended to install the same version.</p>
+
+<p>Starting with 2020-09, Eclipse itself includes a JRE instance,
+and for normal use it no longer needs a separate Java.
+However, active development requires JDK; JRE is not enough,
+without JDK it is not possible to compile the plug-ins and
+run debug sessions.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you already have a more recent version of
+Java installed, or from a different distribution, you might be able to use
+it, but, for consistency reasons, it is still recommended to install
+AdoptOpenJDK 11.</div>
+
+<ul id="profileTabs_1" class="nav nav-tabs">
+    <li class="active"><a href="#windows_1" data-toggle="tab">Windows</a></li>
+    <li><a href="#macos_1" data-toggle="tab">macOS</a></li>
+    <li><a href="#linux_1" data-toggle="tab">GNU/Linux</a></li>
+</ul>
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="windows_1">
+		
+<p>Windows</p>
+
+
+	</div>
+	<div role="tabpanel" class="tab-pane" id="macos_1">
+		
+<p>Go to the AdoptOpenJDK <a href="https://adoptopenjdk.net/releases.html">download</a> page:</p>
 
 <ul>
-  <li>in the <em>Eclipse</em> menu, go to <strong>Help</strong> → <strong>Check for Updates…</strong></li>
+  <li>download the jdk-11* macOS .pkg file (surprisingly, the .tar.gz is
+not an usual archive; it includes the macOS package, and requires
+even more efforts to use)</li>
+  <li>double click it to start the install; it’ll go into
+<code class="language-plaintext highlighter-rouge">/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk</code>.</li>
 </ul>
 
-<p><img src="/web-preview/assets/images/2020/check-for-updates.png" alt="Check for Updates" /></p>
 
-<h2 id="overview">Overview</h2>
+	</div>
+	<div role="tabpanel" class="tab-pane" id="linux_1">
+		
+<p>linux</p>
 
-<p>By design, Eclipse is a collection of features, each refering one or more
-plug-ins; the features are the smallest unit for installing and updating
-plug-ins.</p>
 
-<p>Each feature keeps track of the URL of the update site used to install it
-(also called <em>Eclipse p2 repository</em>).</p>
+	</div>
+</div>
 
-<p>When Eclipse is instructed to check for updates, all the p2 repositories are
-checked for newer versions.</p>
+<h3 id="prepare-folders">Prepare folders</h3>
 
-<p>If newer versions are available, Eclipse lists them and the user can select
-which to update.</p>
+<ul>
+  <li>in a place of you choice (like <code class="language-plaintext highlighter-rouge">${HOME}/Work</code>), create a folder <code class="language-plaintext highlighter-rouge">eclipse-embed-cdt.github</code></li>
+  <li>inside it create a folder <code class="language-plaintext highlighter-rouge">develop</code></li>
+</ul>
 
-<p><img src="/web-preview/assets/images/2020/available-updates.png" alt="Available Updates" /></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="s2">"</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span><span class="s2">/Work/eclipse-embed-cdt.github/develop"</span>
+</code></pre></div></div>
 
-<p>The next step is to review and accept the license:</p>
+<h3 id="install-eclipse-ide-for-eclipse-committers">Install Eclipse IDE for Eclipse Committers</h3>
 
-<p><img src="/web-preview/assets/images/2020/available-updates-license.png" alt="Available Updates License" /></p>
+<p>This instance of Eclipse is specialised for Eclipse plug-ins development.
+The recommened version is 2020-09.</p>
 
-<p>The update may take a while, and Eclipse will ask to restart to make use of
-the new plug-ins.</p>
+<ul id="profileTabs_2" class="nav nav-tabs">
+    <li class="active"><a href="#windows_2" data-toggle="tab">Windows</a></li>
+    <li><a href="#macos_2" data-toggle="tab">macOS</a></li>
+    <li><a href="#linux_2" data-toggle="tab">GNU/Linux</a></li>
+</ul>
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="windows_2">
+		
+<p>Windows</p>
 
-<h2 id="multiple-standalone-eclipse-instances">Multiple standalone Eclipse instances</h2>
 
-<p>If multiple Eclipse instances are installed on a system (which is a good thing!)
-each Eclipse is standalone, and does not share any content with other Eclipses.</p>
+	</div>
+	<div role="tabpanel" class="tab-pane" id="macos_2">
+		
+<p>Go to the 2020-09
+<a href="https://www.eclipse.org/downloads/packages/release/2020-09/r/">download</a> page:</p>
 
-<p>Thus, updating one Eclipse does not affect the plug-ins installed on other
-Eclipses. Maintaining Eclipse consistency is very important in production
-environments, and one of the reasons of using multiple Eclipse
-instances.</p>
+<ul>
+  <li>identify the <strong>Eclipse IDE for Eclipse Committers</strong> section</li>
+  <li>download the macOS binary
+(for example <code class="language-plaintext highlighter-rouge">eclipse-cpp-2020-09-R-macosx-cocoa-x86_64.dmg</code>)</li>
+  <li>double click on the .dmg image file</li>
+  <li>drag and drop the <code class="language-plaintext highlighter-rouge">Eclipse.app</code> into the <code class="language-plaintext highlighter-rouge">eclipse-embed-cdt.github/develop</code>
+folder</li>
+  <li>remove the <code class="language-plaintext highlighter-rouge">com.apple.quarantine</code> attribute:</li>
+</ul>
 
-<h2 id="conclusions">Conclusions</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr <span class="nt">-dr</span> com.apple.quarantine Eclipse.app
+</code></pre></div></div>
 
-<p>This mechanism is common for all Eclipse plug-ins, and, unless when in the
-middle of a critical project, it is recommended that
-from time to time to update the Eclipse plug-ins.</p>
+<ul>
+  <li>rename <code class="language-plaintext highlighter-rouge">Eclipse.app</code> to <code class="language-plaintext highlighter-rouge">Eclipse-committers-2020-09.app</code></li>
+</ul>
+
+
+	</div>
+	<div role="tabpanel" class="tab-pane" id="linux_2">
+		
+<p>linux</p>
+
+
+	</div>
+</div>
+
+<h3 id="start-the-new-eclipse">Start the new Eclipse</h3>
+
+<ul>
+  <li>in the <code class="language-plaintext highlighter-rouge">.../eclipse-embed-cdt.github/develop</code> folder create a new workspace
+named <code class="language-plaintext highlighter-rouge">eclipse-committers-2020-09-workspace</code>
+(note: be sure you create the workspace where you need it to be, since
+moving later is generally not supported by Eclipse; if you need this,
+preferably create a new workspace)</li>
+  <li>check <strong>Use this as default…</strong></li>
+  <li>check if you installed the right Eclipse; go to the <em>Eclipse</em> menu →
+<strong>Help</strong> (<strong>Eclipse</strong> on macOS) → <strong>About Eclipse</strong> and the first line
+should read <strong>Eclipse IDE for Eclipse Committers</strong></li>
+</ul>
+
+<h3 id="set-java-11-as-default">Set Java 11 as default</h3>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Java</strong> → <strong>Installed JREs</strong>
+    <ul>
+      <li>Add → Standard VM
+        <ul>
+          <li>JRE Home: select the <code class="language-plaintext highlighter-rouge">/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home</code> folder</li>
+          <li>JRE name: <strong>AdoptOpenJDK 11</strong></li>
+        </ul>
+      </li>
+      <li>click the <strong>Apply</strong> button</li>
+    </ul>
+  </li>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Java</strong> → <strong>Installed JREs</strong> → <strong>Execution Environments</strong>
+    <ul>
+      <li>in the left pane select <strong>JavaSE-11</strong></li>
+      <li>in the right pane select <strong>AdoptOpenJDK 11</strong></li>
+      <li>click the <strong>Apply and Close</strong> button</li>
+    </ul>
+  </li>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Java</strong> → <strong>Compiler</strong>
+    <ul>
+      <li>Compiler compliance level: select 11</li>
+      <li>click the <strong>Apply and Close</strong> button</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="install-several-eclipse-plug-ins">Install several Eclipse plug-ins</h3>
+
+<ul>
+  <li><strong>Help</strong> → <strong>Install New Software</strong>
+    <ul>
+      <li>Work with: <code class="language-plaintext highlighter-rouge">2020-09 - http://download.eclipse.org/releases/2020-09</code>
+        <ul>
+          <li>In <strong>Application Development Framework</strong>
+            <ul>
+              <li>optional <strong>Eclipse Project SDK</strong></li>
+            </ul>
+          </li>
+          <li>In <strong>Mobile and Device Development</strong>
+            <ul>
+              <li>select <strong>C/C++ GCC Cross Compile Support</strong></li>
+              <li>select <strong>C/C++ GDB Hardware Debugging</strong></li>
+              <li>select <strong>C/C++ Memory View Enhancements</strong></li>
+            </ul>
+          </li>
+          <li>In <strong>Programming Languages</strong>
+            <ul>
+              <li>optional <strong>C/C++ Autotools</strong></li>
+              <li>select <strong>C/C++ Development Tools</strong></li>
+              <li>select <strong>C/C++ Development Tools SDK</strong></li>
+              <li>optional <strong>C/C++ Docker Container Launch Support</strong></li>
+              <li>optional <strong>C/C++ LLVM-Family</strong></li>
+              <li>optional <strong>C/C++ Unit Testing Support</strong></li>
+            </ul>
+          </li>
+          <li>In <strong>Web, XML, Java and OSGi Enterprise Development</strong>
+            <ul>
+              <li>select <strong>Eclipse XML Editors and Tools</strong></li>
+              <li>select <strong>Eclipse XSL Development Tools</strong></li>
+              <li>select <strong>JavaScript Development Tools</strong></li>
+            </ul>
+          </li>
+          <li>click the <strong>Next</strong> button</li>
+          <li>accept the terms of the license agreement</li>
+          <li>click the <strong>Finish</strong> button</li>
+        </ul>
+      </li>
+      <li>wait for the new plug-ins to be installed (in background, see status line)</li>
+    </ul>
+  </li>
+  <li>restart</li>
+  <li>click the Workspace button in the top right corner</li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Without the <strong>C/C++ Development Tools SDK</strong>
+which includes the CDT sources, the extension point
+schemas will not be available so attempts to add new elements to the
+extensions will not be possible, and only ‘Generic’ elements will be
+offered.</div>
+
+<h3 id="install-base-api">Install base API</h3>
+
+<ul>
+  <li>go to <a href="http://www.eclipse.org/cdt/downloads.php">CDT download</a> page,
+and download <code class="language-plaintext highlighter-rouge">cdt-10.0.0.1.zip</code>
+(for compatibility with Eclipse 2020-09)</li>
+  <li>unpack the archive</li>
+  <li>move the new <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code> folder into the <code class="language-plaintext highlighter-rouge">develop</code> folder</li>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong>
+→ <strong>Target Platform</strong>
+    <ul>
+      <li>click the <strong>Add…</strong> button</li>
+      <li>select <strong>Nothing: Start with an empty target</strong></li>
+      <li>Next
+        <ul>
+          <li>Enter name: <code class="language-plaintext highlighter-rouge">2020-09</code></li>
+          <li>click <strong>Add…</strong> → <strong>Directory</strong> → <strong>Next &gt;</strong></li>
+          <li>click <strong>Browse…</strong> → <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code></li>
+          <li>click the <strong>Finish</strong> button</li>
+        </ul>
+      </li>
+      <li>click the <strong>Reload</strong> button</li>
+      <li>click the <strong>Finish</strong></li>
+    </ul>
+  </li>
+  <li>enable only the <strong>Running Platform as Active</strong> (mandatory!)</li>
+  <li>click <strong>Apply and Close</strong></li>
+</ul>
+
+<p>Selecting the running platform is required when starting Eclipse to Run or
+Debug, without it the core plug-ins will not be available.</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong>
+→ <strong>API Baselines</strong>
+    <ul>
+      <li>click the <strong>Add Baseline…</strong> button</li>
+      <li>select <strong>A target platform</strong>
+        <ul>
+          <li>Enter name: <code class="language-plaintext highlighter-rouge">2020-09</code></li>
+          <li>enable <code class="language-plaintext highlighter-rouge">2020-09</code></li>
+          <li>click the <strong>Refresh</strong> button</li>
+          <li>click the <strong>Finish</strong> button</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>click <strong>Apply and Close</strong></li>
+</ul>
+
+<h3 id="create-and-configure-the-workspace">Create and configure the workspace</h3>
+
+<ul>
+  <li>change the workspace preferences
+    <ul>
+      <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences…</strong></li>
+      <li><strong>General</strong> → <strong>Workspace</strong>
+        <ul>
+          <li>enable <strong>Refresh on access</strong></li>
+          <li>set <strong>Text file encoding: UTF-8</strong></li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li><strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong>
+        <ul>
+          <li>enable <strong>Show Print Margin</strong> (80)</li>
+          <li>enable <strong>Show Line Numbers</strong></li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li><strong>General</strong> → <strong>Editors</strong> → <strong>File Associations</strong>
+        <ul>
+          <li>click <strong>Add</strong> and add <code class="language-plaintext highlighter-rouge">*.sh</code>, <code class="language-plaintext highlighter-rouge">*.command</code>, <code class="language-plaintext highlighter-rouge">*.ini</code>, <code class="language-plaintext highlighter-rouge">*.liquid</code>, <code class="language-plaintext highlighter-rouge">*.launch</code></li>
+          <li>for each, click the <strong>Add</strong> button in the Associate editors area</li>
+          <li>associate with the <strong>Text Editor</strong></li>
+          <li>click the <strong>Apply and Close</strong> button</li>
+        </ul>
+      </li>
+      <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences…</strong></li>
+      <li><strong>Run/Debug</strong> → <strong>Console</strong>
+        <ul>
+          <li>disable Limit console output</li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li><strong>Java</strong> → <strong>Editor</strong> → <strong>Folding</strong>
+        <ul>
+          <li>disable <strong>Header Comments</strong></li>
+          <li>disable <strong>Imports</strong></li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li><strong>XML</strong> → <strong>XML Files</strong> → <strong>Editor</strong>
+        <ul>
+          <li>Line width 72</li>
+          <li>enable <strong>Split multiple attributes…</strong></li>
+          <li>disable <strong>Align final bracket…</strong></li>
+          <li>enable <strong>Preserve whitespace in tags with PCDATA content</strong></li>
+          <li>enable <strong>Clear all blank lines</strong></li>
+          <li>disable <strong>Format comments</strong></li>
+          <li>enable <strong>Insert whitespace before closing…</strong></li>
+          <li>enable <strong>Indent using tabs</strong></li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li>click the <strong>Apply and Close</strong> button</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="install-a-eclipse-cdt-for-tests">Install a Eclipse CDT for tests</h3>
+
+<p>This separate instance of Eclipse will be used to test the plug-in.</p>
+
+<p>Go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and follow
+the <a href="https://www.eclipse.org/downloads/eclipse-packages/">download packages</a>
+link.</p>
+
+<h4 id="eclipse-cdt-2020-09">Eclipse CDT 2020-09</h4>
+
+<p>From
+<a href="https://www.eclipse.org/downloads/eclipse-packages/">Eclipse download packages</a>
+install <strong>Eclipse IDE for C/C++ Developers</strong>.</p>
+
+<ul>
+  <li>download <strong>Eclipse IDE for C/C++ Developers</strong>
+(<code class="language-plaintext highlighter-rouge">eclipse-cpp-2020-09-R-macosx-cocoa-x86_64.dmg</code>)</li>
+  <li>unpack the archive into the <code class="language-plaintext highlighter-rouge">develop</code> folder</li>
+  <li>on macOS, remove the <code class="language-plaintext highlighter-rouge">com.apple.quarantine</code> attribute:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr <span class="nt">-dr</span> com.apple.quarantine Eclipse.app
+</code></pre></div></div>
+
+<ul>
+  <li>rename <code class="language-plaintext highlighter-rouge">Eclipse.app</code> to <code class="language-plaintext highlighter-rouge">Eclipse-cpp-2020-09.app</code></li>
+  <li>start Eclipse, use an workspace named <code class="language-plaintext highlighter-rouge">eclipse-cpp-2020-09-workspace</code></li>
+  <li>enable <strong>Use this as the default</strong></li>
+  <li>click the <strong>Hide</strong> button in the top right corner</li>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> →
+<strong>Appearance</strong>
+    <ul>
+      <li>disable <strong>Show source roots at top of project</strong></li>
+      <li>click the <strong>Apply and Close</strong></li>
+    </ul>
+  </li>
+  <li>in Project Explorer, click the three vertical dots icon →
+<strong>Filters and Customizations…</strong>
+    <ul>
+      <li>disable the <strong>.* resources</strong> line</li>
+      <li>click the <strong>OK</strong> button</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="clone-the-repositories">Clone the repositories</h2>
+
+<p>On Unix systems, the recommended method is using a command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/Work/eclipse-embed-cdt.github
+git clone <span class="nt">--recurse-submodules</span> <span class="se">\</span>
+  https://github.com/eclipse-embed-cdt/eclipse-plugins.git <span class="se">\</span>
+  eclipse-plugins.git
+</code></pre></div></div>
+
+<p>On Windows, the <code class="language-plaintext highlighter-rouge">git</code> command is available in the
+<a href="https://git-scm.com/download/win">Git for Windows</a> package, it should
+have been installed from the first step.</p>
+
+<h2 id="import-the-projects">Import the projects</h2>
+
+<p>In the commiters Eclipse, import projects using the generic importer:</p>
+
+<ul>
+  <li><em>Eclipse</em> menu → <strong>Project</strong>
+    <ul>
+      <li>enable <strong>Build Automatically</strong></li>
+    </ul>
+  </li>
+  <li><em>Eclipse</em> menu → <strong>File</strong> → <strong>Import</strong></li>
+  <li>Select
+    <ul>
+      <li>General → <strong>Existing Projects into Workspace</strong></li>
+      <li>click <strong>Next</strong></li>
+    </ul>
+  </li>
+  <li>Import Projects
+    <ul>
+      <li>Root Directory: <code class="language-plaintext highlighter-rouge">${Work}/eclipse-embed-cdt.github/eclipse-plugins.git</code></li>
+      <li>enable <strong>Search for nested projects</strong></li>
+      <li>disable <strong>Copy projects into workspace</strong></li>
+      <li>disable <strong>Add project(s) to working set</strong></li>
+      <li>click <strong>Finish</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="configure-the-working-sets">Configure the working sets</h2>
+
+<p>In the Java Perspective:</p>
+
+<ul>
+  <li>dots icon → <strong>Top Level Elements</strong> → <strong>Working Sets</strong></li>
+  <li>dots icon → <strong>Select Working Sets…</strong> → <strong>New…</strong>
+    <ul>
+      <li><strong>Embed CDT plugins root</strong> (with the <code class="language-plaintext highlighter-rouge">embed-cdt-plugins</code> project)</li>
+      <li><strong>Embed CDT repository</strong> (with the <code class="language-plaintext highlighter-rouge">org.eclipse.embedcdt-repository</code>
+project)</li>
+      <li><strong>Embed CDT features</strong> (with all <code class="language-plaintext highlighter-rouge">*.feature</code> projects)</li>
+      <li><strong>Embed CDT plugins</strong> (with all plug-ins projects)</li>
+      <li>click the <strong>OK</strong> button</li>
+    </ul>
+  </li>
+</ul>
+
+<p>To edit the ets later:</p>
+
+<ul>
+  <li>dots icon → <strong>Configure Working Sets…</strong></li>
+  <li>select the set</li>
+  <li>click the <strong>Edit</strong> button</li>
+</ul>
+
+<h2 id="create-the-maven-run-configurations">Create the Maven run configurations</h2>
+
+<p>To start the plug-ins Maven build from Eclipse:</p>
+
+<ul>
+  <li>in the <code class="language-plaintext highlighter-rouge">Embed CDT plugins root</code> set, select the <code class="language-plaintext highlighter-rouge">embed-cdt-plugins</code>
+project</li>
+  <li><em>Eclipse</em> menu → <strong>Run</strong> → <strong>Run Configurations…</strong></li>
+  <li>double click the <strong>Maven Build</strong> entry</li>
+  <li><strong>Name:</strong> <code class="language-plaintext highlighter-rouge">Embed CDT clean verify</code></li>
+  <li>in the Main tab
+    <ul>
+      <li>Base directory: click the Workspace… button and select the
+<code class="language-plaintext highlighter-rouge">embed-cdt-plugins</code></li>
+      <li>Goals: <code class="language-plaintext highlighter-rouge">-V clean verify</code></li>
+    </ul>
+  </li>
+  <li>click the <strong>Apply</strong> button</li>
+  <li>in the JRE tab
+    <ul>
+      <li>select the Execution environment <strong>JavaSE-11</strong> (to ensure compatibility
+with older environments)</li>
+    </ul>
+  </li>
+  <li>click the <strong>Apply</strong> button</li>
+</ul>
+
+<p>Duplicate the configuration as <code class="language-plaintext highlighter-rouge">Embed CDT clean</code> and update the goal to <code class="language-plaintext highlighter-rouge">clean</code>.</p>
+
+<h2 id="cdt-wiki">CDT Wiki</h2>
+
+<p>For more details, see <a href="https://wiki.eclipse.org/CDT">CDT Wiki</a>,
+especially the <a href="https://wiki.eclipse.org/Getting_started_with_CDT_development">Getting started with CDT development</a> page.</p>
+
 
 
         
@@ -790,7 +1222,7 @@ from time to time to update the Eclipse plug-ins.</p>
     <script type="text/javascript">
         var disqus_config = function () {
             this.page.url = '/web-preview';  // Your page's canonical URL variable
-            this.page.identifier = '/plugins/update/'; // Your page's unique identifier variable
+            this.page.identifier = '/develop/build-prerequisites/'; // Your page's unique identifier variable
         };
 
         (function() { // DON'T EDIT BELOW THIS LINE
@@ -813,7 +1245,7 @@ from time to time to update the Eclipse plug-ins.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 15, 2020<br/> Site last generated: Nov 6, 2020 <br />
+<span>Page last updated:</span> Nov 6, 2020<br/> Site last generated: Nov 6, 2020 <br />
                 </div>
             </div>
 </footer>
