@@ -228,17 +228,6 @@
 
 
 
-{
-"title": "Project Templates",
-"tags": "",
-"keywords": "",
-"url": "/web-preview/templates/",
-"summary": "<p>The C/C++ project templates.</p>"
-}
-,
-
-
-
 
 
 {
@@ -264,6 +253,17 @@
 
 
 {
+"title": "Contributor Info",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/develop/",
+"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
+}
+,
+
+
+
+{
 "title": "Maintainer info",
 "tags": "",
 "keywords": "",
@@ -275,11 +275,11 @@
 
 
 {
-"title": "Contributor Info",
+"title": "Project Templates",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/develop/",
-"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
+"url": "/web-preview/templates/",
+"summary": "<p>The C/C++ project templates.</p>"
 }
 ,
 
@@ -321,22 +321,22 @@
 
 
 {
-"title": "How to install the debugging components",
+"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/debug/install/",
-"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
+"url": "/web-preview/plugins/install/",
+"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
 }
 ,
 
 
 
 {
-"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
+"title": "How to install the debugging components",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/plugins/install/",
-"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
+"url": "/web-preview/debug/install/",
+"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
 }
 ,
 
@@ -647,8 +647,6 @@
 
 
 
-
-
 {
 "title": "How to update the Eclipse Embedded CDT plug-ins",
 "tags": "",
@@ -657,6 +655,8 @@
 "summary": "<p>Update the plug-ins installed on an Eclipse instance.</p>"
 }
 ,
+
+
 
 
 
