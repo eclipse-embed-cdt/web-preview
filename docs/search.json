@@ -228,12 +228,14 @@
 
 
 
+
+
 {
-"title": "Project Templates",
+"title": "Debugging",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/templates/",
-"summary": "<p>The C/C++ project templates.</p>"
+"url": "/web-preview/debug/",
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
 }
 ,
 
@@ -251,19 +253,6 @@
 
 
 {
-"title": "Maintainer info",
-"tags": "",
-"keywords": "",
-"url": "/web-preview/maintain/",
-"summary": "<p>Resources for the projects maintainers.</p>"
-}
-,
-
-
-
-
-
-{
 "title": "Contributor Info",
 "tags": "",
 "keywords": "",
@@ -275,11 +264,22 @@
 
 
 {
-"title": "Debugging",
+"title": "Maintainer info",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/debug/",
-"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
+"url": "/web-preview/maintain/",
+"summary": "<p>Resources for the projects maintainers.</p>"
+}
+,
+
+
+
+{
+"title": "Project Templates",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/templates/",
+"summary": "<p>The C/C++ project templates.</p>"
 }
 ,
 
@@ -296,6 +296,8 @@
 
 
 
+
+
 {
 "title": "The CDT Indexer",
 "tags": "",
@@ -304,8 +306,6 @@
 "summary": "<p>How the Eclipse CDT indexer works.</p>"
 }
 ,
-
-
 
 
 
@@ -951,6 +951,16 @@
 "tags": "gnuarmeclipseneon",
 "keywords": "",
 "url": "/web-preview/blog/2017/02/25/plugins-v3.3.1-201702251311-released/",
+"summary": ""
+}
+,
+
+
+{
+"title": "Embedded CDT plug-ins v6.0.0: CodeRed update failure",
+"tags": "gnuarmeclipsesourceforgeoraclejdk",
+"keywords": "",
+"url": "/web-preview/blog/2017/01/29/codered-update-issue/",
 "summary": ""
 }
 ,
