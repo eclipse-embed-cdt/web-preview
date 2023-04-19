@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Hello World Arm &amp; RISC-V QEMU xPack templates" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-04-19T13:27:55+00:00","datePublished":"2023-04-15T17:59:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"Hello World Arm &amp; RISC-V QEMU xPack templates","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/templates/hello-world-qemu-xpack/"},"url":"https://eclipse-embed-cdt.github.io/web-preview/templates/hello-world-qemu-xpack/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-04-19T13:42:31+00:00","datePublished":"2023-04-15T17:59:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"Hello World Arm &amp; RISC-V QEMU xPack templates","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/templates/hello-world-qemu-xpack/"},"url":"https://eclipse-embed-cdt.github.io/web-preview/templates/hello-world-qemu-xpack/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -747,16 +747,20 @@ page,</p>
 
 <h3 id="xpm">xpm</h3>
 
-<p>Special consideration should be given to install <code class="language-plaintext highlighter-rouge">node</code>/<code class="language-plaintext highlighter-rouge">npm</code>/<code class="language-plaintext highlighter-rouge">xpm</code>, which are mandatory for
+<p>Special consideration should be given to install <code class="language-plaintext highlighter-rouge">node</code>/<code class="language-plaintext highlighter-rouge">npm</code>/<code class="language-plaintext highlighter-rouge">xpm</code>,
+which are mandatory for
 instantiating xPack templates.</p>
 
 <h3 id="pre-download-binary-tools">Pre-download binary tools</h3>
 
-<p>This is a mandatory step, since the Eclipse plug-in will install all
+<p>This is an optional step, but highly recommended.
+Without it the Eclipse plug-in will install all
 dependencies anyway, including the toolchains and all other binary tools,
-but, especially for the RISC-V toolchain, which is very large,
-it is recommended to manually download them before trying to create a
-new project.</p>
+but, especially for the RISC-V toolchain which is very large,
+this will take quite a long time, without any feedback.</p>
+
+<p>Thus it is recommended to manually download the dependencies
+before attempting to create a new project.</p>
 
 <p>For Cortex-M and Arm 32-bit projects, the following commands can be used:</p>
 
@@ -764,8 +768,6 @@ new project.</p>
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@7.0.0-1.1 <span class="nt">--verbose</span>
 
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/cmake@3.21.6-1.1 <span class="nt">--verbose</span>
-xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/meson-build@0.60.3-1.1 <span class="nt">--verbose</span>
-
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/ninja-build@1.11.0-1.1 <span class="nt">--verbose</span>
 </code></pre></div></div>
 
@@ -902,7 +904,7 @@ be patient and wait for it to complete.</div>
 <p>Confirm the switch to the debugger perspective, and allow the plug-in
 to remember this setting.</p>
 
-<p>The Eclipse debugger is starts, with a breakpoint in <code class="language-plaintext highlighter-rouge">main()</code>.</p>
+<p>The Eclipse debugger is started, with a breakpoint in <code class="language-plaintext highlighter-rouge">main()</code>.</p>
 
 <p><img src="/web-preview/assets/images/2023/hello-debug-halt.png" alt="The QEMU Debugger tab" /></p>
 
