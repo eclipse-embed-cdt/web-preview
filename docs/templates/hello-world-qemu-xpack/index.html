@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Hello World Arm &amp; RISC-V QEMU xPack templates" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-04-19T13:42:31+00:00","datePublished":"2023-04-15T17:59:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"Hello World Arm &amp; RISC-V QEMU xPack templates","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/templates/hello-world-qemu-xpack/"},"url":"https://eclipse-embed-cdt.github.io/web-preview/templates/hello-world-qemu-xpack/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-04-19T15:45:20+00:00","datePublished":"2023-04-15T17:59:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"Hello World Arm &amp; RISC-V QEMU xPack templates","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/web-preview/templates/hello-world-qemu-xpack/"},"url":"https://eclipse-embed-cdt.github.io/web-preview/templates/hello-world-qemu-xpack/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1025,6 +1025,10 @@ xpacks/micro-os-plus-semihosting
 <p>The dependent libraries are actually not located in the project, but in
 a central store, and the sub-folders below <code class="language-plaintext highlighter-rouge">xpacks</code> are symbolic links
 (junctions for Windows).</p>
+
+<p>The xPack dependencies <strong>should not</strong> be saved in the project repository,
+since the <code class="language-plaintext highlighter-rouge">xpacks</code> folder can be easily recreated in a freshly cloned
+project with <code class="language-plaintext highlighter-rouge">xpm install</code>.</p>
 
 <p>The content of the central store is read-only, such that the source files
 (which can be used by multiple projects) cannot be inadvertently changed.</p>
