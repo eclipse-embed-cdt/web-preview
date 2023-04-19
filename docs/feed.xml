@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
     <channel>
-        <title></title>
+        <title>web-jekyll</title>
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/web-preview/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/web-preview/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 22 Mar 2023 08:46:13 +0000</pubDate>
-        <lastBuildDate>Wed, 22 Mar 2023 08:46:13 +0000</lastBuildDate>
-        <generator>Jekyll v3.9.0</generator>
+        <pubDate>Wed, 19 Apr 2023 10:21:33 +0000</pubDate>
+        <lastBuildDate>Wed, 19 Apr 2023 10:21:33 +0000</lastBuildDate>
+        <generator>Jekyll v3.9.3</generator>
         
         <item>
             <title>Eclipse Embedded CDT plug-ins v6.3.1 released</title>

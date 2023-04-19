@@ -224,29 +224,29 @@
 
 
 
-
-
-
-
-
-
 {
-"title": "Debugging",
+"title": "Hello World Arm &amp; RISC-V QEMU xPack templates",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/debug/",
-"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
+"url": "/web-preview/templates/hello-world-qemu-xpack/",
+"summary": "<p>The C/C++ project templates for Hello World semihosted projects.</p>"
 }
 ,
 
 
 
+
+
+
+
+
+
 {
-"title": "Maintainer info",
+"title": "Contributor Info",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/maintain/",
-"summary": "<p>Resources for the projects maintainers.</p>"
+"url": "/web-preview/develop/",
+"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
 }
 ,
 
@@ -264,11 +264,11 @@
 
 
 {
-"title": "Contributor Info",
+"title": "Debugging",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/develop/",
-"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
+"url": "/web-preview/debug/",
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
 }
 ,
 
@@ -280,6 +280,17 @@
 "keywords": "",
 "url": "/web-preview/support/",
 "summary": "<p>Where to search for help when something goes wrong.</p>"
+}
+,
+
+
+
+{
+"title": "Maintainer info",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/maintain/",
+"summary": "<p>Resources for the projects maintainers.</p>"
 }
 ,
 
@@ -661,6 +672,28 @@
 ,
 
 
+
+
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/assets/css/style.css",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "README",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/assets/css/",
+"summary": ""
+}
+,
 
 
 
