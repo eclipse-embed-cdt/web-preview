@@ -239,8 +239,6 @@
 
 
 
-
-
 {
 "title": "Contributor Info",
 "tags": "",
@@ -251,26 +249,6 @@
 ,
 
 
-
-{
-"title": "Project Templates",
-"tags": "",
-"keywords": "",
-"url": "/web-preview/templates/",
-"summary": "<p>The C/C++ project templates.</p>"
-}
-,
-
-
-
-{
-"title": "Debugging",
-"tags": "",
-"keywords": "",
-"url": "/web-preview/debug/",
-"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
-}
-,
 
 
 
@@ -291,6 +269,28 @@
 "keywords": "",
 "url": "/web-preview/maintain/",
 "summary": "<p>Resources for the projects maintainers.</p>"
+}
+,
+
+
+
+{
+"title": "Debugging",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/debug/",
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
+}
+,
+
+
+
+{
+"title": "Project Templates",
+"tags": "",
+"keywords": "",
+"url": "/web-preview/templates/",
+"summary": "<p>The C/C++ project templates.</p>"
 }
 ,
 
@@ -332,22 +332,22 @@
 
 
 {
-"title": "How to install the debugging components",
+"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/debug/install/",
-"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
+"url": "/web-preview/plugins/install/",
+"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
 }
 ,
 
 
 
 {
-"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
+"title": "How to install the debugging components",
 "tags": "",
 "keywords": "",
-"url": "/web-preview/plugins/install/",
-"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
+"url": "/web-preview/debug/install/",
+"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
 }
 ,
 
@@ -660,8 +660,6 @@
 
 
 
-
-
 {
 "title": "How to update the Eclipse Embedded CDT plug-ins",
 "tags": "",
@@ -670,6 +668,8 @@
 "summary": "<p>Update the plug-ins installed on an Eclipse instance.</p>"
 }
 ,
+
+
 
 
 
@@ -697,6 +697,16 @@
 
 
 
+
+
+{
+"title": "Eclipse Embedded CDT plug-ins v6.3.2 released",
+"tags": "gnuarmmcueclipserisc-v",
+"keywords": "",
+"url": "/web-preview/blog/2023/04/28/plugins-v6.3.2-released/",
+"summary": ""
+}
+,
 
 
 {
